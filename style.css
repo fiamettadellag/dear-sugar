@@ -1,0 +1,392 @@
+/* ---------- RESET ---------- */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:linear-gradient(
+        180deg,
+        #FFF9F5,
+        #FCEFE8,
+        #F8EBDD
+    );
+
+    color:#2d2d2d;
+
+    overflow:hidden;
+
+}
+
+/* ---------- LANDING PAGE ---------- */
+
+#landing{
+
+    height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    transition:.5s;
+
+}
+
+#landing h1{
+
+    font-size:72px;
+
+    color:#F4B547;
+
+    font-weight:600;
+
+    margin-bottom:20px;
+
+}
+
+#landing p{
+
+    color:#666;
+
+    margin-bottom:70px;
+
+    font-size:18px;
+
+}
+
+#landing button{
+
+    width:320px;
+
+    height:60px;
+
+    border:none;
+
+    border-radius:999px;
+
+    background:#F6C7B8;
+
+    color:white;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+#landing button:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+
+}
+
+/* ---------- HOME ---------- */
+
+#home{
+
+    display:none;
+
+    height:100vh;
+
+    padding:50px;
+
+}
+
+#home h2{
+
+    text-align:center;
+
+    font-size:40px;
+
+    margin-bottom:30px;
+
+}
+
+.search{
+
+    display:block;
+
+    width:420px;
+
+    margin:0 auto 40px;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:20px;
+
+    outline:none;
+
+    font-size:16px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.05);
+
+}
+
+.grid{
+
+    width:500px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:25px;
+
+}
+
+.card{
+
+    height:180px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.85);
+
+    backdrop-filter:blur(12px);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    font-size:55px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+    border:1px solid rgba(255,255,255,.6);
+
+}
+
+.card:hover{
+
+    transform:translateY(-10px) scale(1.03);
+
+    box-shadow:0 25px 50px rgba(0,0,0,.14);
+
+}
+
+
+.card span{
+
+    margin-top:15px;
+
+    font-size:18px;
+
+    font-weight:500;
+
+}
+
+#lettersPage,
+#reasonsPage,
+#songsPage,
+#moviesPage{
+
+    display:none;
+
+    padding:40px;
+
+    min-height:100vh;
+
+    overflow-y:auto;
+
+}
+
+.backBtn{
+
+    background:#f6c7b8;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 20px;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    margin-bottom:30px;
+
+    font-size:16px;
+
+}
+
+.letter,
+.reason,
+.song,
+.movie{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    margin-bottom:20px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+}
+
+.letter h3,
+.song h3,
+.movie h3{
+
+    margin-bottom:12px;
+
+}
+
+.letterBtn{
+
+    width:100%;
+    background:#fff;
+    border:none;
+    border-radius:18px;
+    padding:20px;
+    font-size:18px;
+    cursor:pointer;
+    text-align:left;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+}
+
+.letterBtn:hover{
+
+    transform:scale(1.02);
+
+}
+
+.letterContent{
+
+    display:none;
+
+    margin-top:15px;
+
+    background:white;
+
+    padding:20px;
+
+    border-radius:15px;
+
+}
+
+/* ===== PREMIUM ANIMATIONS ===== */
+
+body{
+    animation: fadeBody .8s ease;
+}
+
+@keyframes fadeBody{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}
+
+.card,
+.letterBtn,
+.song,
+.movie,
+.reason,
+.backBtn,
+#landing button{
+
+    transition:all .3s ease;
+
+}
+
+.card:hover{
+
+    transform:translateY(-8px) scale(1.02);
+
+    box-shadow:0 18px 40px rgba(0,0,0,.12);
+
+}
+
+.backBtn:hover{
+
+    transform:translateY(-2px);
+
+}
+
+.song:hover,
+.movie:hover,
+.reason:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 16px 35px rgba(0,0,0,.12);
+
+}
+
+.letterContent{
+
+    animation:openLetter .35s ease;
+
+}
+
+@keyframes openLetter{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(-15px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.loveMessage{
+
+    margin:70px auto 30px;
+
+    max-width:650px;
+
+    text-align:center;
+
+    color:#7a6660;
+
+    font-size:17px;
+
+    line-height:1.9;
+
+    opacity:.85;
+
+}
