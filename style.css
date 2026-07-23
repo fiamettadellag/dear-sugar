@@ -405,6 +405,16 @@ body{
 
     }
 
+    #gameComplete{
+
+    width:95%;
+
+    max-height:90vh;
+
+    padding:20px;
+
+}
+
     #home h2{
 
         font-size:32px;
@@ -502,9 +512,12 @@ body{
 
 #startGame:hover{
 
-    transform:scale(1.05);
+    transform:translateY(-4px);
+
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
 
 }
+
 
 #gameContainer{
 
@@ -598,6 +611,8 @@ body{
 
     line-height:1.7;
 
+    width:90%;
+
 }
 
 #gameComplete{
@@ -612,15 +627,21 @@ body{
 
     background:white;
 
-    padding:40px;
+    padding:30px;
 
     border-radius:30px;
 
     display:none;
 
-    max-width:450px;
+    max-width:600px;
 
     width:90%;
+
+    max-height:85vh;
+
+    overflow-y:auto;
+
+    -webkit-overflow-scrolling: touch;
 
     box-shadow:0 20px 45px rgba(0,0,0,.15);
 
@@ -707,13 +728,19 @@ body{
 
 #continueGame{
 
-    margin-top:20px;
+    display:block;
 
-    padding:12px 28px;
+    width:100%;
+
+    max-width:240px;
+
+    margin:20px auto 0;
+
+    padding:14px 20px;
 
     border:none;
 
-    border-radius:999px;
+    border-radius:30px;
 
     background:#f6c7b8;
 
@@ -736,5 +763,13 @@ body{
     transform:translateY(-2px);
 
     box-shadow:0 10px 20px rgba(0,0,0,.12);
+
+}
+
+#finalLetter{
+
+    text-align:left;
+
+    line-height:1.8;
 
 }
