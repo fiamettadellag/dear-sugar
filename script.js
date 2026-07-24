@@ -6,6 +6,7 @@ const reasonsPage = document.getElementById("reasonsPage");
 const songsPage = document.getElementById("songsPage");
 const moviesPage = document.getElementById("moviesPage");
 const gamePage = document.getElementById("gamePage");
+const moodPage = document.getElementById("moodPage");
 
 // Hide every page except the one we want
 function showPage(page){
@@ -17,6 +18,7 @@ function showPage(page){
     songsPage.style.display = "none";
     moviesPage.style.display = "none";
     gamePage.style.display = "none";
+    moodPage.style.display = "none";
 
     page.style.display = "block";
 }
@@ -41,6 +43,12 @@ document.getElementById("songsBtn").addEventListener("click", () => {
 
 document.getElementById("moviesBtn").addEventListener("click", () => {
     showPage(moviesPage);
+});
+
+document.getElementById("moodBtn").addEventListener("click", () => {
+
+    showPage(moodPage);
+
 });
 
 // Every back button returns home
@@ -329,3 +337,154 @@ playAgain.addEventListener("click",()=>{
     heartInterval = setInterval(createHeart,700);
 
 });
+
+// =========================
+// Mood Check
+// =========================
+
+const moodMessage = document.getElementById("moodMessage");
+const moodCards = document.querySelectorAll(".moodCard");
+
+const moodMessages = {
+
+    happy: `
+        <h3>😊 I'm Happy You're Happy</h3>
+
+        <p>
+            Well i am so very glad that you are happy, thats all i wish for you. Enjoy the day or night whenever you are reading this dont worry about how long it will last, live in the moment sugar. Write down what has made you happy, listen to a song that will enhance the feeling or even share that happiness with someone else xoxo
+        </p>
+    `,
+
+    sad: `
+        <h3>😢 When You're Feeling Sad</h3>
+
+        <p>
+            Im sorry today isn't the best, but i do know one thing, i know that this rain cloud will soon go away. be kind to yourself today more than you would any other day. You are still my favourite person, even when do feel like running away to new york. Dont worry be happy sugar xoxo
+        </p>
+    `,
+
+    anxious: `
+        <h3>😰 When You're Feeling Anxious</h3>
+
+        <p>
+            Its okay, its not as bad as it seems i can promise you that, your brain is making it ten times worse than it actually is. Take a minute to slow down, breathe and take things one at a time. Drop your shoulders unclench your jaw and breathe dont think about anything, breathe in for four and out for six. Youre okay sugar i promis xoxo
+        </p>
+    `,
+
+    overthinking: `
+        <h3>🤯 When You're Overthinking</h3>
+
+        <p>
+            You have too many tabs open in your brain, its okay dont worry where its all coming from or what the cause is, not every thought needs an answer and not every worry needs your attention. Write down one thought that keeps doing circles in your head. Once its on the page leave it and go on about your day xoxo
+        </p>
+    `,
+
+    missing: `
+        <h3>🥺 When You're Missing Me</h3>
+
+        <p>
+            Its okay soemtimes i miss me too, but hey thats okay you let a tear to two out its alright i wont judge xx Look through our messsages maybe reminice a bit listen to a song that reminds you of me, for the record i miss you too xoxo
+        </p>
+    `,
+
+    tired: `
+        <h3>😴 When You're Tired</h3>
+
+        <p>
+            You can sleep its okay, no doubt we were probably meant to watch our show tonight, but one of us probably got tired and in this case its your, its okay we can alway watch tomorrow, get comfy and cosy and ready to sleep, dream as much as you can about me sleepwell sugar xoxo
+        </p>
+    `,
+
+    angry: `
+        <h3>😠 When You're Angry</h3>
+
+        <p>
+             Whoever or whatever has annoyed you dont bother giving them the time or energy of your day, they arent worth your thoughts. Youre allowed to be angry thats okay, but dont give anyone the satisfaction of you turing into she-hulk. Step away for a couple minutesbefore respondinf to anyone, shake yoour hands and take a couple minutes to collect yourself. Then when youre ready tell me the story xoxo
+        </p>
+    `,
+
+    unmotivated: `
+        <h3>🌧️ When You're Unmotivated</h3>
+
+        <p>
+            You don't need to conquer the world today, the world is well massive so i think you would be quite exhausted even if you tried to. One small thing still counts and i will proudly celebrate it just like you won an oscar award (i think that what its called..?) Pick one task that is quick, once its finished continue or have a break and declare yourself sucsessful
+        </p>
+    `
+
+};
+
+moodCards.forEach(card => {
+
+    card.addEventListener("click", () => {
+
+        const selectedMood = card.dataset.mood;
+
+        moodMessage.innerHTML = `
+
+            ${moodMessages[selectedMood]}
+
+            <button class="feelBetterBtn">
+                I Feel Better ❤️
+            </button>
+
+        `;
+
+        moodMessage.style.display = "block";
+
+        moodMessage.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+
+       moodMessage
+    .querySelector(".feelBetterBtn")
+    .addEventListener("click", () => {
+
+        moodMessage.innerHTML = `
+
+            <div class="happyEnding">
+
+                <div class="floatingHearts">
+                    <span>💖</span>
+                    <span>❤️</span>
+                    <span>💗</span>
+                </div>
+
+                <h3>I'm glad, Sugar 💖</h3>
+
+                <p>
+                    Come back whenever you need me.<br>
+                    I'll always be here.
+                </p>
+
+                <button class="backToMoodsBtn">
+                    Back to Mood Check
+                </button>
+
+            </div>
+
+        `;
+
+        moodMessage.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+
+        moodMessage
+            .querySelector(".backToMoodsBtn")
+            .addEventListener("click", () => {
+
+                moodMessage.style.display = "none";
+
+                document.querySelector(".moodGrid").scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+             });
+
+         }); 
+
+     });
+
+  });
