@@ -118,6 +118,8 @@ body{
 
     margin-bottom:30px;
 
+    color:#7A5E57;
+
 }
 
 .search{
@@ -196,7 +198,8 @@ body{
 #lettersPage,
 #reasonsPage,
 #songsPage,
-#moviesPage{
+#moviesPage,
+#moodPage{
 
     display:none;
 
@@ -208,23 +211,45 @@ body{
 
 }
 
+#lettersPage h2,
+#reasonsPage h2,
+#songsPage h2,
+#moviesPage h2,
+#moodPage h2{
+
+    color:#D98AA6;
+
+}
+
 .backBtn{
 
-    background:#f6c7b8;
+    background:#F6C7B8;
 
     color:white;
 
     border:none;
 
-    padding:12px 20px;
-
     border-radius:30px;
+
+    padding:12px 28px;
+
+    font-family:'Poppins',sans-serif;
+
+    font-size:18px;
 
     cursor:pointer;
 
+    transition:.3s;
+
     margin-bottom:30px;
 
-    font-size:16px;
+}
+
+.backBtn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 20px rgba(0,0,0,.12);
 
 }
 
@@ -452,11 +477,13 @@ body{
     #lettersPage,
     #songsPage,
     #reasonsPage,
-    #moviesPage{
+    #moviesPage,
+    #moodPage,
+    #gamePage{
 
-        padding:20px;
+    padding:20px;
 
-    }
+}
 
 }
 
@@ -554,6 +581,8 @@ body{
     font-size:22px;
 
     font-weight:bold;
+
+    color:#E56A6A;
 
 }
 
@@ -771,5 +800,356 @@ body{
     text-align:left;
 
     line-height:1.8;
+
+}
+
+.lastUpdated{
+
+    text-align:center;
+
+    margin-top:15px;
+
+    margin-bottom:40px;
+
+    font-size:14px;
+
+    color:#9b8d87;
+
+    opacity:.8;
+
+}
+
+/* ---------- MOOD CHECK ---------- */
+
+#moodPage{
+
+    display:none;
+
+    min-height:100vh;
+
+    padding:40px;
+
+    text-align:center;
+
+}
+
+.moodIntro{
+
+    margin:15px 0 30px;
+
+    color:#8c7b75;
+
+    font-size:17px;
+
+}
+
+.moodGrid{
+
+    width:100%;
+
+    max-width:650px;
+
+    margin:0 auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:20px;
+
+}
+
+.moodCard{
+
+    min-height:140px;
+
+    border:none;
+
+    border-radius:28px;
+
+    background:white;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+
+    font-family:'Poppins',sans-serif;
+
+    font-size:38px;
+
+    cursor:pointer;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:12px;
+
+    transition:.3s;
+
+}
+
+.moodCard span{
+
+    font-size:17px;
+
+    font-weight:500;
+
+}
+
+.moodCard:hover{
+
+    transform:translateY(-6px) scale(1.02);
+
+    box-shadow:0 18px 40px rgba(0,0,0,.12);
+
+}
+
+#moodMessage{
+
+    max-width:650px;
+
+    margin:30px auto 0;
+
+    text-align:left;
+
+    line-height:1.8;
+
+}
+
+@media(max-width:768px){
+
+    #moodPage{
+
+        padding:20px;
+
+    }
+
+    .moodGrid{
+
+        grid-template-columns:1fr;
+
+        gap:16px;
+
+    }
+
+    .moodCard{
+
+        min-height:125px;
+
+    }
+
+}
+
+#home .gamesTitle{
+
+    text-align:center;
+
+    margin:45px 0 20px;
+
+    font-size:28px;
+
+    font-weight:600;
+
+    color:#F4B547;
+
+}
+
+.homeSubtitle{
+
+    text-align:center;
+
+    color:#B78495;
+
+    font-size:16px;
+
+    margin-top:8px;
+
+    margin-bottom:35px;
+
+    font-weight:400;
+
+}
+
+@media(max-width:768px){
+
+    #gamePage{
+        padding:20px;
+    }
+
+}
+
+#moodMessage{
+
+    display:none;
+
+    background:white;
+
+    border-radius:28px;
+
+    padding:30px;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+
+    color:#7A5E57;
+
+}
+
+#moodMessage h3{
+
+    color:#D98AA6;
+
+    text-align:center;
+
+    margin-bottom:18px;
+
+}
+
+#moodMessage p{
+
+    line-height:1.8;
+
+}
+
+.feelBetterBtn{
+
+    display:block;
+
+    margin:25px auto 0;
+
+    padding:13px 26px;
+
+    border:none;
+
+    border-radius:30px;
+
+    background:#F6C7B8;
+
+    color:white;
+
+    font-family:'Poppins',sans-serif;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.feelBetterBtn:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 10px 20px rgba(0,0,0,.12);
+
+}
+
+/* ---------- MOOD CHECK ENDING ---------- */
+
+.happyEnding{
+
+    text-align:center;
+
+}
+
+.happyEnding p{
+
+    text-align:center;
+
+    line-height:1.8;
+
+}
+
+.floatingHearts{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+    margin-bottom:15px;
+
+    font-size:28px;
+
+}
+
+.floatingHearts span{
+
+    display:inline-block;
+
+    animation:floatHeart 1.4s ease-in-out infinite;
+
+}
+
+.floatingHearts span:nth-child(2){
+
+    animation-delay:.2s;
+
+}
+
+.floatingHearts span:nth-child(3){
+
+    animation-delay:.4s;
+
+}
+
+@keyframes floatHeart{
+
+    0%,
+    100%{
+
+        transform:translateY(0);
+
+        opacity:.7;
+
+    }
+
+    50%{
+
+        transform:translateY(-12px);
+
+        opacity:1;
+
+    }
+
+}
+
+.backToMoodsBtn{
+
+    display:block;
+
+    margin:25px auto 0;
+
+    padding:13px 26px;
+
+    border:none;
+
+    border-radius:30px;
+
+    background:#F6C7B8;
+
+    color:white;
+
+    font-family:'Poppins',sans-serif;
+
+    font-size:16px;
+
+    font-weight:500;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.backToMoodsBtn:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 10px 20px rgba(0,0,0,.12);
 
 }
