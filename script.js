@@ -7,6 +7,7 @@ const songsPage = document.getElementById("songsPage");
 const moviesPage = document.getElementById("moviesPage");
 const gamePage = document.getElementById("gamePage");
 const moodPage = document.getElementById("moodPage");
+const proposalPage = document.getElementById("proposalPage");
 
 // Hide every page except the one we want
 function showPage(page){
@@ -19,6 +20,7 @@ function showPage(page){
     moviesPage.style.display = "none";
     gamePage.style.display = "none";
     moodPage.style.display = "none";
+    proposalPage.style.display = "none";
 
     page.style.display = "block";
 }
@@ -48,6 +50,19 @@ document.getElementById("moviesBtn").addEventListener("click", () => {
 document.getElementById("moodBtn").addEventListener("click", () => {
 
     showPage(moodPage);
+
+});
+
+document.getElementById("proposalBtn").addEventListener("click", () => {
+
+    document.getElementById("specialDelivery").style.display = "block";
+    document.getElementById("proposalLetter").style.display = "none";
+    document.getElementById("weddingInvite").style.display = "none";
+    document.getElementById("vowsSection").style.display = "none";
+    document.getElementById("ceremonySection").style.display = "none";
+    document.getElementById("certificateSection").style.display = "none";
+
+    showPage(proposalPage);
 
 });
 
@@ -488,3 +503,102 @@ moodCards.forEach(card => {
      });
 
   });
+// =========================
+// Proposal and Wedding
+// =========================
+
+const openLetterBtn = document.getElementById("openLetterBtn");
+const proposalYesBtn = document.getElementById("proposalYesBtn");
+
+openLetterBtn.addEventListener("click", () => {
+
+    const specialDelivery = document.getElementById("specialDelivery");
+    const proposalLetter = document.getElementById("proposalLetter");
+
+    specialDelivery.style.display = "none";
+    proposalLetter.style.display = "block";
+
+    proposalLetter.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+
+});
+
+proposalYesBtn.addEventListener("click", () => {
+
+    const proposalLetter = document.getElementById("proposalLetter");
+    const weddingInvite = document.getElementById("weddingInvite");
+
+    proposalLetter.style.display = "none";
+    weddingInvite.style.display = "block";
+
+    weddingInvite.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+
+});
+
+const inviteToVowsBtn = document.getElementById("inviteToVowsBtn");
+
+inviteToVowsBtn.addEventListener("click", () => {
+
+    const weddingInvite = document.getElementById("weddingInvite");
+    const vowsSection = document.getElementById("vowsSection");
+
+    weddingInvite.style.display = "none";
+    vowsSection.style.display = "block";
+
+    vowsSection.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+
+});
+
+const vowsToCeremonyBtn =
+    document.getElementById("vowsToCeremonyBtn");
+
+const ceremonySection =
+    document.getElementById("ceremonySection");
+
+vowsToCeremonyBtn.addEventListener("click", () => {
+
+    document.getElementById("vowsSection").style.display = "none";
+
+    ceremonySection.style.display = "block";
+
+    ceremonySection.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+
+});
+
+const iDoBtn = document.getElementById("iDoBtn");
+const weddingHomeBtn = document.getElementById("weddingHomeBtn");
+
+iDoBtn.addEventListener("click", () => {
+
+    const ceremonySection =
+        document.getElementById("ceremonySection");
+
+    const certificateSection =
+        document.getElementById("certificateSection");
+
+    ceremonySection.style.display = "none";
+    certificateSection.style.display = "block";
+
+    certificateSection.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+
+});
+
+weddingHomeBtn.addEventListener("click", () => {
+
+    showPage(home);
+
+});
