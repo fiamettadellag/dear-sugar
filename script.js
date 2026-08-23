@@ -8,6 +8,7 @@ const moviesPage = document.getElementById("moviesPage");
 const gamePage = document.getElementById("gamePage");
 const moodPage = document.getElementById("moodPage");
 const proposalPage = document.getElementById("proposalPage");
+const bouquetPage = document.getElementById("bouquetPage");
 
 // Hide every page except the one we want
 function showPage(page){
@@ -21,6 +22,8 @@ function showPage(page){
     gamePage.style.display = "none";
     moodPage.style.display = "none";
     proposalPage.style.display = "none";
+    bouquetPage.style.display = "none";
+    
 
     page.style.display = "block";
 }
@@ -33,6 +36,17 @@ document.getElementById("beginButton").addEventListener("click", () => {
 // Home buttons
 document.getElementById("lettersBtn").addEventListener("click", () => {
     showPage(lettersPage);
+});
+
+document.getElementById("bouquetBtn").addEventListener("click", () => {
+
+    showPage(bouquetPage);
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
 });
 
 document.getElementById("reasonsBtn").addEventListener("click", () => {
@@ -53,14 +67,38 @@ document.getElementById("moodBtn").addEventListener("click", () => {
 
 });
 
+
 document.getElementById("proposalBtn").addEventListener("click", () => {
 
-    document.getElementById("specialDelivery").style.display = "block";
-    document.getElementById("proposalLetter").style.display = "none";
-    document.getElementById("weddingInvite").style.display = "none";
-    document.getElementById("vowsSection").style.display = "none";
-    document.getElementById("ceremonySection").style.display = "none";
-    document.getElementById("certificateSection").style.display = "none";
+    document
+        .getElementById("specialDelivery")
+        .style
+        .setProperty("display", "block", "important");
+
+    document
+        .getElementById("proposalLetter")
+        .style
+        .setProperty("display", "none", "important");
+
+    document
+        .getElementById("weddingInvite")
+        .style
+        .setProperty("display", "none", "important");
+
+    document
+        .getElementById("vowsSection")
+        .style
+        .setProperty("display", "none", "important");
+
+    document
+        .getElementById("ceremonySection")
+        .style
+        .setProperty("display", "none", "important");
+
+    document
+        .getElementById("certificateSection")
+        .style
+        .setProperty("display", "none", "important");
 
     showPage(proposalPage);
 
@@ -130,7 +168,7 @@ gameBtn.addEventListener("click", () => {
     finalLetter.style.display = "none";
 
     heartsCaught = 0;
-    score.innerHTML = "❤️ 0 / 100";
+    score.innerHTML = "♡ 0 / 100"
 
     gameRunning = false;
     clearInterval(heartInterval);
@@ -174,7 +212,7 @@ startGame.addEventListener("click", () => {
 
     heartsCaught = 0;
 
-    score.innerHTML = "❤️ 0 / 100";
+    score.innerHTML = "♡ 0 / 100"
 
     gameContainer.style.display = "block";
 
@@ -230,7 +268,7 @@ function createHeart(){
 
     heart.className = "heart";
 
-    heart.innerHTML = "❤️";
+    heart.innerHTML = "♡";
 
     heart.style.left = Math.random() * (gameContainer.offsetWidth - 40) + "px";
 
@@ -268,7 +306,7 @@ function createHeart(){
 
             heartsCaught++;
 
-            score.innerHTML = `❤️ ${heartsCaught} / 100`;
+            score.innerHTML = `♡ ${heartsCaught} / 100`;
 
 if(messages[heartsCaught]){
 
@@ -279,7 +317,7 @@ if(messages[heartsCaught]){
 
 <p>${messages[heartsCaught]}</p>
 
-<button id="continueGame">Keep Going, Sugar 💖</button>
+<button id="continueGame">Keep Going, Sugar ♡</button>
 
 `;
 
@@ -341,7 +379,7 @@ playAgain.addEventListener("click",()=>{
 
     heartsCaught = 0;
 
-    score.innerHTML = "❤️ 0 / 100";
+    score.innerHTML = "♡ 0 / 100"
 
     gameComplete.style.display = "none";
 
@@ -363,7 +401,7 @@ const moodCards = document.querySelectorAll(".moodCard");
 const moodMessages = {
 
     happy: `
-        <h3>😊 I'm Happy You're Happy</h3>
+        <h3>I'm Happy You're Happy ♡</h3>
 
         <p>
             Well i am so very glad that you are happy, thats all i wish for you. Enjoy the day or night whenever you are reading this dont worry about how long it will last, live in the moment sugar. Write down what has made you happy, listen to a song that will enhance the feeling or even share that happiness with someone else xoxo
@@ -371,7 +409,7 @@ const moodMessages = {
     `,
 
     sad: `
-        <h3>😢 When You're Feeling Sad</h3>
+        <h3>When You're Feeling Sad ♡</h3>
 
         <p>
             Im sorry today isn't the best, but i do know one thing, i know that this rain cloud will soon go away. be kind to yourself today more than you would any other day. You are still my favourite person, even when do feel like running away to new york. Dont worry be happy sugar xoxo
@@ -379,7 +417,7 @@ const moodMessages = {
     `,
 
     anxious: `
-        <h3>😰 When You're Feeling Anxious</h3>
+        <h3>When You're Feeling Anxious ♡</h3>
 
         <p>
             Its okay, its not as bad as it seems i can promise you that, your brain is making it ten times worse than it actually is. Take a minute to slow down, breathe and take things one at a time. Drop your shoulders unclench your jaw and breathe dont think about anything, breathe in for four and out for six. Youre okay sugar i promis xoxo
@@ -387,7 +425,7 @@ const moodMessages = {
     `,
 
     overthinking: `
-        <h3>🤯 When You're Overthinking</h3>
+        <h3>When You're Overthinking ♡</h3>
 
         <p>
             You have too many tabs open in your brain, its okay dont worry where its all coming from or what the cause is, not every thought needs an answer and not every worry needs your attention. Write down one thought that keeps doing circles in your head. Once its on the page leave it and go on about your day xoxo
@@ -395,7 +433,7 @@ const moodMessages = {
     `,
 
     missing: `
-        <h3>🥺 When You're Missing Me</h3>
+        <h3>When You're Missing Me ♡</h3>
 
         <p>
             Its okay soemtimes i miss me too, but hey thats okay you let a tear to two out its alright i wont judge xx Look through our messsages maybe reminice a bit listen to a song that reminds you of me, for the record i miss you too xoxo
@@ -403,7 +441,7 @@ const moodMessages = {
     `,
 
     tired: `
-        <h3>😴 When You're Tired</h3>
+        <h3>When You're Tired ♡</h3>
 
         <p>
             You can sleep its okay, no doubt we were probably meant to watch our show tonight, but one of us probably got tired and in this case its your, its okay we can alway watch tomorrow, get comfy and cosy and ready to sleep, dream as much as you can about me sleepwell sugar xoxo
@@ -411,7 +449,7 @@ const moodMessages = {
     `,
 
     angry: `
-        <h3>😠 When You're Angry</h3>
+        <h3>When You're Angry ♡</h3>
 
         <p>
              Whoever or whatever has annoyed you dont bother giving them the time or energy of your day, they arent worth your thoughts. Youre allowed to be angry thats okay, but dont give anyone the satisfaction of you turing into she-hulk. Step away for a couple minutesbefore respondinf to anyone, shake yoour hands and take a couple minutes to collect yourself. Then when youre ready tell me the story xoxo
@@ -419,7 +457,7 @@ const moodMessages = {
     `,
 
     unmotivated: `
-        <h3>🌧️ When You're Unmotivated</h3>
+        <h3>When You're Unmotivated ♡</h3>
 
         <p>
             You don't need to conquer the world today, the world is well massive so i think you would be quite exhausted even if you tried to. One small thing still counts and i will proudly celebrate it just like you won an oscar award (i think that what its called..?) Pick one task that is quick, once its finished continue or have a break and declare yourself sucsessful
@@ -439,7 +477,7 @@ moodCards.forEach(card => {
             ${moodMessages[selectedMood]}
 
             <button class="feelBetterBtn">
-                I Feel Better ❤️
+                I Feel Better ♡
             </button>
 
         `;
@@ -465,7 +503,7 @@ moodCards.forEach(card => {
                     <span>💗</span>
                 </div>
 
-                <h3>I'm glad, Sugar 💖</h3>
+                <h3>I'm glad, Sugar ♡</h3>
 
                 <p>
                     Come back whenever you need me.<br>
@@ -509,93 +547,102 @@ moodCards.forEach(card => {
 
 const openLetterBtn = document.getElementById("openLetterBtn");
 const proposalYesBtn = document.getElementById("proposalYesBtn");
-
-openLetterBtn.addEventListener("click", () => {
-
-    const specialDelivery = document.getElementById("specialDelivery");
-    const proposalLetter = document.getElementById("proposalLetter");
-
-    specialDelivery.style.display = "none";
-    proposalLetter.style.display = "block";
-
-    proposalLetter.scrollIntoView({
-        behavior: "smooth",
-        block: "center"
-    });
-
-});
-
-proposalYesBtn.addEventListener("click", () => {
-
-    const proposalLetter = document.getElementById("proposalLetter");
-    const weddingInvite = document.getElementById("weddingInvite");
-
-    proposalLetter.style.display = "none";
-    weddingInvite.style.display = "block";
-
-    weddingInvite.scrollIntoView({
-        behavior: "smooth",
-        block: "center"
-    });
-
-});
-
 const inviteToVowsBtn = document.getElementById("inviteToVowsBtn");
-
-inviteToVowsBtn.addEventListener("click", () => {
-
-    const weddingInvite = document.getElementById("weddingInvite");
-    const vowsSection = document.getElementById("vowsSection");
-
-    weddingInvite.style.display = "none";
-    vowsSection.style.display = "block";
-
-    vowsSection.scrollIntoView({
-        behavior: "smooth",
-        block: "center"
-    });
-
-});
-
-const vowsToCeremonyBtn =
-    document.getElementById("vowsToCeremonyBtn");
-
-const ceremonySection =
-    document.getElementById("ceremonySection");
-
-vowsToCeremonyBtn.addEventListener("click", () => {
-
-    document.getElementById("vowsSection").style.display = "none";
-
-    ceremonySection.style.display = "block";
-
-    ceremonySection.scrollIntoView({
-        behavior: "smooth",
-        block: "center"
-    });
-
-});
-
+const vowsToCeremonyBtn = document.getElementById("vowsToCeremonyBtn");
 const iDoBtn = document.getElementById("iDoBtn");
 const weddingHomeBtn = document.getElementById("weddingHomeBtn");
 
-iDoBtn.addEventListener("click", () => {
+function hideWeddingStep(id){
+    document
+        .getElementById(id)
+        .style
+        .setProperty("display", "none", "important");
+}
 
-    const ceremonySection =
-        document.getElementById("ceremonySection");
+function showWeddingStep(id){
+    document
+        .getElementById(id)
+        .style
+        .setProperty("display", "block", "important");
+}
 
-    const certificateSection =
-        document.getElementById("certificateSection");
 
-    ceremonySection.style.display = "none";
-    certificateSection.style.display = "block";
+/* OPEN LETTER */
 
-    certificateSection.scrollIntoView({
-        behavior: "smooth",
-        block: "center"
+openLetterBtn.addEventListener("click", () => {
+
+    hideWeddingStep("specialDelivery");
+    showWeddingStep("proposalLetter");
+
+    document.getElementById("proposalLetter").scrollIntoView({
+        behavior:"smooth",
+        block:"center"
     });
 
 });
+
+
+/* YES */
+
+proposalYesBtn.addEventListener("click", () => {
+
+    hideWeddingStep("proposalLetter");
+    showWeddingStep("weddingInvite");
+
+    document.getElementById("weddingInvite").scrollIntoView({
+        behavior:"smooth",
+        block:"center"
+    });
+
+});
+
+
+/* INVITATION TO VOWS */
+
+inviteToVowsBtn.addEventListener("click", () => {
+
+    hideWeddingStep("weddingInvite");
+    showWeddingStep("vowsSection");
+
+    document.getElementById("vowsSection").scrollIntoView({
+        behavior:"smooth",
+        block:"center"
+    });
+
+});
+
+
+/* VOWS TO CEREMONY */
+
+vowsToCeremonyBtn.addEventListener("click", () => {
+
+    hideWeddingStep("vowsSection");
+    showWeddingStep("ceremonySection");
+
+    document.getElementById("ceremonySection").scrollIntoView({
+        behavior:"smooth",
+        block:"center"
+    });
+
+});
+
+
+/* I DO */
+
+iDoBtn.addEventListener("click", () => {
+
+    hideWeddingStep("ceremonySection");
+    showWeddingStep("certificateSection");
+
+    document.getElementById("certificateSection").scrollIntoView({
+        behavior:"smooth",
+        block:"center"
+    });
+
+});
+
+
+/* BACK HOME */
 
 weddingHomeBtn.addEventListener("click", () => {
 
