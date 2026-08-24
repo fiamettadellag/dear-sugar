@@ -8791,3 +8791,61 @@ margin:30px auto 0 !important;
 .remindersBoard .reminderCard:nth-of-type(11) .reminderPhoto{
     background-image:url("yellow.png");
 }
+
+/* =========================================
+   FIX REMINDERS PAGE ON PHONES
+========================================= */
+
+@media screen and (max-width: 700px){
+
+    .remindersBoard{
+        display:grid !important;
+        grid-template-columns:repeat(2, minmax(0, 1fr)) !important;
+        gap:24px 14px !important;
+        width:100% !important;
+    }
+
+    .remindersBoard .reminderCard{
+        grid-column:span 1 !important;
+        width:auto !important;
+        margin-top:0 !important;
+    }
+
+    .reminderPhoto,
+    .reminderPolaroid .reminderPhoto,
+    .reminderTall .reminderPhoto,
+    .reminderWide .reminderPhoto{
+        width:100% !important;
+        min-height:0 !important;
+        height:auto !important;
+        aspect-ratio:1 / 1 !important;
+
+        background-size:cover !important;
+        background-position:center !important;
+    }
+
+    .reminderPhoto img{
+        width:100% !important;
+        height:100% !important;
+        aspect-ratio:1 / 1 !important;
+        object-fit:cover !important;
+        display:block !important;
+    }
+
+    .reminderCard{
+        padding:9px 9px 16px !important;
+    }
+
+    .reminderCard > p{
+        margin-top:9px !important;
+    }
+
+    .reminderDoodle{
+        display:none !important;
+    }
+
+    .remindersHeader{
+        margin-bottom:40px !important;
+    }
+
+}
