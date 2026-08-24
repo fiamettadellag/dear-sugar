@@ -8849,3 +8849,89 @@ margin:30px auto 0 !important;
     }
 
 }
+
+/* =========================================
+   FINAL PHONE FIX - REMINDERS
+========================================= */
+
+@media screen and (max-width:1000px){
+
+    #remindersPage{
+        padding:24px 14px 60px !important;
+    }
+
+    .remindersBoard{
+        display:grid !important;
+        grid-template-columns:repeat(2, minmax(0, 1fr)) !important;
+        grid-auto-flow:row !important;
+
+        gap:24px 14px !important;
+
+        width:100% !important;
+        max-width:100% !important;
+    }
+
+    .remindersBoard > .reminderCard{
+        grid-column:auto !important;
+
+        width:100% !important;
+        max-width:none !important;
+        min-width:0 !important;
+
+        margin:0 !important;
+    }
+
+    .reminderDoodle{
+        display:none !important;
+    }
+
+    /* make every photo window a nice square */
+    .reminderPhoto,
+    .reminderPolaroid .reminderPhoto,
+    .reminderTall .reminderPhoto,
+    .reminderWide .reminderPhoto{
+        position:relative !important;
+
+        width:100% !important;
+        height:auto !important;
+        min-height:0 !important;
+
+        aspect-ratio:1 / 1 !important;
+
+        background-size:cover !important;
+        background-position:center !important;
+        background-repeat:no-repeat !important;
+
+        overflow:hidden !important;
+    }
+
+    /* fixes Belle and any photos added with an img tag */
+    .reminderPhoto img{
+        position:absolute !important;
+
+        inset:0 !important;
+
+        width:100% !important;
+        height:100% !important;
+
+        object-fit:cover !important;
+        object-position:center !important;
+    }
+
+    .reminderCard,
+    .reminderPolaroid,
+    .reminderTall,
+    .reminderWide{
+        padding:9px 9px 15px !important;
+    }
+
+    .reminderCard > p{
+        margin-top:10px !important;
+        font-size:17px !important;
+    }
+
+    .remindersHeader{
+        margin-bottom:42px !important;
+    }
+
+}
