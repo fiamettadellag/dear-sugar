@@ -8935,3 +8935,8 @@ margin:30px auto 0 !important;
     }
 
 }
+
+/* Fix Belle photo crop */
+.remindersBoard .reminderCard:nth-of-type(1) .reminderPhoto img{
+    object-position:center top !important;
+}
