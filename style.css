@@ -7218,3 +7218,1576 @@ margin:30px auto 0 !important;
 #remindersBtn{
     cursor:default;
 }
+
+/* =========================================
+   OUR SCRAPBOOK - FLIP BOOK
+========================================= */
+
+#scrapbookPage{
+    display:none;
+
+    min-height:100vh;
+
+    padding:30px 24px 70px;
+
+    background:#FFFBF8;
+
+    color:#2B2320;
+
+    font-family:'Poppins',sans-serif;
+}
+
+
+/* HEADER */
+
+.scrapbookHeader{
+    max-width:900px;
+
+    margin:0 auto 30px;
+
+    text-align:center;
+}
+
+.scrapbookEyebrow{
+    margin:5px 0 12px;
+
+    color:#D9828F;
+
+    font-size:9px;
+    font-weight:500;
+
+    letter-spacing:4px;
+}
+
+.scrapbookHeader h2{
+    margin:0;
+
+    color:#211917;
+
+    font-family:'Playfair Display',serif;
+
+    font-size:46px;
+    font-weight:500;
+}
+
+.scrapbookHeader h2 span{
+    color:#D9828F;
+}
+
+.scrapbookHandwriting{
+    margin-top:8px;
+
+    color:#D9828F;
+
+    font-family:'Caveat',cursive;
+
+    font-size:20px;
+}
+
+
+/* =========================================
+   BOOK
+========================================= */
+
+.scrapbookBook{
+    width:100%;
+    max-width:900px;
+
+    margin:0 auto;
+
+    position:relative;
+}
+
+
+/* hide pages until active */
+
+.scrapbookSpread{
+    display:none;
+
+    width:100%;
+
+    min-height:540px;
+
+    align-items:stretch;
+    justify-content:center;
+}
+
+.scrapbookSpread.active{
+    display:flex;
+
+    animation:scrapbookTurn .35s ease;
+}
+
+
+/* actual pages */
+
+.scrapbookSheet{
+    position:relative;
+
+    width:50%;
+
+    min-height:540px;
+
+    padding:32px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    background:#FFFDFC;
+
+    border:1px solid #E8DCD5;
+
+    overflow:hidden;
+}
+
+
+/* left page */
+
+.leftSheet{
+    border-radius:18px 0 0 18px;
+
+    border-right:none;
+}
+
+
+/* right page */
+
+.rightSheet{
+    border-radius:0 18px 18px 0;
+
+    border-left:1px solid #EFE4DE;
+}
+
+
+/* centre crease */
+
+.scrapbookSpread:not(:first-child)::after{
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    top:3%;
+
+    width:1px;
+    height:94%;
+
+    background:#E2D3CD;
+
+    box-shadow:
+        -4px 0 10px rgba(80,55,45,.04),
+        4px 0 10px rgba(80,55,45,.04);
+
+    transform:translateX(-50%);
+}
+
+
+/* scrapbook images */
+
+.scrapbookSheet img{
+    display:block;
+
+    width:100%;
+    height:auto;
+
+    max-height:455px;
+
+    object-fit:contain;
+
+    border-radius:4px;
+
+    background:white;
+}
+
+
+/* little tape */
+
+.scrapbookTape{
+    position:absolute;
+
+    top:17px;
+    left:50%;
+
+    width:65px;
+    height:17px;
+
+    transform:translateX(-50%) rotate(-2deg);
+
+    background:rgba(247,222,222,.75);
+
+    z-index:2;
+}
+
+.rightSheet .scrapbookTape{
+    transform:translateX(-50%) rotate(2deg);
+}
+
+
+/* page numbers */
+
+.pageNumber{
+    position:absolute;
+
+    bottom:13px;
+
+    color:#C5969B;
+
+    font-family:'Caveat',cursive;
+
+    font-size:15px;
+}
+
+.leftSheet .pageNumber{
+    left:18px;
+}
+
+.rightSheet .pageNumber{
+    right:18px;
+}
+
+
+/* =========================================
+   COVER
+========================================= */
+
+.scrapbookSpread:first-child{
+    align-items:center;
+}
+
+.scrapbookCover{
+    position:relative;
+
+    width:430px;
+    min-height:530px;
+
+    padding:55px 45px;
+
+    display:flex;
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+
+    border:1px solid #D9B8B6;
+
+    border-radius:18px;
+
+    background:#F7DEDE;
+
+    text-align:center;
+
+    box-shadow:
+        8px 10px 0 #F3ECE8;
+}
+
+.coverTinyHeart{
+    margin-bottom:18px;
+
+    color:#D9828F;
+
+    font-size:24px;
+}
+
+.coverSmall{
+    margin-bottom:20px;
+
+    color:#9C6F75;
+
+    font-size:9px;
+
+    letter-spacing:4px;
+}
+
+.scrapbookCover h3{
+    margin:0 0 22px;
+
+    color:#332724;
+
+    font-family:'Playfair Display',serif;
+
+    font-size:52px;
+    font-weight:500;
+
+    line-height:1.05;
+}
+
+.coverNote{
+    color:#6F615C;
+
+    font-family:'Caveat',cursive;
+
+    font-size:21px;
+    line-height:1.5;
+}
+
+.coverFrom{
+    position:absolute;
+
+    bottom:30px;
+
+    color:#B4767E;
+
+    font-family:'Caveat',cursive;
+
+    font-size:18px;
+}
+
+
+/* =========================================
+   END PAGE
+========================================= */
+
+.scrapbookEndPage{
+    flex-direction:column;
+
+    border-radius:0 18px 18px 0;
+
+    text-align:center;
+}
+
+.endHeart{
+    margin-bottom:14px;
+
+    color:#D9828F;
+
+    font-size:28px;
+}
+
+.scrapbookEndPage h3{
+    margin:0 0 15px;
+
+    color:#D9828F;
+
+    font-family:'Playfair Display',serif;
+
+    font-size:28px;
+    font-weight:500;
+}
+
+.scrapbookEndPage p{
+    color:#6E625D;
+
+    font-family:'Caveat',cursive;
+
+    font-size:19px;
+    line-height:1.5;
+}
+
+
+/* =========================================
+   CONTROLS
+========================================= */
+
+.scrapbookControls{
+    max-width:900px;
+
+    margin:24px auto 0;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:25px;
+}
+
+.scrapbookControls button{
+    width:44px;
+    height:44px;
+
+    border:1px solid #D9828F;
+    border-radius:50%;
+
+    background:transparent;
+
+    color:#D9828F;
+
+    font-size:19px;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.scrapbookControls button:hover{
+    background:#D9828F;
+
+    color:white;
+
+    transform:none;
+}
+
+#scrapbookCounter{
+    min-width:95px;
+
+    color:#8C7770;
+
+    font-size:11px;
+
+    text-align:center;
+
+    letter-spacing:1px;
+}
+
+.scrapbookBottomNote{
+    margin-top:20px;
+
+    color:#D9828F;
+
+    font-family:'Caveat',cursive;
+
+    font-size:17px;
+
+    text-align:center;
+}
+
+
+
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:700px){
+
+    #scrapbookPage{
+        padding:24px 14px 50px;
+    }
+
+    .scrapbookHeader h2{
+        font-size:37px;
+    }
+
+    .scrapbookSpread{
+        min-height:auto;
+    }
+
+    .scrapbookSpread.active{
+        display:block;
+    }
+
+    .scrapbookSpread:not(:first-child)::after{
+        display:none;
+    }
+
+    .scrapbookSheet{
+        width:100%;
+
+        min-height:460px;
+
+        margin-bottom:18px;
+
+        border:1px solid #E8DCD5;
+
+        border-radius:16px;
+    }
+
+    .scrapbookSheet img{
+        max-height:390px;
+    }
+
+    .scrapbookCover{
+        width:100%;
+
+        min-height:470px;
+    }
+
+    .scrapbookCover h3{
+        font-size:45px;
+    }
+
+}
+
+/* =========================================
+   REAL SCRAPBOOK PAGE FLIP
+========================================= */
+
+.scrapbookBook{
+    position:relative;
+    perspective:1800px;
+    transform-style:preserve-3d;
+}
+
+
+/* don't slide/fade the spreads anymore */
+
+.scrapbookSpread.active{
+    animation:none;
+    position:relative;
+    z-index:2;
+}
+
+
+/* spread underneath while a page is turning */
+
+.scrapbookSpread.underSpread{
+    display:flex;
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    z-index:1;
+}
+
+
+/* hide the page underneath the page we're physically turning */
+
+.scrapbookSpread.turnBaseForward .rightSheet{
+    visibility:hidden;
+}
+
+.scrapbookSpread.turnBaseBack .leftSheet{
+    visibility:hidden;
+}
+
+
+/* =========================================
+   THE ACTUAL MOVING PAGE
+========================================= */
+
+.scrapbookFlipLeaf{
+    position:absolute;
+
+    top:0;
+
+    width:50%;
+    height:540px;
+
+    z-index:20;
+
+    transform-style:preserve-3d;
+
+    pointer-events:none;
+}
+
+
+/* RIGHT PAGE TURNS TO THE LEFT */
+
+.scrapbookFlipLeaf.flipForward{
+    left:50%;
+
+    transform-origin:left center;
+
+    animation:realPageForward 1.4s
+        cubic-bezier(.55,.05,.25,1)
+        forwards;
+}
+
+
+/* LEFT PAGE TURNS BACK TO THE RIGHT */
+
+.scrapbookFlipLeaf.flipBack{
+    left:0;
+
+    transform-origin:right center;
+
+    animation:realPageBack 1.4s
+        cubic-bezier(.55,.05,.25,1)
+        forwards;
+}
+
+
+/* both sides of the turning piece of paper */
+
+.scrapbookFlipFace{
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    background:#FFFDFC;
+
+    backface-visibility:hidden;
+    -webkit-backface-visibility:hidden;
+
+    overflow:hidden;
+}
+
+
+/* front of page */
+
+.scrapbookFlipFront{
+    transform:rotateY(0deg);
+}
+
+
+/* back of page */
+
+.scrapbookFlipBack{
+    transform:rotateY(180deg);
+}
+
+
+/* make copied scrapbook sheets fit inside the flipping leaf */
+
+.scrapbookFlipFace.scrapbookSheet{
+    width:100%;
+    height:100%;
+
+    min-height:0;
+
+    margin:0;
+
+    border:1px solid #E8DCD5;
+}
+
+
+/* tiny shadow while the paper moves */
+
+.scrapbookFlipLeaf::after{
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background:linear-gradient(
+        90deg,
+        rgba(70,45,35,.12),
+        transparent 22%,
+        transparent 78%,
+        rgba(70,45,35,.08)
+    );
+
+    opacity:0;
+
+    animation:pageShadow 1.4s ease;
+}
+
+
+/* =========================================
+   PAGE TURN ANIMATIONS
+========================================= */
+
+@keyframes realPageForward{
+
+    0%{
+        transform:rotateY(0deg);
+    }
+
+    45%{
+        transform:rotateY(-82deg);
+    }
+
+    55%{
+        transform:rotateY(-98deg);
+    }
+
+    100%{
+        transform:rotateY(-180deg);
+    }
+
+}
+
+
+@keyframes realPageBack{
+
+    0%{
+        transform:rotateY(0deg);
+    }
+
+    45%{
+        transform:rotateY(82deg);
+    }
+
+    55%{
+        transform:rotateY(98deg);
+    }
+
+    100%{
+        transform:rotateY(180deg);
+    }
+
+}
+
+
+@keyframes pageShadow{
+
+    0%{
+        opacity:0;
+    }
+
+    45%{
+        opacity:.8;
+    }
+
+    60%{
+        opacity:.6;
+    }
+
+    100%{
+        opacity:0;
+    }
+
+}
+
+
+/* make the centre of the book feel deeper */
+
+.scrapbookSpread:not(:first-child)::after{
+    z-index:10;
+
+    background:linear-gradient(
+        to right,
+        rgba(90,60,50,.07),
+        #E2D3CD,
+        rgba(90,60,50,.07)
+    );
+
+    width:5px;
+
+    border-radius:50%;
+}
+
+
+/* smoother images while page is moving */
+
+.scrapbookFlipLeaf img{
+    transform:translateZ(1px);
+}
+
+
+/* don't allow arrow double-clicks during animation */
+
+.scrapbookControls button:disabled{
+    cursor:default;
+}
+
+/* =========================================
+   SCRAPBOOK IMAGE PLACEMENT
+========================================= */
+
+.scrapbookSheet img{
+    width:112%;
+    max-width:none;
+    max-height:500px;
+
+    object-fit:contain;
+
+    transition:transform .3s ease;
+}
+
+
+/* give every picture a slightly handmade position */
+
+.scrapbookSpread:nth-child(2) .leftSheet img{
+    transform:rotate(-1.5deg) scale(1.04);
+}
+
+.scrapbookSpread:nth-child(2) .rightSheet img{
+    transform:rotate(1.2deg) scale(1.04);
+}
+
+.scrapbookSpread:nth-child(3) .leftSheet img{
+    transform:rotate(1deg) scale(1.08);
+}
+
+.scrapbookSpread:nth-child(3) .rightSheet img{
+    transform:rotate(-1.2deg) scale(1.08);
+}
+
+.scrapbookSpread:nth-child(4) .leftSheet img{
+    transform:rotate(-1deg) scale(1.06);
+}
+
+
+/* make the tape look more like real translucent tape */
+
+.scrapbookTape{
+    width:72px;
+    height:20px;
+
+    background:rgba(235,184,190,.38);
+
+    border-left:1px solid rgba(255,255,255,.5);
+    border-right:1px solid rgba(255,255,255,.5);
+
+    backdrop-filter:blur(1px);
+}
+
+/* =========================================
+   THINGS THAT REMIND ME OF YOU
+========================================= */
+
+#remindersPage{
+    display:none;
+
+    min-height:100vh;
+
+    padding:30px 24px 80px;
+
+    background:#FFFBF8;
+
+    color:#2B2320;
+
+    font-family:'Poppins',sans-serif;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.remindersHeader{
+    width:100%;
+    max-width:950px;
+
+    margin:0 auto 65px;
+
+    text-align:center;
+}
+
+.remindersEyebrow{
+    margin:5px 0 13px;
+
+    color:#D9828F;
+
+    font-size:9px;
+    font-weight:500;
+
+    letter-spacing:4px;
+}
+
+.remindersHeader h2{
+    margin:0;
+
+    color:#211917;
+
+    font-family:'Playfair Display',serif;
+
+    font-size:45px;
+    font-weight:500;
+
+    line-height:1.2;
+}
+
+.remindersHeader h2 span{
+    color:#D9828F;
+}
+
+.remindersHandwriting{
+    margin-top:11px;
+
+    color:#D9828F;
+
+    font-family:'Caveat',cursive;
+
+    font-size:21px;
+}
+
+
+/* =========================================
+   MEMORY BOARD
+========================================= */
+
+.remindersBoard{
+    width:100%;
+    max-width:1050px;
+
+    margin:0 auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(12,1fr);
+
+    grid-auto-flow:dense;
+
+    gap:34px 22px;
+
+    align-items:start;
+
+    position:relative;
+}
+
+
+/* =========================================
+   NORMAL CARD
+========================================= */
+
+.reminderCard{
+    position:relative;
+
+    grid-column:span 3;
+
+    padding:11px 11px 15px;
+
+    background:#FFFDFC;
+
+    border:1px solid #E8DCD5;
+
+    border-radius:3px;
+
+    text-align:center;
+
+    transition:
+        transform .25s ease,
+        border-color .25s ease;
+
+    cursor:pointer;
+}
+
+.reminderCard:hover{
+    border-color:#D9B2B7;
+}
+
+
+/* =========================================
+   PHOTO PLACEHOLDERS
+========================================= */
+
+.reminderPhoto{
+    width:100%;
+
+    min-height:175px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    background:#FFF8F5;
+
+    border:1px solid #EFE2DC;
+
+    overflow:hidden;
+}
+
+.reminderPhoto span{
+    color:#D8BFC0;
+
+    font-family:'Caveat',cursive;
+
+    font-size:17px;
+}
+
+
+/* later your real photos will use this */
+
+.reminderPhoto img{
+    width:100%;
+    height:100%;
+
+    display:block;
+
+    object-fit:cover;
+}
+
+
+/* captions */
+
+.reminderCard > p:not(.noteWord){
+    margin:12px 3px 0;
+
+    color:#6D5D58;
+
+    font-family:'Caveat',cursive;
+
+    font-size:18px;
+
+    line-height:1.1;
+}
+
+
+/* =========================================
+   DIFFERENT CARD SHAPES
+========================================= */
+
+
+/* classic polaroid */
+
+.reminderPolaroid{
+    padding:10px 10px 22px;
+
+    grid-column:span 3;
+}
+
+.reminderPolaroid .reminderPhoto{
+    min-height:190px;
+}
+
+
+/* taller */
+
+.reminderTall{
+    grid-column:span 3;
+
+    padding:11px 11px 17px;
+}
+
+.reminderTall .reminderPhoto{
+    min-height:245px;
+}
+
+
+/* wide landscape */
+
+.reminderWide{
+    grid-column:span 4;
+}
+
+.reminderWide .reminderPhoto{
+    min-height:165px;
+}
+
+
+/* =========================================
+   SLIGHT UNEVENNESS
+========================================= */
+
+.reminderTiltLeft{
+    transform:rotate(-1.3deg);
+}
+
+.reminderTiltRight{
+    transform:rotate(1.2deg);
+}
+
+.reminderTiltLeft:hover{
+    transform:rotate(-1.3deg) translateY(-3px);
+}
+
+.reminderTiltRight:hover{
+    transform:rotate(1.2deg) translateY(-3px);
+}
+
+
+/* =========================================
+   TAPE
+========================================= */
+
+.reminderTape{
+    position:absolute;
+
+    top:-10px;
+    left:50%;
+
+    width:65px;
+    height:18px;
+
+    transform:translateX(-50%) rotate(-2deg);
+
+    background:rgba(232,184,190,.42);
+
+    border-left:1px solid rgba(255,255,255,.6);
+    border-right:1px solid rgba(255,255,255,.6);
+
+    z-index:3;
+}
+
+.reminderTiltRight .reminderTape{
+    transform:translateX(-50%) rotate(3deg);
+}
+
+
+/* =========================================
+   PAPERCLIP DETAIL
+========================================= */
+
+.reminderPaperclip{
+    position:absolute;
+
+    top:-16px;
+    right:18px;
+
+    color:#C59FA4;
+
+    font-size:32px;
+
+    font-family:'Caveat',cursive;
+
+    transform:rotate(35deg);
+
+    z-index:4;
+}
+
+
+/* =========================================
+   PIN
+========================================= */
+
+.reminderPin{
+    position:absolute;
+
+    top:-5px;
+    left:50%;
+
+    width:8px;
+    height:8px;
+
+    transform:translateX(-50%);
+
+    border-radius:50%;
+
+    background:#D9828F;
+
+    z-index:4;
+}
+
+
+/* =========================================
+   COLOUR CARDS
+========================================= */
+
+.reminderColourCard{
+    grid-column:span 2;
+
+    min-height:180px;
+
+    padding:28px 16px 18px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+
+    background:#FFFDFC;
+}
+
+.colourCircle{
+    display:block;
+
+    width:82px;
+    height:82px;
+
+    margin-bottom:13px;
+
+    border-radius:50%;
+}
+
+
+/* orange */
+
+.orangeMemory .colourCircle{
+    background:#D78551;
+}
+
+
+/* yellow */
+
+.yellowMemory .colourCircle{
+    background:#E9D27C;
+}
+
+
+/* =========================================
+   HOME NOTE CARD
+========================================= */
+
+.reminderNoteCard{
+    grid-column:span 3;
+
+    min-height:200px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:28px 22px;
+
+    background:#FFF7F3;
+}
+
+.reminderNoteCard .noteWord{
+    margin:0 0 9px;
+
+    color:#D9828F;
+
+    font-family:'Caveat',cursive;
+
+    font-size:37px;
+}
+
+.reminderNoteCard small{
+    color:#8B7770;
+
+    font-family:'Caveat',cursive;
+
+    font-size:16px;
+
+    line-height:1.45;
+}
+
+
+/* =========================================
+   LITTLE DOODLES
+========================================= */
+
+.reminderDoodle{
+    grid-column:span 1;
+
+    align-self:center;
+    justify-self:center;
+
+    color:#D9828F;
+
+    font-family:'Caveat',cursive;
+
+    font-size:28px;
+
+    opacity:.75;
+
+    pointer-events:none;
+}
+
+.doodleHeartOne{
+    transform:rotate(-13deg);
+}
+
+.doodleHeartTwo{
+    transform:rotate(9deg);
+}
+
+.doodleHeartThree{
+    transform:rotate(-8deg);
+}
+
+.doodleArrowOne,
+.doodleArrowTwo{
+    font-size:26px;
+}
+
+.doodleStarOne,
+.doodleStarTwo{
+    font-size:25px;
+}
+
+
+/* =========================================
+   MAKE THE COLLAGE FEEL LESS PERFECT
+========================================= */
+
+.remindersBoard .reminderCard:nth-of-type(2){
+    margin-top:35px;
+}
+
+.remindersBoard .reminderCard:nth-of-type(4){
+    margin-top:20px;
+}
+
+.remindersBoard .reminderCard:nth-of-type(7){
+    margin-top:38px;
+}
+
+.remindersBoard .reminderCard:nth-of-type(9){
+    margin-top:15px;
+}
+
+.remindersBoard .reminderCard:nth-of-type(12){
+    margin-top:30px;
+}
+
+.remindersBoard .reminderCard:nth-of-type(15){
+    margin-top:20px;
+}
+
+.remindersBoard .reminderCard:nth-of-type(18){
+    margin-top:35px;
+}
+
+
+/* =========================================
+   ENDING
+========================================= */
+
+.remindersEnding{
+    width:100%;
+    max-width:500px;
+
+    margin:85px auto 10px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:18px;
+
+    text-align:center;
+}
+
+.remindersEnding > span{
+    color:#D9828F;
+
+    font-size:16px;
+}
+
+.remindersEnding p{
+    margin:0;
+
+    color:#D9828F;
+
+    font-family:'Caveat',cursive;
+
+    font-size:22px;
+
+    line-height:1.35;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:700px){
+
+    #remindersPage{
+        padding:24px 16px 60px;
+    }
+
+    .remindersHeader{
+        margin-bottom:45px;
+    }
+
+    .remindersHeader h2{
+        font-size:36px;
+    }
+
+    .remindersEyebrow{
+        letter-spacing:3px;
+    }
+
+    .remindersBoard{
+        grid-template-columns:repeat(6,1fr);
+
+        gap:29px 14px;
+    }
+
+
+    .reminderCard,
+    .reminderPolaroid,
+    .reminderTall{
+        grid-column:span 3;
+    }
+
+    .reminderWide{
+        grid-column:span 4;
+    }
+
+    .reminderColourCard{
+        grid-column:span 2;
+    }
+
+    .reminderNoteCard{
+        grid-column:span 3;
+    }
+
+    .reminderDoodle{
+        grid-column:span 1;
+
+        font-size:22px;
+    }
+
+
+    .reminderPhoto{
+        min-height:145px;
+    }
+
+    .reminderPolaroid .reminderPhoto{
+        min-height:165px;
+    }
+
+    .reminderTall .reminderPhoto{
+        min-height:205px;
+    }
+
+    .reminderWide .reminderPhoto{
+        min-height:145px;
+    }
+
+
+    .reminderCard > p:not(.noteWord){
+        font-size:16px;
+    }
+
+    .remindersEnding{
+        margin-top:60px;
+    }
+
+}
+
+
+/* VERY SMALL PHONES */
+
+@media(max-width:430px){
+
+    .remindersBoard{
+        grid-template-columns:repeat(2,1fr);
+
+        gap:27px 13px;
+    }
+
+    .reminderCard,
+    .reminderPolaroid,
+    .reminderTall,
+    .reminderWide,
+    .reminderNoteCard{
+        grid-column:span 1;
+    }
+
+    .reminderColourCard{
+        grid-column:span 1;
+    }
+
+    .reminderDoodle{
+        display:none;
+    }
+
+    .reminderPhoto{
+        min-height:135px;
+    }
+
+    .reminderTall .reminderPhoto{
+        min-height:185px;
+    }
+
+    .reminderWide .reminderPhoto{
+        min-height:135px;
+    }
+
+    .reminderNoteCard{
+        min-height:175px;
+    }
+
+    .colourCircle{
+        width:68px;
+        height:68px;
+    }
+
+}
+
+/* keep New York + Golden Brown beside each other */
+
+@media(max-width:700px){
+
+    .remindersBoard .reminderCard:nth-of-type(18),
+    .remindersBoard .reminderCard:nth-of-type(20){
+        grid-column:span 3;
+    }
+
+}
+
+/* =========================================
+   REMINDER PHOTOS
+========================================= */
+
+.reminderPhoto{
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+.reminderPhoto > span{
+    display:none;
+}
+
+/* 2 Rapunzel */
+.remindersBoard .reminderCard:nth-of-type(2) .reminderPhoto{
+    background-image:url("rapunzel.png");
+}
+
+/* 3 Tides of the Moon */
+.remindersBoard .reminderCard:nth-of-type(3) .reminderPhoto{
+    background-image:url("tides.png");
+}
+
+/* 4 California Dreamin' */
+.remindersBoard .reminderCard:nth-of-type(4) .reminderPhoto{
+    background-image:url("california.png");
+}
+
+/* 5 O Children */
+.remindersBoard .reminderCard:nth-of-type(5) .reminderPhoto{
+    background-image:url("o-children.png");
+}
+
+/* 7 Billie Eilish */
+.remindersBoard .reminderCard:nth-of-type(7) .reminderPhoto{
+    background-image:url("billie.png");
+}
+
+/* 8 Autumn */
+.remindersBoard .reminderCard:nth-of-type(8) .reminderPhoto{
+    background-image:url("autumn.png");
+}
+
+/* 9 Gilmore Girls */
+.remindersBoard .reminderCard:nth-of-type(9) .reminderPhoto{
+    background-image:url("gilmore-girls.png");
+}
+
+/* 10 Home */
+.remindersBoard .reminderCard:nth-of-type(10) .reminderPhoto{
+    background-image:url("home.png");
+}
+
+/* 12 Harry Potter */
+.remindersBoard .reminderCard:nth-of-type(12) .reminderPhoto{
+    background-image:url("harry-potter.png");
+}
+
+/* 13 Oregon */
+.remindersBoard .reminderCard:nth-of-type(13) .reminderPhoto{
+    background-image:url("oregon.png");
+}
+
+/* 14 Rain */
+.remindersBoard .reminderCard:nth-of-type(14) .reminderPhoto{
+    background-image:url("rain.png");
+}
+
+/* 15 Girl on the Moon */
+.remindersBoard .reminderCard:nth-of-type(15) .reminderPhoto{
+    background-image:url("girl-on-the-moon.png");
+}
+
+/* 16 Lana Del Rey */
+.remindersBoard .reminderCard:nth-of-type(16) .reminderPhoto{
+    background-image:url("lana.png");
+}
+
+/* 17 Roses */
+.remindersBoard .reminderCard:nth-of-type(17) .reminderPhoto{
+    background-image:url("roses.png");
+}
+
+/* 18 New York */
+.remindersBoard .reminderCard:nth-of-type(18) .reminderPhoto{
+    background-image:url("new-york.png");
+}
+
+/* 19 She's Unreal */
+.remindersBoard .reminderCard:nth-of-type(19) .reminderPhoto{
+    background-image:url("shes-unreal.png");
+}
+
+/* 20 Golden Brown */
+.remindersBoard .reminderCard:nth-of-type(20) .reminderPhoto{
+    background-image:url("golden-brown.png");
+}
+
+/* 6 Orange */
+.remindersBoard .reminderCard:nth-of-type(6) .reminderPhoto{
+    background-image:url("orange.png");
+}
+
+/* 11 Yellow */
+.remindersBoard .reminderCard:nth-of-type(11) .reminderPhoto{
+    background-image:url("yellow.png");
+}
