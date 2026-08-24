@@ -1,8794 +1,1136 @@
-/* ---------- RESET ---------- */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-body{
-
-    font-family:'Poppins',sans-serif;
-
-    background:linear-gradient(
-        180deg,
-        #FFF9F5,
-        #FCEFE8,
-        #F8EBDD
-    );
-
-    color:#2d2d2d;
-
-    overflow-x:hidden;
-    overflow-y:auto;
-
-}
-
-/* ---------- LANDING PAGE ---------- */
-
-#landing{
-
-    height:100vh;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-
-    align-items:center;
-
-    text-align:center;
-
-    transition:.5s;
-
-}
-
-#landing h1{
-
-    font-size:72px;
-
-    color:#F4B547;
-
-    font-weight:600;
-
-    margin-bottom:20px;
-
-}
-
-#landing p{
-
-    color:#666;
-
-    margin-bottom:70px;
-
-    font-size:18px;
-
-}
-
-#landing button{
-
-    width:320px;
-
-    height:60px;
-
-    border:none;
-
-    border-radius:999px;
-
-    background:#F6C7B8;
-
-    color:white;
-
-    font-size:18px;
-
-    cursor:pointer;
-
-    transition:.3s;
-
-}
-
-#landing button:hover{
-
-    transform:translateY(-4px);
-
-    box-shadow:0 10px 30px rgba(0,0,0,.12);
-
-}
-
-/* ---------- HOME ---------- */
-
-#home{
-
-    display:none;
-
-    min-height:100vh;
-
-    padding:50px;
-
-    overflow-y:auto;
-
-}
-
-#home h2{
-
-    text-align:center;
-
-    font-size:40px;
-
-    margin-bottom:30px;
-
-    color:#7A5E57;
-
-}
-
-.search{
-
-    display:block;
-
-    width:420px;
-
-    margin:0 auto 40px;
-
-    padding:18px;
-
-    border:none;
-
-    border-radius:20px;
-
-    outline:none;
-
-    font-size:16px;
-
-    box-shadow:0 8px 20px rgba(0,0,0,.05);
-
-}
-
-.grid{
-
-    width:500px;
-
-    margin:auto;
-
-    display:grid;
-
-    grid-template-columns:repeat(2,1fr);
-
-    gap:25px;
-
-}
-
-.card{
-
-    background:white;
-    border-radius:30px;
-    padding:35px;
-    min-height:170px;
-
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-
-    cursor:pointer;
-
-    transition:.3s;
-
-    box-shadow:0 12px 30px rgba(0,0,0,.08);
-
-}
-
-.card:hover{
-
-    transform:translateY(-8px);
-
-}
-
-
-.card span{
-
-    margin-top:15px;
-
-    font-size:18px;
-
-    font-weight:500;
-
-}
-
-#lettersPage,
-#reasonsPage,
-#songsPage,
-#moviesPage,
-#moodPage{
-
-    display:none;
-
-    padding:40px;
-
-    min-height:100vh;
-
-    overflow-y:auto;
-
-}
-
-#lettersPage h2,
-#reasonsPage h2,
-#songsPage h2,
-#moviesPage h2,
-#moodPage h2{
-
-    color:#D98AA6;
-
-}
-
-.backBtn{
-
-    background:#F6C7B8;
-
-    color:white;
-
-    border:none;
-
-    border-radius:30px;
-
-    padding:12px 28px;
-
-    font-family:'Poppins',sans-serif;
-
-    font-size:18px;
-
-    cursor:pointer;
-
-    transition:.3s;
-
-    margin-bottom:30px;
-
-}
-
-.backBtn:hover{
-
-    transform:translateY(-3px);
-
-    box-shadow:0 10px 20px rgba(0,0,0,.12);
-
-}
-
-.letter,
-.reason,
-.song,
-.movie{
-
-    background:white;
-
-    border-radius:20px;
-
-    padding:25px;
-
-    margin-bottom:20px;
-
-    box-shadow:0 8px 20px rgba(0,0,0,.08);
-
-}
-
-.letter h3,
-.song h3,
-.movie h3{
-
-    margin-bottom:12px;
-
-}
-
-.letterBtn{
-
-    width:100%;
-    background:#fff;
-    border:none;
-    border-radius:18px;
-    padding:20px;
-    font-size:18px;
-    cursor:pointer;
-    text-align:left;
-    box-shadow:0 8px 20px rgba(0,0,0,.08);
-
-}
-
-.letterBtn:hover{
-
-    transform:scale(1.02);
-
-}
-
-.letterContent{
-
-    display:none;
-
-    margin-top:15px;
-
-    background:white;
-
-    padding:20px;
-
-    border-radius:15px;
-
-}
-
-/* ===== PREMIUM ANIMATIONS ===== */
-
-body{
-    animation: fadeBody .8s ease;
-}
-
-@keyframes fadeBody{
-    from{
-        opacity:0;
-    }
-    to{
-        opacity:1;
-    }
-}
-
-.card,
-.letterBtn,
-.song,
-.movie,
-.reason,
-.backBtn,
-#landing button{
-
-    transition:all .3s ease;
-
-}
-
-.card:hover{
-
-    transform:translateY(-8px) scale(1.02);
-
-    box-shadow:0 18px 40px rgba(0,0,0,.12);
-
-}
-
-.backBtn:hover{
-
-    transform:translateY(-2px);
-
-}
-
-.song:hover,
-.movie:hover,
-.reason:hover{
-
-    transform:translateY(-4px);
-
-    box-shadow:0 16px 35px rgba(0,0,0,.12);
-
-}
-
-.letterContent{
-
-    animation:openLetter .35s ease;
-
-}
-
-@keyframes openLetter{
-
-    from{
-
-        opacity:0;
-
-        transform:translateY(-15px);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:translateY(0);
-
-    }
-
-}
-
-.loveMessage{
-
-    margin:70px auto 30px;
-
-    max-width:650px;
-
-    text-align:center;
-
-    color:#7a6660;
-
-    font-size:17px;
-
-    line-height:1.9;
-
-    opacity:.85;
-
-}
-
-/* ---------- MOBILE ---------- */
-
-@media (max-width: 768px){
-
-    #landing h1{
-        font-size:48px;
-    }
-
-    #landing p{
-        font-size:16px;
-        width:90%;
-    }
-
-    #landing button{
-        width:85%;
-    }
-
-    #home{
-
-        padding:25px;
-
-    }
-
-    #gameComplete{
-
-    width:95%;
-
-    max-height:90vh;
-
-    padding:20px;
-
-}
-
-    #home h2{
-
-        font-size:32px;
+// Get all sections
+const landing = document.getElementById("landing");
+const home = document.getElementById("home");
+const lettersPage = document.getElementById("lettersPage");
+const reasonsPage = document.getElementById("reasonsPage");
+const songsPage = document.getElementById("songsPage");
+const moviesPage = document.getElementById("moviesPage");
+const gamePage = document.getElementById("gamePage");
+const moodPage = document.getElementById("moodPage");
+const proposalPage = document.getElementById("proposalPage");
+const bouquetPage = document.getElementById("bouquetPage");
+const scrapbookPage = document.getElementById("scrapbookPage");
+const remindersPage = document.getElementById("remindersPage");
 
-    }
+// Hide every page except the one we want
+function showPage(page){
 
-    .grid{
+    landing.style.display = "none";
+    home.style.display = "none";
+    lettersPage.style.display = "none";
+    reasonsPage.style.display = "none";
+    songsPage.style.display = "none";
+    moviesPage.style.display = "none";
+    gamePage.style.display = "none";
+    moodPage.style.display = "none";
+    proposalPage.style.display = "none";
+    bouquetPage.style.display = "none";
+    scrapbookPage.style.display = "none";
+    remindersPage.style.display = "none";
 
-        width:100%;
-
-        grid-template-columns:1fr;
-
-        gap:18px;
-
-    }
-
-    .card{
-
-        height:140px;
-
-        font-size:45px;
-
-    }
-
-    .loveMessage{
-
-        margin-top:40px;
-
-        width:100%;
-
-        font-size:15px;
-
-    }
-
-    #lettersPage,
-    #songsPage,
-    #reasonsPage,
-    #moviesPage,
-    #moodPage,
-    #gamePage{
-
-    padding:20px;
-
-}
-
-}
-
-/* ==========================================
-   CATCH MY LOVE
-========================================== */
-
-#gamePage{
-
-    display:none;
-
-    min-height:100vh;
-
-    padding:40px;
-
-    text-align:center;
-
-}
-
-.gameIntro{
-
-    margin:25px auto;
-
-    color:#8c7b75;
-
-    max-width:450px;
-
-    line-height:1.8;
-
-}
-
-#startGame{
-
-    margin:20px 0 35px;
-
-    padding:15px 35px;
-
-    border:none;
-
-    border-radius:999px;
-
-    background:#f8bfd2;
-
-    color:white;
-
-    font-size:18px;
-
-    cursor:pointer;
-
-    transition:.3s;
-
-}
-
-#startGame:hover{
-
-    transform:translateY(-4px);
-
-    box-shadow:0 10px 30px rgba(0,0,0,.12);
-
-}
-
-
-#gameContainer{
-
-    position:relative;
-
-    width:650px;
-
-    max-width:100%;
-
-    height:500px;
-
-    margin:0 auto;
-
-    background:white;
-
-    border-radius:30px;
-
-    overflow:hidden;
-
-    box-shadow:0 15px 40px rgba(0,0,0,.08);
-
-    display:none;
-
-}
-
-#score{
-
-    position:absolute;
-
-    top:20px;
-
-    left:20px;
-
-    font-size:22px;
-
-    font-weight:bold;
-
-    color:#E56A6A;
-
-}
-
-#basket{
-
-    position:absolute;
-
-    bottom:20px;
-
-    left:50%;
-
-    transform:translateX(-50%);
-
-    font-size:55px;
-
-    user-select:none;
-
-    transition:.05s;
-
-}
-
-.heart{
-
-    position:absolute;
-
-    font-size:32px;
-
-    pointer-events:none;
-
-}
-
-#popupMessage{
-
-    position:absolute;
-
-    top:50%;
-
-    left:50%;
-
-    transform:translate(-50%,-50%);
-
-    background:white;
-
-    padding:25px 35px;
-
-    border-radius:25px;
-
-    display:none;
-
-    box-shadow:0 15px 35px rgba(0,0,0,.15);
-
-    z-index:999;
-
-    max-width:320px;
-
-    line-height:1.7;
-
-    width:90%;
-
-}
-
-#gameComplete{
-
-    position:absolute;
-
-    top:50%;
-
-    left:50%;
-
-    transform:translate(-50%,-50%);
-
-    background:white;
-
-    padding:30px;
-
-    border-radius:30px;
-
-    display:none;
-
-    max-width:600px;
-
-    width:90%;
-
-    max-height:85vh;
-
-    overflow-y:auto;
-
-    -webkit-overflow-scrolling: touch;
-
-    box-shadow:0 20px 45px rgba(0,0,0,.15);
-
-    z-index:999;
-
-}
-
-#playAgain{
-
-    margin-top:25px;
-
-    padding:14px 30px;
-
-    border:none;
-
-    border-radius:999px;
-
-    background:#f8bfd2;
-
-    color:white;
-
-    cursor:pointer;
-
-}
-
-.gameSection{
-
-    width:100%;
-
-    margin-top:20px;
-
-}
-
-.gameButton{
-
-    width:100%;
-    height:140px;
-
-    background:#fff;
-
-    border:none;
-
-    border-radius:30px;
-
-    font-size:18px;
-
-    font-weight:500;
-
-    cursor:pointer;
-
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
-
-    transition:.25s;
-    
-    font-family: 'Poppins', sans-serif;
-
-}
-
-.gameButton:hover{
-
-    transform:translateY(-8px) scale(1.02);
-
-    box-shadow:0 18px 40px rgba(0,0,0,.12);
-
-}
-
-.gameButton{
-
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    gap:12px;
-
+    page.style.display = "block";
 }
 
-.gameEmoji{
+// Landing button
+document.getElementById("beginButton").addEventListener("click", () => {
+    showPage(home);
+});
 
-    font-size:45px;
+// Home buttons
+document.getElementById("scrapbookBtn").addEventListener("click", () => {
 
-    line-height:1;
+    showPage(scrapbookPage);
 
-}
+    currentScrapbookSpread = 0;
+    showScrapbookSpread();
 
-#continueGame{
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 
-    display:block;
+});
 
-    width:100%;
+document.getElementById("remindersBtn").addEventListener("click", () => {
 
-    max-width:240px;
+    showPage(remindersPage);
 
-    margin:20px auto 0;
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 
-    padding:14px 20px;
+});
 
-    border:none;
+document.getElementById("lettersBtn").addEventListener("click", () => {
+    showPage(lettersPage);
+});
 
-    border-radius:30px;
+document.getElementById("bouquetBtn").addEventListener("click", () => {
 
-    background:#f6c7b8;
+    showPage(bouquetPage);
 
-    color:white;
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 
-    font-family:'Poppins',sans-serif;
+});
 
-    font-size:16px;
+document.getElementById("reasonsBtn").addEventListener("click", () => {
+    showPage(reasonsPage);
+});
 
-    font-weight:500;
+document.getElementById("songsBtn").addEventListener("click", () => {
+    showPage(songsPage);
+});
 
-    cursor:pointer;
+document.getElementById("moviesBtn").addEventListener("click", () => {
+    showPage(moviesPage);
+});
 
-    transition:.3s;
+document.getElementById("moodBtn").addEventListener("click", () => {
 
-}
+    showPage(moodPage);
 
-#continueGame:hover{
+});
 
-    transform:translateY(-2px);
 
-    box-shadow:0 10px 20px rgba(0,0,0,.12);
+document.getElementById("proposalBtn").addEventListener("click", () => {
 
-}
+    document
+        .getElementById("specialDelivery")
+        .style
+        .setProperty("display", "block", "important");
 
-#finalLetter{
+    document
+        .getElementById("proposalLetter")
+        .style
+        .setProperty("display", "none", "important");
 
-    text-align:left;
+    document
+        .getElementById("weddingInvite")
+        .style
+        .setProperty("display", "none", "important");
 
-    line-height:1.8;
+    document
+        .getElementById("vowsSection")
+        .style
+        .setProperty("display", "none", "important");
 
-}
+    document
+        .getElementById("ceremonySection")
+        .style
+        .setProperty("display", "none", "important");
 
-.lastUpdated{
+    document
+        .getElementById("certificateSection")
+        .style
+        .setProperty("display", "none", "important");
 
-    text-align:center;
+    showPage(proposalPage);
 
-    margin-top:15px;
+});
 
-    margin-bottom:40px;
+// Every back button returns home
+document.querySelectorAll(".backBtn").forEach(button => {
 
-    font-size:14px;
+    button.addEventListener("click", () => {
+        showPage(home);
+    });
 
-    color:#9b8d87;
+});
 
-    opacity:.8;
+// Start on landing page
+showPage(landing);
 
-}
+const letterButtons = document.querySelectorAll(".letterBtn");
 
-/* ---------- MOOD CHECK ---------- */
+letterButtons.forEach(button => {
 
-#moodPage{
+    button.addEventListener("click", () => {
 
-    display:none;
+        const content = button.nextElementSibling;
 
-    min-height:100vh;
+        const isOpen = content.style.display === "block";
 
-    padding:40px;
+        document.querySelectorAll(".letterContent").forEach(letter => {
+            letter.style.display = "none";
+        });
 
-    text-align:center;
+        if (!isOpen) {
+            content.style.display = "block";
+        }
 
-}
+    });
 
-.moodIntro{
+});
 
-    margin:15px 0 30px;
+// =========================
+// Catch My Love - Part 1
+// =========================
 
-    color:#8c7b75;
+// Get game elements
+const gameBtn = document.getElementById("gameBtn");
+const gameBack = document.getElementById("gameBack");
 
-    font-size:17px;
+const startGame = document.getElementById("startGame");
+const playAgain = document.getElementById("playAgain");
 
-}
+const gameContainer = document.getElementById("gameContainer");
+const score = document.getElementById("score");
+const basket = document.getElementById("basket");
 
-.moodGrid{
+const popupMessage = document.getElementById("popupMessage");
+const gameComplete = document.getElementById("gameComplete");
+const finalLetter = document.getElementById("finalLetter");
 
-    width:100%;
+// Open the game
+gameBtn.addEventListener("click", () => {
 
-    max-width:650px;
+    showPage(gamePage);
 
-    margin:0 auto;
+    gameContainer.style.display = "none";
+    gameComplete.style.display = "none";
+    popupMessage.style.display = "none";
+    finalLetter.style.display = "none";
 
-    display:grid;
+    heartsCaught = 0;
+    score.innerHTML = "♡ 0 / 100"
 
-    grid-template-columns:repeat(2,1fr);
+    gameRunning = false;
+    clearInterval(heartInterval);
 
-    gap:20px;
+});
 
-}
+// Back button
+gameBack.addEventListener("click", () => {
 
-.moodCard{
+    showPage(home);
 
-    min-height:140px;
+});
 
-    border:none;
+// Messages
+const messages = {
 
-    border-radius:28px;
+    10: "I hope you are enjoying the game",
 
-    background:white;
+    20: "20 hearts, keep going i think i mean a lot more than that..xox",
 
-    box-shadow:0 12px 30px rgba(0,0,0,.08);
+    30: "Every heart you catch is one more closer to my own(idk if that makes sense btw but ykwim)",
 
-    font-family:'Poppins',sans-serif;
+    40: "I am always always so proud of you",
 
-    font-size:38px;
+    50: "Halfway there sugar, you mean the world to me",
 
-    cursor:pointer;
+    60: "You are so definitely my favourite person",
 
-    display:flex;
+    70: "You are so amazing diva baddie slay xox",
 
-    flex-direction:column;
+    80: "okay look at you catching all these hearts well done",
 
-    justify-content:center;
+    90: "You mean more to me than you will ever know. You are my everything and more always and forever (only 10 more keep on going xo)",
 
-    align-items:center;
+};
 
-    gap:12px;
+let heartsCaught = 0;
 
-    transition:.3s;
+// Start button
+startGame.addEventListener("click", () => {
 
-}
+    heartsCaught = 0;
 
-.moodCard span{
+    score.innerHTML = "♡ 0 / 100"
 
-    font-size:17px;
+    gameContainer.style.display = "block";
 
-    font-weight:500;
+    gameComplete.style.display = "none";
 
-}
+});
 
-.moodCard:hover{
+// =========================
+// Catch My Love - Part 2
+// =========================
 
-    transform:translateY(-6px) scale(1.02);
+let basketX = gameContainer.offsetWidth / 2;
 
-    box-shadow:0 18px 40px rgba(0,0,0,.12);
+basket.style.left = basketX + "px";
 
-}
+function moveBasket(x){
 
-#moodMessage{
+    const rect = gameContainer.getBoundingClientRect();
 
-    max-width:650px;
+    basketX = x - rect.left;
 
-    margin:30px auto 0;
+    if(basketX < 35) basketX = 35;
 
-    text-align:left;
+    if(basketX > rect.width - 35) basketX = rect.width - 35;
 
-    line-height:1.8;
+    basket.style.left = basketX + "px";
 
 }
-
-@media(max-width:768px){
 
-    #moodPage{
+// Desktop
+gameContainer.addEventListener("mousemove",(e)=>{
 
-        padding:20px;
+    moveBasket(e.clientX);
 
-    }
+});
 
-    .moodGrid{
+// Mobile
+gameContainer.addEventListener("touchmove",(e)=>{
 
-        grid-template-columns:1fr;
+    moveBasket(e.touches[0].clientX);
 
-        gap:16px;
+});
 
-    }
+let gameRunning = false;
 
-    .moodCard{
+let heartInterval;
 
-        min-height:125px;
+function createHeart(){
 
-    }
+    if(!gameRunning) return;
 
-}
-
-#home .gamesTitle{
+    const heart = document.createElement("div");
 
-    text-align:center;
+    heart.className = "heart";
 
-    margin:45px 0 20px;
+    heart.innerHTML = "♡";
 
-    font-size:28px;
+    heart.style.left = Math.random() * (gameContainer.offsetWidth - 40) + "px";
 
-    font-weight:600;
+    heart.style.top = "-40px";
 
-    color:#F4B547;
-
-}
+    gameContainer.appendChild(heart);
 
-.homeSubtitle{
+    let y = -40;
 
-    text-align:center;
+    const fall = setInterval(()=>{
+        
+        if(!gameRunning) return;
+        
+        y += 4;
 
-    color:#B78495;
+        heart.style.top = y + "px";
 
-    font-size:16px;
+        const heartRect = heart.getBoundingClientRect();
 
-    margin-top:8px;
+        const basketRect = basket.getBoundingClientRect();
 
-    margin-bottom:35px;
+        if(
 
-    font-weight:400;
+            heartRect.bottom >= basketRect.top &&
 
-}
+            heartRect.left < basketRect.right &&
 
-@media(max-width:768px){
+            heartRect.right > basketRect.left
 
-    #gamePage{
-        padding:20px;
-    }
+        ){
 
-}
+            clearInterval(fall);
 
-#moodMessage{
+            heart.remove();
 
-    display:none;
+            heartsCaught++;
 
-    background:white;
+            score.innerHTML = `♡ ${heartsCaught} / 100`;
 
-    border-radius:28px;
+if(messages[heartsCaught]){
 
-    padding:30px;
+    clearInterval(heartInterval);
+    gameRunning = false;
 
-    box-shadow:0 12px 30px rgba(0,0,0,.08);
+    popupMessage.innerHTML = `
 
-    color:#7A5E57;
+<p>${messages[heartsCaught]}</p>
 
-}
+<button id="continueGame">Keep Going, Sugar ♡</button>
 
-#moodMessage h3{
+`;
 
-    color:#D98AA6;
+    popupMessage.style.display = "block";
 
-    text-align:center;
+    document.getElementById("continueGame").addEventListener("click",()=>{
 
-    margin-bottom:18px;
+        popupMessage.style.display = "none";
 
-}
+        gameRunning = true;
 
-#moodMessage p{
+        heartInterval = setInterval(createHeart,700);
 
-    line-height:1.8;
+    });
 
 }
-
-.feelBetterBtn{
-
-    display:block;
-
-    margin:25px auto 0;
 
-    padding:13px 26px;
+// Finished
+if(heartsCaught >= 100){
 
-    border:none;
+    gameRunning = false;
 
-    border-radius:30px;
+    clearInterval(heartInterval);
 
-    background:#F6C7B8;
+    finalLetter.style.display = "block";
 
-    color:white;
+    gameComplete.style.display = "block";
 
-    font-family:'Poppins',sans-serif;
-
-    font-size:16px;
-
-    cursor:pointer;
-
-    transition:.3s;
-
 }
-
-.feelBetterBtn:hover{
+        }
 
-    transform:translateY(-2px);
+        if(y > gameContainer.offsetHeight){
 
-    box-shadow:0 10px 20px rgba(0,0,0,.12);
-
-}
+            clearInterval(fall);
 
-/* ---------- MOOD CHECK ENDING ---------- */
+            heart.remove();
 
-.happyEnding{
+        }
 
-    text-align:center;
+    },20);
 
 }
 
-.happyEnding p{
+startGame.addEventListener("click",()=>{
 
-    text-align:center;
+    gameRunning = true;
 
-    line-height:1.8;
+    gameComplete.style.display = "none";
+    finalLetter.style.display = "none";
+    popupMessage.style.display = "none";
 
-}
+    heartInterval = setInterval(createHeart,700);
 
-.floatingHearts{
+});
 
-    display:flex;
+playAgain.addEventListener("click",()=>{
 
-    justify-content:center;
+    document.querySelectorAll(".heart").forEach(h=>h.remove());
 
-    gap:15px;
+    heartsCaught = 0;
 
-    margin-bottom:15px;
+    score.innerHTML = "♡ 0 / 100"
 
-    font-size:28px;
+    gameComplete.style.display = "none";
 
-}
+    gameRunning = true;
 
-.floatingHearts span{
+    clearInterval(heartInterval);
 
-    display:inline-block;
+    heartInterval = setInterval(createHeart,700);
 
-    animation:floatHeart 1.4s ease-in-out infinite;
+});
 
-}
+// =========================
+// Mood Check
+// =========================
 
-.floatingHearts span:nth-child(2){
+const moodMessage = document.getElementById("moodMessage");
+const moodCards = document.querySelectorAll(".moodCard");
 
-    animation-delay:.2s;
+const moodMessages = {
 
-}
+    happy: `
+        <h3>I'm Happy You're Happy ♡</h3>
 
-.floatingHearts span:nth-child(3){
+        <p>
+            Well i am so very glad that you are happy, thats all i wish for you. Enjoy the day or night whenever you are reading this dont worry about how long it will last, live in the moment sugar. Write down what has made you happy, listen to a song that will enhance the feeling or even share that happiness with someone else xoxo
+        </p>
+    `,
 
-    animation-delay:.4s;
+    sad: `
+        <h3>When You're Feeling Sad ♡</h3>
 
-}
+        <p>
+            Im sorry today isn't the best, but i do know one thing, i know that this rain cloud will soon go away. be kind to yourself today more than you would any other day. You are still my favourite person, even when do feel like running away to new york. Dont worry be happy sugar xoxo
+        </p>
+    `,
 
-@keyframes floatHeart{
+    anxious: `
+        <h3>When You're Feeling Anxious ♡</h3>
 
-    0%,
-    100%{
+        <p>
+            Its okay, its not as bad as it seems i can promise you that, your brain is making it ten times worse than it actually is. Take a minute to slow down, breathe and take things one at a time. Drop your shoulders unclench your jaw and breathe dont think about anything, breathe in for four and out for six. Youre okay sugar i promis xoxo
+        </p>
+    `,
 
-        transform:translateY(0);
+    overthinking: `
+        <h3>When You're Overthinking ♡</h3>
 
-        opacity:.7;
+        <p>
+            You have too many tabs open in your brain, its okay dont worry where its all coming from or what the cause is, not every thought needs an answer and not every worry needs your attention. Write down one thought that keeps doing circles in your head. Once its on the page leave it and go on about your day xoxo
+        </p>
+    `,
 
-    }
+    missing: `
+        <h3>When You're Missing Me ♡</h3>
 
-    50%{
+        <p>
+            Its okay soemtimes i miss me too, but hey thats okay you let a tear to two out its alright i wont judge xx Look through our messsages maybe reminice a bit listen to a song that reminds you of me, for the record i miss you too xoxo
+        </p>
+    `,
 
-        transform:translateY(-12px);
+    tired: `
+        <h3>When You're Tired ♡</h3>
 
-        opacity:1;
+        <p>
+            You can sleep its okay, no doubt we were probably meant to watch our show tonight, but one of us probably got tired and in this case its your, its okay we can alway watch tomorrow, get comfy and cosy and ready to sleep, dream as much as you can about me sleepwell sugar xoxo
+        </p>
+    `,
 
-    }
+    angry: `
+        <h3>When You're Angry ♡</h3>
 
-}
+        <p>
+             Whoever or whatever has annoyed you dont bother giving them the time or energy of your day, they arent worth your thoughts. Youre allowed to be angry thats okay, but dont give anyone the satisfaction of you turing into she-hulk. Step away for a couple minutesbefore respondinf to anyone, shake yoour hands and take a couple minutes to collect yourself. Then when youre ready tell me the story xoxo
+        </p>
+    `,
 
-.backToMoodsBtn{
+    unmotivated: `
+        <h3>When You're Unmotivated ♡</h3>
 
-    display:block;
+        <p>
+            You don't need to conquer the world today, the world is well massive so i think you would be quite exhausted even if you tried to. One small thing still counts and i will proudly celebrate it just like you won an oscar award (i think that what its called..?) Pick one task that is quick, once its finished continue or have a break and declare yourself sucsessful
+        </p>
+    `
 
-    margin:25px auto 0;
+};
 
-    padding:13px 26px;
+moodCards.forEach(card => {
 
-    border:none;
+    card.addEventListener("click", () => {
 
-    border-radius:30px;
+        const selectedMood = card.dataset.mood;
 
-    background:#F6C7B8;
+        moodMessage.innerHTML = `
 
-    color:white;
+            ${moodMessages[selectedMood]}
 
-    font-family:'Poppins',sans-serif;
+            <button class="feelBetterBtn">
+                I Feel Better ♡
+            </button>
 
-    font-size:16px;
+        `;
 
-    font-weight:500;
+        moodMessage.style.display = "block";
 
-    cursor:pointer;
+        moodMessage.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
 
-    transition:.3s;
+       moodMessage
+    .querySelector(".feelBetterBtn")
+    .addEventListener("click", () => {
 
-}
+        moodMessage.innerHTML = `
 
-.backToMoodsBtn:hover{
+            <div class="happyEnding">
 
-    transform:translateY(-2px);
+                <div class="floatingHearts">
+                    <span>💖</span>
+                    <span>❤️</span>
+                    <span>💗</span>
+                </div>
 
-    box-shadow:0 10px 20px rgba(0,0,0,.12);
+                <h3>I'm glad, Sugar ♡</h3>
 
-}
+                <p>
+                    Come back whenever you need me.<br>
+                    I'll always be here.
+                </p>
 
+                <button class="backToMoodsBtn">
+                    Back to Mood Check
+                </button>
 
-/* ---------- SPECIAL DELIVERY ---------- */
+            </div>
 
-#specialDelivery,
-#proposalLetter,
-#weddingInvite{
+        `;
 
-    display:none;
+        moodMessage.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
 
-}
+        moodMessage
+            .querySelector(".backToMoodsBtn")
+            .addEventListener("click", () => {
 
-.deliveryBox{
+                moodMessage.style.display = "none";
 
-    text-align:center;
+                document.querySelector(".moodGrid").scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
 
-}
+             });
 
-.deliverySmallText{
+         }); 
 
-    color:#B78495;
+     });
 
-    font-size:16px;
+  });
+// =========================
+// Proposal and Wedding
+// =========================
 
-    margin-bottom:12px;
+const openLetterBtn = document.getElementById("openLetterBtn");
+const proposalYesBtn = document.getElementById("proposalYesBtn");
+const inviteToVowsBtn = document.getElementById("inviteToVowsBtn");
+const vowsToCeremonyBtn = document.getElementById("vowsToCeremonyBtn");
+const iDoBtn = document.getElementById("iDoBtn");
+const weddingHomeBtn = document.getElementById("weddingHomeBtn");
 
+function hideWeddingStep(id){
+    document
+        .getElementById(id)
+        .style
+        .setProperty("display", "none", "important");
 }
-
-.deliveryEnvelope{
-
-    display:inline-block;
-
-    font-size:85px;
-
-    margin:10px 0 15px;
 
-    animation:deliveryFloat 2s ease-in-out infinite;
-
+function showWeddingStep(id){
+    document
+        .getElementById(id)
+        .style
+        .setProperty("display", "block", "important");
 }
-
-@keyframes deliveryFloat{
-
-    0%,
-    100%{
 
-        transform:translateY(0) rotate(-2deg);
 
-    }
+/* OPEN LETTER */
 
-    50%{
-
-        transform:translateY(-10px) rotate(2deg);
-
-    }
-
-}
+openLetterBtn.addEventListener("click", () => {
 
-.deliveryLabel{
+    hideWeddingStep("specialDelivery");
+    showWeddingStep("proposalLetter");
 
-    width:100%;
+    document.getElementById("proposalLetter").scrollIntoView({
+        behavior:"smooth",
+        block:"center"
+    });
 
-    max-width:370px;
+});
 
-    margin:22px auto;
 
-    padding:20px;
+/* YES */
 
-    border:2px dashed #F6C7B8;
+proposalYesBtn.addEventListener("click", () => {
 
-    border-radius:20px;
+    hideWeddingStep("proposalLetter");
+    showWeddingStep("weddingInvite");
 
-    background:#FFF9F5;
+    document.getElementById("weddingInvite").scrollIntoView({
+        behavior:"smooth",
+        block:"center"
+    });
 
-    color:#7A5E57;
+});
 
-    text-align:left;
 
-    line-height:1.9;
+/* INVITATION TO VOWS */
 
-}
+inviteToVowsBtn.addEventListener("click", () => {
 
-.deliveryLabel strong{
+    hideWeddingStep("weddingInvite");
+    showWeddingStep("vowsSection");
 
-    color:#D98AA6;
+    document.getElementById("vowsSection").scrollIntoView({
+        behavior:"smooth",
+        block:"center"
+    });
 
-}
+});
 
-.deliveryWarning{
 
-    max-width:450px;
+/* VOWS TO CEREMONY */
 
-    margin:20px auto;
+vowsToCeremonyBtn.addEventListener("click", () => {
 
-    color:#B78495;
+    hideWeddingStep("vowsSection");
+    showWeddingStep("ceremonySection");
 
-    font-size:14px;
+    document.getElementById("ceremonySection").scrollIntoView({
+        behavior:"smooth",
+        block:"center"
+    });
 
-    font-style:italic;
+});
 
-    line-height:1.7;
 
-}
+/* I DO */
 
-#openLetterBtn{
+iDoBtn.addEventListener("click", () => {
 
-    margin-top:10px;
+    hideWeddingStep("ceremonySection");
+    showWeddingStep("certificateSection");
 
-    padding:14px 28px;
+    document.getElementById("certificateSection").scrollIntoView({
+        behavior:"smooth",
+        block:"center"
+    });
 
-    border:none;
+});
 
-    border-radius:30px;
 
-    background:#F6C7B8;
+/* BACK HOME */
 
-    color:white;
+weddingHomeBtn.addEventListener("click", () => {
 
-    font-family:'Poppins',sans-serif;
+    showPage(home);
 
-    font-size:16px;
+});
 
-    font-weight:500;
+// =========================
+// Our Scrapbook - Real Page Flip
+// =========================
 
-    cursor:pointer;
+const scrapbookBook = document.querySelector(".scrapbookBook");
+const scrapbookSpreads = Array.from(
+    document.querySelectorAll(".scrapbookSpread")
+);
 
-    transition:.3s;
+const scrapbookPrev = document.getElementById("scrapbookPrev");
+const scrapbookNext = document.getElementById("scrapbookNext");
+const scrapbookCounter = document.getElementById("scrapbookCounter");
 
-}
+let currentScrapbookSpread = 0;
+let scrapbookIsFlipping = false;
 
-#openLetterBtn:hover{
 
-    transform:translateY(-3px);
+const scrapbookLabels = [
+    "Cover",
+    "Pages 1–2",
+    "Pages 3–4",
+    "Page 5"
+];
 
-    box-shadow:0 10px 20px rgba(0,0,0,.12);
 
-}
 
-/* ---------- PROPOSAL LETTER ---------- */
+function updateScrapbookControls(){
 
-#proposalPage{
-    display:none;
-    min-height:100vh;
-    padding:40px;
-    text-align:center;
-}
+    scrapbookCounter.textContent =
+        scrapbookLabels[currentScrapbookSpread];
 
-#proposalLetter{
-    display:none;
-    width:100%;
-    max-width:680px;
-    margin:0 auto;
-    padding:40px;
-    background:white;
-    border:2px solid #F8D8D0;
-    border-radius:32px;
-    box-shadow:0 18px 45px rgba(122,94,87,.12);
-    animation:proposalAppear .5s ease;
-}
+    scrapbookPrev.disabled =
+        scrapbookIsFlipping ||
+        currentScrapbookSpread === 0;
 
-@keyframes proposalAppear{
-    from{
-        opacity:0;
-        transform:translateY(20px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
+    scrapbookNext.disabled =
+        scrapbookIsFlipping ||
+        currentScrapbookSpread === scrapbookSpreads.length - 1;
 
-#proposalLetter .proposalIcon{
-    font-size:65px;
-    line-height:1;
-    margin-bottom:15px;
-}
 
-#proposalLetter h2{
-    color:#D98AA6;
-    font-size:32px;
-    margin-bottom:24px;
-}
+    scrapbookPrev.style.opacity =
+        currentScrapbookSpread === 0
+            ? ".3"
+            : "1";
 
-.proposalText{
-    padding:24px;
-    background:#FFF9F5;
-    border-radius:22px;
-    color:#7A5E57;
-    font-size:17px;
-    line-height:1.9;
-    text-align:left;
+    scrapbookNext.style.opacity =
+        currentScrapbookSpread === scrapbookSpreads.length - 1
+            ? ".3"
+            : "1";
 }
 
-.proposalQuestion{
-    margin-top:25px;
-    padding:18px;
-    background:#FFF4D6;
-    border-radius:20px;
-    color:#E56A6A;
-    font-size:22px;
-    font-weight:600;
-}
 
-#proposalYesBtn{
-    margin-top:25px;
-    padding:15px 30px;
-    border:none;
-    border-radius:999px;
-    background:linear-gradient(135deg,#F6C7B8,#EFA8BC);
-    color:white;
-    font-family:'Poppins',sans-serif;
-    font-size:16px;
-    font-weight:600;
-    cursor:pointer;
-    box-shadow:0 10px 24px rgba(217,138,166,.25);
-    transition:.3s;
-}
 
-#proposalYesBtn:hover{
-    transform:translateY(-3px);
-    box-shadow:0 15px 30px rgba(217,138,166,.35);
-}
+function showScrapbookSpread(){
 
-@media(max-width:768px){
-
-    #proposalPage{
-        padding:20px;
-    }
-
-    #proposalLetter{
-        padding:28px 20px;
-        border-radius:28px;
-    }
-
-    #proposalLetter h2{
-        font-size:27px;
-    }
-
-    .proposalText{
-        padding:20px;
-        font-size:15px;
-    }
-
-    .proposalQuestion{
-        font-size:19px;
-    }
-
-    #proposalYesBtn{
-        width:100%;
-        max-width:300px;
-    }
-}
+    scrapbookSpreads.forEach((spread, index) => {
 
-/* ---------- WEDDING INVITATION AND VOWS ---------- */
-
-#proposalPage{
-
-    background:
-        radial-gradient(
-            circle at 15% 18%,
-            rgba(246,199,184,.55) 0 90px,
-            transparent 91px
-        ),
-        radial-gradient(
-            circle at 85% 12%,
-            rgba(255,229,145,.5) 0 105px,
-            transparent 106px
-        ),
-        radial-gradient(
-            circle at 90% 82%,
-            rgba(217,138,166,.22) 0 125px,
-            transparent 126px
-        ),
-        linear-gradient(
-            180deg,
-            #FFF9F5,
-            #FCEFE8,
-            #F8EBDD
+        spread.classList.remove(
+            "active",
+            "underSpread",
+            "turnBaseForward",
+            "turnBaseBack"
         );
 
-    background-attachment:fixed;
+        if(index === currentScrapbookSpread){
+            spread.classList.add("active");
+        }
 
+    });
+
+    updateScrapbookControls();
 }
 
-#weddingInvite,
-#vowsSection{
 
-    display:none;
 
-    width:100%;
+/* =========================================
+   OPEN THE FRONT COVER
+========================================= */
 
-    max-width:680px;
+function openScrapbookCover(){
 
-    margin:0 auto;
+    if(scrapbookIsFlipping) return;
 
-    padding:40px;
+    scrapbookIsFlipping = true;
+    updateScrapbookControls();
 
-    background:rgba(255,255,255,.94);
 
-    border:2px solid #F8D8D0;
+    const coverSpread = scrapbookSpreads[0];
+    const nextSpread = scrapbookSpreads[1];
 
-    border-radius:32px;
+    const cover =
+        coverSpread.querySelector(".scrapbookCover");
 
-    box-shadow:0 18px 45px rgba(122,94,87,.14);
 
-    animation:proposalAppear .5s ease;
+    coverSpread.classList.add("active");
 
-}
+/* wait until the cover reaches the centre before revealing the pages */
+setTimeout(() => {
 
-#weddingInvite .inviteNames{
+    nextSpread.classList.add("underSpread");
 
-    margin:18px 0;
+}, 720);
 
-    color:#E56A6A;
+    cover.style.transformOrigin = "left center";
+    cover.style.transformStyle = "preserve-3d";
+    cover.style.backfaceVisibility = "hidden";
 
-    font-size:30px;
 
-    font-weight:600;
+    const animation = cover.animate(
 
-}
+        [
+            {
+                transform:"rotateY(0deg)"
+            },
 
-#weddingInvite .inviteDetails{
+            {
+                transform:"rotateY(-82deg)",
+                offset:.48
+            },
 
-    margin:25px 0;
+            {
+                transform:"rotateY(-100deg)",
+                offset:.58
+            },
 
-    padding:18px;
+            {
+                transform:"rotateY(-180deg)"
+            }
+        ],
 
-    background:#FFF4D6;
+        {
+            duration:1400,
 
-    border-radius:20px;
+            easing:
+                "cubic-bezier(.55,.05,.25,1)",
 
-    color:#7A5E57;
+            fill:"forwards"
+        }
 
-    font-size:17px;
-
-    line-height:1.8;
-
-}
-
-#weddingInvite .inviteNote{
-
-    color:#B78495;
-
-    font-style:italic;
-
-}
-
-#inviteToVowsBtn{
-
-    margin-top:28px;
-
-    padding:15px 30px;
-
-    border:none;
-
-    border-radius:999px;
-
-    background:linear-gradient(
-        135deg,
-        #F6C7B8,
-        #EFA8BC
     );
 
-    color:white;
 
-    font-family:'Poppins',sans-serif;
+    animation.onfinish = () => {
 
-    font-size:16px;
+        animation.cancel();
 
-    font-weight:600;
+        cover.style.transform = "";
+        cover.style.transformOrigin = "";
+        cover.style.transformStyle = "";
+        cover.style.backfaceVisibility = "";
 
-    cursor:pointer;
+        currentScrapbookSpread = 1;
 
-    box-shadow:0 10px 24px rgba(217,138,166,.25);
+        scrapbookIsFlipping = false;
 
-    transition:.3s;
+        showScrapbookSpread();
 
-}
-
-#inviteToVowsBtn:hover{
-
-    transform:translateY(-3px);
-
-    box-shadow:0 15px 30px rgba(217,138,166,.35);
+    };
 
 }
 
-.vowCard{
 
-    margin-top:22px;
 
-    padding:25px;
+/* =========================================
+   CLOSE THE FRONT COVER
+========================================= */
 
-    background:#FFF9F5;
+function closeScrapbookCover(){
 
-    border:1px solid #F8D8D0;
+    if(scrapbookIsFlipping) return;
 
-    border-radius:22px;
+    scrapbookIsFlipping = true;
+    updateScrapbookControls();
 
-    color:#7A5E57;
 
-    line-height:1.9;
+    const coverSpread = scrapbookSpreads[0];
 
-    text-align:left;
+    const coverOriginal =
+        coverSpread.querySelector(".scrapbookCover");
 
-}
+    const cover =
+        coverOriginal.cloneNode(true);
 
-.vowCard h3{
 
-    margin-bottom:15px;
+    cover.classList.add("closingScrapbookCover");
 
-    color:#D98AA6;
 
-    text-align:center;
+    cover.style.position = "absolute";
 
-}
+    cover.style.left = "50%";
+    cover.style.top = "50%";
 
-@media(max-width:768px){
+    cover.style.margin = "0";
 
-    #weddingInvite,
-    #vowsSection{
+    cover.style.zIndex = "40";
 
-        padding:28px 20px;
+    cover.style.transformOrigin = "left center";
 
-        border-radius:28px;
+    cover.style.transformStyle = "preserve-3d";
 
-    }
 
-    #inviteToVowsBtn{
+    scrapbookBook.appendChild(cover);
 
-        width:100%;
 
-        max-width:300px;
+    const animation = cover.animate(
 
-    }
+        [
+            {
+                transform:
+                    "translate(-50%, -50%) rotateY(-180deg)"
+            },
 
-    .vowCard{
+            {
+                transform:
+                    "translate(-50%, -50%) rotateY(-95deg)",
+                offset:.48
+            },
 
-        padding:20px;
+            {
+                transform:
+                    "translate(-50%, -50%) rotateY(-78deg)",
+                offset:.58
+            },
 
-    }
+            {
+                transform:
+                    "translate(-50%, -50%) rotateY(0deg)"
+            }
+        ],
 
-}
+        {
+            duration:1400,
 
-/* ---------- I DO AND CERTIFICATE ---------- */
+            easing:
+                "cubic-bezier(.55,.05,.25,1)",
 
-#certificateSection{
-    display:none;
-}
+            fill:"forwards"
+        }
 
-.ceremonyQuestion{
-    margin-top:28px;
-    padding:22px;
-    background:#FFF4D6;
-    border-radius:22px;
-    color:#7A5E57;
-    font-size:18px;
-    line-height:1.8;
-    text-align:center;
-}
-
-#iDoBtn,
-#weddingHomeBtn{
-    margin-top:22px;
-    padding:15px 32px;
-    border:none;
-    border-radius:999px;
-    background:linear-gradient(
-        135deg,
-        #F6C7B8,
-        #EFA8BC
-    );
-    color:white;
-    font-family:'Poppins',sans-serif;
-    font-size:16px;
-    font-weight:600;
-    cursor:pointer;
-    box-shadow:0 10px 24px rgba(217,138,166,.25);
-    transition:.3s;
-}
-
-#iDoBtn:hover,
-#weddingHomeBtn:hover{
-    transform:translateY(-3px) scale(1.02);
-    box-shadow:0 15px 30px rgba(217,138,166,.35);
-}
-
-.certificateIntro{
-    margin:0 auto 25px;
-    color:#B78495;
-    font-size:17px;
-    line-height:1.8;
-}
-
-.certificateImage{
-    display:block;
-    width:100%;
-    max-width:580px;
-    height:auto;
-    margin:0 auto;
-    border-radius:20px;
-    box-shadow:0 14px 35px rgba(122,94,87,.16);
-}
-
-.certificateEnding{
-    max-width:520px;
-    margin:25px auto 0;
-    color:#7A5E57;
-    line-height:1.8;
-    font-style:italic;
-}
-
-@media(max-width:768px){
-
-    .ceremonyQuestion{
-        padding:18px;
-        font-size:16px;
-    }
-
-    #iDoBtn,
-    #weddingHomeBtn{
-        width:100%;
-        max-width:300px;
-    }
-
-    .certificateImage{
-        border-radius:15px;
-    }
-
-}
-
-/* Keep wedding steps hidden until their buttons are pressed */
-
-#proposalLetter,
-#weddingInvite,
-#vowsSection,
-#ceremonySection,
-#certificateSection{
-    display:none;
-}
-
-#vowsToCeremonyBtn{
-
-    display:block;
-
-    width:100%;
-
-    max-width:300px;
-
-    margin:28px auto 0;
-
-    padding:15px 28px;
-
-    border:none;
-
-    border-radius:999px;
-
-    background:linear-gradient(
-        135deg,
-        #F6C7B8,
-        #EFA8BC
     );
 
-    color:white;
 
-    font-family:'Poppins',sans-serif;
+    animation.onfinish = () => {
 
-    font-size:16px;
+        cover.remove();
 
-    font-weight:600;
+        currentScrapbookSpread = 0;
 
-    cursor:pointer;
+        scrapbookIsFlipping = false;
 
-    box-shadow:0 10px 24px rgba(217,138,166,.25);
+        showScrapbookSpread();
 
-    transition:.3s;
-
-}
-
-#vowsToCeremonyBtn:hover{
-
-    transform:translateY(-3px) scale(1.02);
-
-    box-shadow:0 15px 30px rgba(217,138,166,.35);
+    };
 
 }
 
-#certificateSection{
-    display:none;
-}
 
-.certificateBox{
-    text-align:center;
-}
 
-.certificateIntro{
-    margin-bottom:25px;
-    color:#B78495;
-    font-size:17px;
-    line-height:1.8;
-}
+/* =========================================
+   TURN A PAPER PAGE
+========================================= */
 
-.certificateImage{
-    display:block;
-    width:100%;
-    max-width:580px;
-    height:auto;
-    margin:0 auto;
-    border-radius:20px;
-    box-shadow:0 14px 35px rgba(122,94,87,.18);
-}
+function turnScrapbookPage(direction){
 
-.certificateEnding{
-    max-width:520px;
-    margin:25px auto 0;
-    color:#7A5E57;
-    line-height:1.8;
-    font-style:italic;
-}
+    if(scrapbookIsFlipping) return;
 
-#weddingHomeBtn{
-    display:block;
-    width:100%;
-    max-width:320px;
-    margin:25px auto 0;
-    padding:15px 28px;
-    border:none;
-    border-radius:999px;
-    background:linear-gradient(135deg,#F6C7B8,#EFA8BC);
-    color:white;
-    font-family:'Poppins',sans-serif;
-    font-size:16px;
-    font-weight:600;
-    cursor:pointer;
-    box-shadow:0 10px 24px rgba(217,138,166,.25);
-    transition:.3s;
-}
+    scrapbookIsFlipping = true;
+    updateScrapbookControls();
 
-#weddingHomeBtn:hover{
-    transform:translateY(-3px);
-    box-shadow:0 15px 30px rgba(217,138,166,.35);
-}
 
-/* ---------- SPECIAL HOMEPAGE LETTER CARD ---------- */
+    const current =
+        scrapbookSpreads[currentScrapbookSpread];
 
-#proposalBtn{
-    position:relative;
 
-    background:linear-gradient(
-        135deg,
-        #FFF7F2,
-        #FCE0E8,
-        #FFF1B8
-    );
+    const targetIndex =
+        direction === "forward"
+            ? currentScrapbookSpread + 1
+            : currentScrapbookSpread - 1;
 
-    border:2px dashed #EFA8BC;
 
-    box-shadow:
-        0 14px 35px rgba(217,138,166,.2),
-        0 0 0 6px rgba(255,244,214,.65);
+    const target =
+        scrapbookSpreads[targetIndex];
 
-    overflow:hidden;
 
-    animation:specialCardGlow 2.5s ease-in-out infinite;
-}
+    /* page being lifted */
 
-#proposalBtn::before{
-    content:"SPECIAL";
+    const frontPage =
+        direction === "forward"
+            ? current.querySelector(".rightSheet")
+            : current.querySelector(".leftSheet");
 
-    position:absolute;
 
-    top:15px;
-    right:15px;
+    /* page on the back of the paper */
 
-    padding:6px 11px;
+    const backPage =
+        direction === "forward"
+            ? target.querySelector(".leftSheet")
+            : target.querySelector(".rightSheet");
 
-    border-radius:999px;
 
-    background:#E56A6A;
+    if(!frontPage || !backPage){
 
-    color:white;
+        scrapbookIsFlipping = false;
 
-    font-size:10px;
-    font-weight:700;
-    letter-spacing:1px;
+        currentScrapbookSpread = targetIndex;
 
-    transform:rotate(4deg);
-}
+        showScrapbookSpread();
 
-#proposalBtn span{
-    color:#B85F7D;
-
-    font-weight:600;
-}
-
-#proposalBtn:hover{
-    transform:translateY(-9px) scale(1.03);
-
-    box-shadow:
-        0 20px 45px rgba(217,138,166,.3),
-        0 0 0 7px rgba(255,244,214,.8);
-}
-
-@keyframes specialCardGlow{
-
-    0%,
-    100%{
-        box-shadow:
-            0 14px 35px rgba(217,138,166,.18),
-            0 0 0 5px rgba(255,244,214,.55);
+        return;
     }
 
-    50%{
-        box-shadow:
-            0 18px 42px rgba(217,138,166,.3),
-            0 0 0 8px rgba(255,244,214,.8);
-    }
 
-}
 
-/* =========================================================
-   NEW MINIMAL DEAR SUGAR HOMEPAGE
-========================================================= */
+    /* next spread sits underneath */
 
-#home.homeRedesign{
+    target.classList.add("underSpread");
 
-    --cream:#FFFBF8;
-    --paper:#FFFDFC;
-    --pink:#D9828F;
-    --softPink:#F7DEDE;
-    --border:#E8DCD5;
-    --brown:#4C403C;
-    --muted:#786B66;
-    --sage:#85865C;
 
-    display:none;
+    if(direction === "forward"){
 
-    min-height:100vh;
-
-    padding:35px 28px 50px;
-
-    background:
-        linear-gradient(
-            180deg,
-            #FFFCFA,
-            #FFF9F5
+        current.classList.add(
+            "active",
+            "turnBaseForward"
         );
 
-    color:var(--brown);
-
-}
-
-
-/* HEADER */
-
-.homeHeader{
-
-    width:100%;
-    max-width:1000px;
-
-    margin:0 auto 38px;
-
-    display:grid;
-
-    grid-template-columns:1fr auto 1fr;
-
-    align-items:start;
-
-}
-
-
-.homeMenuDecoration{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:18px;
-
-    padding-top:17px;
-
-    width:70px;
-
-    position:relative;
-
-}
-
-
-.homeMenuDecoration > span{
-
-    position:absolute;
-
-    left:0;
-
-    width:26px;
-
-    height:1.5px;
-
-    background:#26201E;
-
-}
-
-
-.homeMenuDecoration > span:nth-child(1){
-
-    top:18px;
-
-}
-
-
-.homeMenuDecoration > span:nth-child(2){
-
-    top:25px;
-
-}
-
-
-.homeMenuDecoration > span:nth-child(3){
-
-    top:32px;
-
-}
-
-
-.homeMenuDecoration b{
-
-    margin-left:43px;
-
-    margin-top:-3px;
-
-    color:var(--pink);
-
-    font-size:25px;
-
-    font-weight:400;
-
-}
-
-
-.homeBrand{
-
-    text-align:center;
-
-}
-
-
-.homeBrand h1{
-
-    margin:0;
-
-    font-family:'Playfair Display',serif;
-
-    font-size:58px;
-
-    line-height:1;
-
-    font-weight:500;
-
-    letter-spacing:-2px;
-
-    color:#15100E;
-
-}
-
-
-.homeBrand h1 span{
-
-    color:var(--pink);
-
-    font-family:'Poppins',sans-serif;
-
-    font-weight:300;
-
-}
-
-
-.homeBrand p{
-
-    margin-top:20px;
-
-    color:#625955;
-
-    font-size:11px;
-
-    font-weight:400;
-
-    letter-spacing:5px;
-
-}
-
-
-.homeTinyNote{
-
-    justify-self:end;
-
-    margin-top:3px;
-
-    text-align:left;
-
-    font-family:'Caveat',cursive;
-
-    font-size:18px;
-
-    line-height:1.08;
-
-    transform:rotate(-3deg);
-
-    color:#423835;
-
-}
-
-
-.homeTinyNote span{
-
-    display:block;
-
-    color:var(--pink);
-
-    font-family:'Poppins',sans-serif;
-
-    font-size:24px;
-
-    margin-left:55px;
-
-    margin-top:3px;
-
-}
-
-
-/* MAIN WIDTH */
-
-.homeMain{
-
-    width:100%;
-
-    max-width:1000px;
-
-    margin:0 auto;
-
-}
-
-
-/* =========================================================
-   BOUQUET HERO
-========================================================= */
-
-.bouquetHero{
-
-    position:relative;
-
-    width:100%;
-
-    min-height:290px;
-
-    padding:0;
-
-    display:grid;
-
-    grid-template-columns:45% 55%;
-
-    align-items:center;
-
-    border:1px solid var(--border);
-
-    border-radius:22px;
-
-    background:
-        linear-gradient(
-            110deg,
-            #FFF9F6,
-            #FFFCFA
+    }else{
+
+        current.classList.add(
+            "active",
+            "turnBaseBack"
         );
 
-    overflow:hidden;
-
-    color:inherit;
-
-    font-family:'Poppins',sans-serif;
-
-    text-align:left;
-
-    cursor:pointer;
-
-    box-shadow:
-        0 7px 24px rgba(94,72,63,.055);
-
-    transition:
-        transform .25s ease,
-        border-color .25s ease;
-
-}
-
-
-.bouquetHero:hover{
-
-    transform:translateY(-2px);
-
-    border-color:#DDC9C1;
-
-}
-
-
-/* line-art bouquet */
-
-.bouquetSketch{
-
-    position:relative;
-
-    height:290px;
-
-    display:flex;
-
-    align-items:flex-end;
-
-    justify-content:center;
-
-}
-
-
-.bouquetSketch svg{
-
-    width:95%;
-
-    height:100%;
-
-    overflow:visible;
-
-}
-
-
-.flowerLines{
-
-    fill:none;
-
-    stroke:#81805C;
-
-    stroke-width:1.4;
-
-    stroke-linecap:round;
-
-    stroke-linejoin:round;
-
-}
-
-
-.flowerLines circle{
-
-    fill:#FFF9F6;
-
-    stroke:#D09A90;
-
-}
-
-
-.bouquetPaper{
-
-    fill:rgba(245,226,215,.22);
-
-    stroke:#CBAE9F;
-
-    stroke-width:1.1;
-
-    stroke-linejoin:round;
-
-}
-
-
-.bouquetRibbon{
-
-    fill:none;
-
-    stroke:#B99988;
-
-    stroke-width:1.4;
-
-}
-
-
-.bouquetTag{
-
-    position:absolute;
-
-    left:53%;
-
-    bottom:42px;
-
-    padding:8px 13px;
-
-    border:1px solid #CEB6A8;
-
-    border-radius:3px;
-
-    background:#FFF8F1;
-
-    color:#50433D;
-
-    font-family:'Caveat',cursive;
-
-    font-size:17px;
-
-    line-height:1.05;
-
-    transform:rotate(7deg);
-
-}
-
-
-/* bouquet words */
-
-.bouquetHeroText{
-
-    padding:40px 50px 40px 25px;
-
-}
-
-
-.deliveryLabelHome{
-
-    display:block;
-
-    margin-bottom:25px;
-
-    color:var(--pink);
-
-    font-size:11px;
-
-    letter-spacing:4px;
-
-}
-
-
-#home .bouquetHero h2{
-
-    margin:0;
-
-    text-align:left;
-
-    font-family:'Playfair Display',serif;
-
-    font-size:35px;
-
-    font-weight:500;
-
-    color:#17110F;
-
-}
-
-
-.bouquetHero h2 span{
-
-    color:var(--pink);
-
-    font-family:'Poppins',sans-serif;
-
-    font-weight:300;
-
-}
-
-
-.bouquetHeroText p{
-
-    margin:23px 0;
-
-    color:#544A46;
-
-    font-size:15px;
-
-}
-
-
-.heroFakeButton{
-
-    display:inline-flex;
-
-    align-items:center;
-
-    gap:22px;
-
-    margin-top:5px;
-
-    padding:13px 22px;
-
-    border-radius:8px;
-
-    background:#D9828F;
-
-    color:white;
-
-    font-size:14px;
-
-    font-weight:400;
-
-}
-
-
-.heroFakeButton b{
-
-    font-size:20px;
-
-    font-weight:300;
-
-}
-
-
-/* =========================================================
-   SECTION HEADINGS
-========================================================= */
-
-#home .homeSectionTitle{
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-    gap:3px;
-
-    margin:34px 0 14px;
-
-    color:#3D3430;
-
-    font-family:'Poppins',sans-serif;
-
-    font-size:12px;
-
-    font-weight:400;
-
-    letter-spacing:5px;
-
-}
-
-
-#home .homeSectionTitle span{
-
-    color:var(--pink);
-
-    font-size:17px;
-
-    font-weight:300;
-
-    letter-spacing:0;
-
-}
-
-
-/* =========================================================
-   FOR YOU
-========================================================= */
-
-.forYouGrid{
-
-    display:grid;
-
-    grid-template-columns:repeat(2,1fr);
-
-    gap:18px;
-
-}
-
-
-.forYouItem{
-
-    min-height:98px;
-
-    padding:18px 24px;
-
-    display:grid;
-
-    grid-template-columns:42px 1fr 25px;
-
-    gap:18px;
-
-    align-items:center;
-
-    border:1px solid var(--border);
-
-    border-radius:18px;
-
-    background:rgba(255,255,255,.35);
-
-    color:var(--brown);
-
-    font-family:'Poppins',sans-serif;
-
-    text-align:left;
-
-    cursor:pointer;
-
-    transition:.25s ease;
-
-}
-
-
-.forYouItem:hover{
-
-    transform:translateY(-2px);
-
-    border-color:#D9C7BF;
-
-    background:#FFFCFA;
-
-}
-
-
-.lineIcon{
-
-    width:34px;
-
-    height:34px;
-
-    color:var(--pink);
-
-}
-
-
-.lineIcon svg{
-
-    width:100%;
-
-    height:100%;
-
-    fill:none;
-
-    stroke:currentColor;
-
-    stroke-width:1.4;
-
-    stroke-linecap:round;
-
-    stroke-linejoin:round;
-
-}
-
-
-.featureText{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:6px;
-
-}
-
-
-.featureText strong{
-
-    font-family:'Playfair Display',serif;
-
-    font-size:22px;
-
-    font-weight:500;
-
-    color:#2C2421;
-
-}
-
-
-.featureText small{
-
-    color:#6D625D;
-
-    font-size:13px;
-
-    font-weight:400;
-
-}
-
-
-.featureArrow{
-
-    justify-self:end;
-
-    color:var(--pink);
-
-    font-size:24px;
-
-    font-weight:300;
-
-}
-
-
-/* =========================================================
-   ALL THINGS US
-========================================================= */
-
-.thingsGrid{
-
-    display:grid;
-
-    grid-template-columns:repeat(4,1fr);
-
-    gap:16px;
-
-}
-
-
-.minimalCard{
-
-    position:relative;
-
-    min-height:174px;
-
-    padding:20px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:flex-start;
-
-    border:1px solid var(--border);
-
-    border-radius:17px;
-
-    background:rgba(255,255,255,.28);
-
-    color:var(--brown);
-
-    font-family:'Poppins',sans-serif;
-
-    text-align:left;
-
-    cursor:pointer;
-
-    transition:.25s ease;
-
-}
-
-
-.minimalCard:hover{
-
-    transform:translateY(-3px);
-
-    border-color:#D8C4BC;
-
-    background:#FFFCFA;
-
-}
-
-
-.tinyCardHeart{
-
-    position:absolute;
-
-    top:16px;
-
-    right:17px;
-
-    color:var(--pink);
-
-    font-size:19px;
-
-}
-
-
-.miniLineIcon{
-
-    width:30px;
-
-    height:30px;
-
-    margin-bottom:18px;
-
-    color:var(--sage);
-
-}
-
-
-.miniLineIcon svg{
-
-    width:100%;
-
-    height:100%;
-
-    fill:none;
-
-    stroke:currentColor;
-
-    stroke-width:1.4;
-
-    stroke-linecap:round;
-
-    stroke-linejoin:round;
-
-}
-
-
-.miniTextIcon{
-
-    display:block;
-
-    height:30px;
-
-    margin-bottom:18px;
-
-    color:var(--sage);
-
-    font-family:'Playfair Display',serif;
-
-    font-size:32px;
-
-    line-height:28px;
-
-    font-weight:400;
-
-}
-
-
-.minimalCard strong{
-
-    margin-bottom:9px;
-
-    font-family:'Playfair Display',serif;
-
-    font-size:19px;
-
-    line-height:1.2;
-
-    font-weight:500;
-
-    color:#2B2320;
-
-}
-
-
-.minimalCard small{
-
-    max-width:160px;
-
-    color:#6C625E;
-
-    font-size:12px;
-
-    line-height:1.7;
-
-}
-
-
-.miniArrow{
-
-    margin-top:auto;
-
-    align-self:flex-end;
-
-    color:var(--sage);
-
-    font-size:23px;
-
-}
-
-
-.minimalCard:nth-child(2) .miniLineIcon,
-.minimalCard:nth-child(2) .miniArrow,
-.minimalCard:nth-child(4) .miniLineIcon,
-.minimalCard:nth-child(4) .miniArrow{
-
-    color:var(--pink);
-
-}
-
-
-/* reasons is deliberately tiny */
-
-.quietReasons{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:14px;
-
-    margin:16px auto 0;
-
-    padding:5px 10px;
-
-    border:none;
-
-    background:transparent;
-
-    color:#9D797D;
-
-    font-family:'Poppins',sans-serif;
-
-    font-size:12px;
-
-    cursor:pointer;
-
-}
-
-
-.quietReasons span{
-
-    font-size:17px;
-
-}
-
-
-.quietReasons:hover{
-
-    color:#C66F7A;
-
-}
-
-
-/* =========================================================
-   GAME
-========================================================= */
-
-.gameStrip{
-
-    width:100%;
-
-    min-height:105px;
-
-    padding:18px 55px;
-
-    display:grid;
-
-    grid-template-columns:100px 1fr auto;
-
-    align-items:center;
-
-    border:1px solid var(--border);
-
-    border-radius:18px;
-
-    background:
-        linear-gradient(
-            100deg,
-            rgba(251,230,228,.48),
-            rgba(255,255,255,.35)
-        );
-
-    color:var(--brown);
-
-    font-family:'Poppins',sans-serif;
-
-    text-align:left;
-
-    cursor:pointer;
-
-    transition:.25s ease;
-
-}
-
-
-.gameStrip:hover{
-
-    transform:translateY(-2px);
-
-    border-color:#D9C6BE;
-
-}
-
-
-.gameLineHeart{
-
-    width:52px;
-
-    height:52px;
-
-    color:var(--pink);
-
-}
-
-
-.gameLineHeart svg{
-
-    width:100%;
-
-    height:100%;
-
-    fill:none;
-
-    stroke:currentColor;
-
-    stroke-width:1.35;
-
-    stroke-linecap:round;
-
-    stroke-linejoin:round;
-
-}
-
-
-.gameStripText{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:6px;
-
-}
-
-
-.gameStripText strong{
-
-    font-family:'Playfair Display',serif;
-
-    font-size:23px;
-
-    font-weight:500;
-
-}
-
-
-.gameStripText small{
-
-    color:#6C615D;
-
-    font-size:13px;
-
-}
-
-
-.playGameButton{
-
-    display:flex;
-
-    gap:20px;
-
-    align-items:center;
-
-    padding:11px 22px;
-
-    border:1px solid var(--pink);
-
-    border-radius:8px;
-
-    color:var(--pink);
-
-    font-size:13px;
-
-}
-
-
-.playGameButton b{
-
-    font-size:19px;
-
-    font-weight:300;
-
-}
-
-
-/* =========================================================
-   SPECIAL LETTER
-========================================================= */
-
-#proposalBtn.specialFeature{
-
-    position:relative;
-
-    width:100%;
-
-    min-height:115px;
-
-    padding:18px 55px;
-
-    display:grid;
-
-    grid-template-columns:135px 1fr 40px;
-
-    align-items:center;
-
-    border:1px solid var(--border);
-
-    border-radius:18px;
-
-    background:
-        linear-gradient(
-            100deg,
-            #FFF9F4,
-            #FFFCFA
-        );
-
-    color:var(--brown);
-
-    font-family:'Poppins',sans-serif;
-
-    text-align:left;
-
-    cursor:pointer;
-
-    box-shadow:none;
-
-    overflow:hidden;
-
-    animation:none;
-
-    transition:.25s ease;
-
-}
-
-
-#proposalBtn.specialFeature:hover{
-
-    transform:translateY(-2px) scale(1);
-
-    border-color:#D9C4BC;
-
-    box-shadow:none;
-
-}
-
-
-#proposalBtn::before{
-
-    content:none;
-
-}
-
-
-.specialLineHeart{
-
-    width:55px;
-
-    height:55px;
-
-    justify-self:center;
-
-    color:var(--pink);
-
-}
-
-
-.specialLineHeart svg{
-
-    width:100%;
-
-    height:100%;
-
-    fill:none;
-
-    stroke:currentColor;
-
-    stroke-width:1.15;
-
-}
-
-
-#proposalBtn.specialFeature .specialCopy{
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:flex-start;
-
-    gap:5px;
-
-    color:var(--brown);
-
-    font-weight:400;
-
-}
-
-
-#proposalBtn.specialFeature .specialCopy strong{
-
-    color:#2A211E;
-
-    font-family:'Playfair Display',serif;
-
-    font-size:23px;
-
-    font-weight:500;
-
-}
-
-
-#proposalBtn.specialFeature .specialCopy small{
-
-    color:#70625D;
-
-    font-size:12px;
-
-    font-weight:400;
-
-}
-
-
-#proposalBtn.specialFeature .specialCopy em{
-
-    margin-top:4px;
-
-    padding:3px 10px;
-
-    border:1px solid var(--pink);
-
-    border-radius:3px;
-
-    color:var(--pink);
-
-    font-size:9px;
-
-    font-style:normal;
-
-    font-weight:500;
-
-    letter-spacing:1.5px;
-
-}
-
-
-#proposalBtn.specialFeature .specialArrow{
-
-    justify-self:end;
-
-    color:var(--pink);
-
-    font-size:24px;
-
-    font-weight:300;
-
-}
-
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-.newHomeFooter{
-
-    width:78%;
-
-    margin:28px auto 0;
-
-    display:grid;
-
-    grid-template-columns:1fr auto 1fr;
-
-    gap:20px;
-
-    align-items:center;
-
-}
-
-
-.newHomeFooter > span{
-
-    height:1px;
-
-    background:#DED3CD;
-
-}
-
-
-.newHomeFooter p{
-
-    color:#514641;
-
-    font-family:'Caveat',cursive;
-
-    font-size:18px;
-
-    white-space:nowrap;
-
-}
-
-
-.newHomeFooter small{
-
-    display:block;
-
-    margin-top:2px;
-
-    text-align:center;
-
-    color:var(--pink);
-
-    font-family:'Poppins',sans-serif;
-
-    font-size:11px;
-
-}
-
-
-#home .lastUpdated{
-
-    margin:15px 0 0;
-
-    font-size:10px;
-
-    opacity:.55;
-
-}
-
-
-/* =========================================================
-   RESPONSIVE
-========================================================= */
-
-@media(max-width:900px){
-
-    .thingsGrid{
-
-        grid-template-columns:repeat(2,1fr);
-
-    }
-
-}
-
-
-@media(max-width:700px){
-
-    #home.homeRedesign{
-
-        padding:25px 16px 40px;
-
-    }
-
-
-    .homeHeader{
-
-        grid-template-columns:45px 1fr 45px;
-
-        margin-bottom:28px;
-
-    }
-
-
-    .homeBrand h1{
-
-        font-size:40px;
-
-        letter-spacing:-1px;
-
-    }
-
-
-    .homeBrand p{
-
-        margin-top:13px;
-
-        font-size:8px;
-
-        letter-spacing:3px;
-
-    }
-
-
-    .homeTinyNote{
-
-        display:none;
-
-    }
-
-
-    .homeMenuDecoration{
-
-        transform:scale(.85);
-
-        transform-origin:left top;
-
-    }
-
-
-    .bouquetHero{
-
-        grid-template-columns:1fr;
-
-    }
-
-
-    .bouquetSketch{
-
-        height:235px;
-
-    }
-
-
-    .bouquetHeroText{
-
-        padding:0 27px 30px;
-
-        text-align:center;
-
-    }
-
-
-    .deliveryLabelHome{
-
-        margin-bottom:14px;
-
-    }
-
-
-    #home .bouquetHero h2{
-
-        text-align:center;
-
-        font-size:29px;
-
-    }
-
-
-    .bouquetHeroText p{
-
-        font-size:13px;
-
-    }
-
-
-    .forYouGrid{
-
-        grid-template-columns:1fr;
-
-        gap:10px;
-
-    }
-
-
-    .forYouItem{
-
-        min-height:85px;
-
-        padding:15px 18px;
-
-    }
-
-
-    .featureText strong{
-
-        font-size:20px;
-
-    }
-
-
-    .thingsGrid{
-
-        grid-template-columns:repeat(2,1fr);
-
-        gap:10px;
-
-    }
-
-
-    .minimalCard{
-
-        min-height:160px;
-
-        padding:17px;
-
-    }
-
-
-    .minimalCard strong{
-
-        font-size:17px;
-
-    }
-
-
-    .gameStrip{
-
-        grid-template-columns:55px 1fr;
-
-        padding:20px;
-
-        gap:14px;
-
-    }
-
-
-    .playGameButton{
-
-        grid-column:1 / -1;
-
-        justify-self:stretch;
-
-        justify-content:center;
-
-        margin-top:7px;
-
-    }
-
-
-    #proposalBtn.specialFeature{
-
-        grid-template-columns:65px 1fr 25px;
-
-        padding:20px 17px;
-
-    }
-
-
-    .specialLineHeart{
-
-        width:42px;
-
-        height:42px;
-
-    }
-
-
-    #proposalBtn.specialFeature .specialCopy strong{
-
-        font-size:19px;
-
-    }
-
-
-    .newHomeFooter{
-
-        width:100%;
-
-        gap:10px;
-
-    }
-
-
-    .newHomeFooter p{
-
-        font-size:15px;
-
-        white-space:normal;
-
-        text-align:center;
-
-    }
-
-}
-
-
-@media(max-width:430px){
-
-    .thingsGrid{
-
-        grid-template-columns:1fr;
-
-    }
-
-
-    .minimalCard{
-
-        min-height:145px;
-
-    }
-
-}
-
-/* ===============================
-   REASONS HOMEPAGE CARD
-================================ */
-
-.reasonsHomeCard{
-
-    width:100%;
-    min-height:95px;
-
-    margin-top:16px;
-
-    padding:18px 28px;
-
-    display:grid;
-    grid-template-columns:55px 1fr 30px;
-    align-items:center;
-    gap:16px;
-
-    border:1px solid var(--border);
-    border-radius:17px;
-
-    background:rgba(255,255,255,.28);
-
-    color:var(--brown);
-
-    font-family:'Poppins',sans-serif;
-    text-align:left;
-
-    cursor:pointer;
-
-    transition:.25s ease;
-}
-
-
-.reasonsHomeCard:hover{
-
-    transform:translateY(-2px);
-
-    border-color:#D8C4BC;
-
-    background:#FFFCFA;
-
-}
-
-
-.reasonsIcon{
-
-    color:var(--pink);
-
-    font-size:34px;
-
-    font-weight:300;
-
-    text-align:center;
-}
-
-
-.reasonsHomeText{
-
-    display:flex;
-    flex-direction:column;
-
-    gap:5px;
-}
-
-
-.reasonsHomeText strong{
-
-    font-family:'Playfair Display',serif;
-
-    font-size:21px;
-
-    font-weight:500;
-
-    color:#2B2320;
-}
-
-
-.reasonsHomeText small{
-
-    color:#6C625E;
-
-    font-size:12px;
-
-    line-height:1.6;
-}
-
-
-.reasonsArrow{
-
-    justify-self:end;
-
-    color:var(--pink);
-
-    font-size:23px;
-}
-
-
-@media(max-width:700px){
-
-    .reasonsHomeCard{
-
-        grid-template-columns:45px 1fr 25px;
-
-        padding:16px 18px;
-    }
-
-    .reasonsHomeText strong{
-
-        font-size:19px;
-    }
-
-}
-
-/* ===============================
-   MAKE GAME MATCH OTHER CARDS
-================================ */
-
-#home .gameStrip{
-
-    background:rgba(255,255,255,.28);
-
-    border:1px solid var(--border);
-
-    box-shadow:none;
-}
-
-
-#home .gameStrip:hover{
-
-    background:#FFFCFA;
-
-    border-color:#D8C4BC;
-
-    box-shadow:none;
-}
-
-/* Make all homepage icons pink */
-
-#home .miniLineIcon,
-#home .miniTextIcon{
-    color:var(--pink);
-}
-
-/* Fix Catch My Love layout */
-
-#home .gameStripText{
-    min-width:0;
-    width:auto;
-
-    display:flex;
-    flex-direction:column;
-
-    gap:6px;
-}
-
-#home .gameStripText strong{
-    display:block;
-
-    color:#2B2320;
-
-    font-family:'Playfair Display',serif;
-
-    font-size:23px;
-    font-weight:500;
-
-    white-space:nowrap;
-}
-
-#home .gameStripText small{
-    display:block;
-
-    color:#6C625E;
-
-    font-size:13px;
-
-    white-space:nowrap;
-}
-
-#home .gameLineHeart{
-    display:block;
-    flex-shrink:0;
-}
-
-/* =========================================================
-   DEAR SUGAR - INNER PAGE REDESIGN
-   Matches the new minimalist homepage
-========================================================= */
-
-:root{
-    --ds-cream:#FFFBF8;
-    --ds-paper:#FFFDFC;
-    --ds-pink:#D9828F;
-    --ds-soft-pink:#F7DEDE;
-    --ds-border:#E8DCD5;
-    --ds-brown:#4C403C;
-    --ds-muted:#786B66;
-    --ds-sage:#85865C;
-}
-
-
-/* =========================================================
-   ALL INNER PAGES
-========================================================= */
-
-#lettersPage,
-#reasonsPage,
-#songsPage,
-#moviesPage,
-#moodPage,
-#gamePage,
-#proposalPage{
-
-    width:100%;
-    max-width:1000px;
-
-    margin:0 auto;
-
-    min-height:100vh;
-
-    padding:38px 28px 70px;
-
-    background:transparent;
-
-    color:var(--ds-brown);
-}
-
-
-/* Page titles */
-
-#lettersPage > h2,
-#reasonsPage > h2,
-#songsPage > h2,
-#moviesPage > h2,
-#moodPage > h2,
-#gamePage > h2{
-
-    margin:5px 0 30px;
-
-    text-align:center;
-
-    font-family:'Playfair Display',serif;
-
-    font-size:40px;
-
-    font-weight:500;
-
-    color:#211917;
-}
-
-
-/* tiny heart under title */
-
-#lettersPage > h2::after,
-#reasonsPage > h2::after,
-#songsPage > h2::after,
-#moviesPage > h2::after,
-#moodPage > h2::after,
-#gamePage > h2::after{
-
-    content:"♡";
-
-    display:block;
-
-    margin-top:6px;
-
-    color:var(--ds-pink);
-
-    font-family:'Poppins',sans-serif;
-
-    font-size:18px;
-
-    font-weight:300;
-}
-
-
-/* =========================================================
-   BACK BUTTONS
-========================================================= */
-
-.backBtn,
-#gameBack{
-
-    display:inline-flex;
-
-    align-items:center;
-
-    gap:8px;
-
-    margin-bottom:25px;
-
-    padding:5px 2px;
-
-    border:none;
-
-    border-radius:0;
-
-    background:transparent;
-
-    box-shadow:none;
-
-    color:#625651;
-
-    font-family:'Poppins',sans-serif;
-
-    font-size:13px;
-
-    font-weight:400;
-
-    cursor:pointer;
-
-    transition:.2s ease;
-}
-
-
-.backBtn:hover,
-#gameBack:hover{
-
-    transform:translateX(-3px);
-
-    background:transparent;
-
-    box-shadow:none;
-
-    color:var(--ds-pink);
-}
-
-
-/* =========================================================
-   LETTERS
-========================================================= */
-
-#lettersPage .letter{
-
-    margin-bottom:12px;
-
-    padding:0;
-
-    overflow:hidden;
-
-    border:1px solid var(--ds-border);
-
-    border-radius:16px;
-
-    background:rgba(255,255,255,.28);
-
-    box-shadow:none;
-}
-
-
-#lettersPage .letterBtn{
-
-    position:relative;
-
-    width:100%;
-
-    padding:19px 52px 19px 22px;
-
-    border:none;
-
-    border-radius:0;
-
-    background:transparent;
-
-    box-shadow:none;
-
-    color:#302725;
-
-    font-family:'Playfair Display',serif;
-
-    font-size:18px;
-
-    font-weight:500;
-
-    text-align:left;
-
-    cursor:pointer;
-
-    transition:.2s ease;
-}
-
-
-#lettersPage .letterBtn::after{
-
-    content:"→";
-
-    position:absolute;
-
-    top:50%;
-    right:22px;
-
-    transform:translateY(-50%);
-
-    color:var(--ds-pink);
-
-    font-family:'Poppins',sans-serif;
-
-    font-size:18px;
-
-    font-weight:300;
-}
-
-
-#lettersPage .letterBtn:hover{
-
-    transform:none;
-
-    background:#FFFCFA;
-}
-
-
-#lettersPage .letterContent{
-
-    margin:0;
-
-    padding:25px;
-
-    border-top:1px solid var(--ds-border);
-
-    border-radius:0;
-
-    background:#FFFCFA;
-
-    box-shadow:none;
-
-    color:#665A55;
-
-    font-size:14px;
-
-    line-height:1.9;
-}
-
-
-#lettersPage .letterContent h3{
-
-    margin-bottom:15px;
-
-    font-family:'Playfair Display',serif;
-
-    font-size:21px;
-
-    font-weight:500;
-
-    color:#302725;
-}
-
-
-/* =========================================================
-   REASONS
-========================================================= */
-
-#reasonsPage{
-
-    text-align:center;
-}
-
-
-#reasonsPage .reason{
-
-    display:inline-flex;
-
-    width:calc(50% - 18px);
-
-    min-height:88px;
-
-    margin:7px;
-
-    padding:20px 24px;
-
-    align-items:center;
-
-    justify-content:flex-start;
-
-    vertical-align:top;
-
-    border:1px solid var(--ds-border);
-
-    border-radius:16px;
-
-    background:rgba(255,255,255,.28);
-
-    box-shadow:none;
-
-    color:#5F534F;
-
-    font-size:13px;
-
-    line-height:1.7;
-
-    text-align:left;
-
-    transition:.2s ease;
-}
-
-
-#reasonsPage .reason::before{
-
-    content:"♡";
-
-    margin-right:14px;
-
-    color:var(--ds-pink);
-
-    font-size:21px;
-
-    flex-shrink:0;
-}
-
-
-#reasonsPage .reason:hover{
-
-    transform:translateY(-2px);
-
-    background:#FFFCFA;
-
-    border-color:#DCCAC3;
-
-    box-shadow:none;
-}
-
-
-/* =========================================================
-   SONGS
-========================================================= */
-
-#songsPage .song{
-
-    position:relative;
-
-    padding:21px 24px;
-
-    margin-bottom:12px;
-
-    border:1px solid var(--ds-border);
-
-    border-radius:16px;
-
-    background:rgba(255,255,255,.28);
-
-    box-shadow:none;
-
-    transition:.2s ease;
-}
-
-
-#songsPage .song:hover{
-
-    transform:translateY(-2px);
-
-    border-color:#DCCAC3;
-
-    background:#FFFCFA;
-
-    box-shadow:none;
-}
-
-
-#songsPage .song h3{
-
-    margin:0 0 8px;
-
-    padding-right:20px;
-
-    font-family:'Playfair Display',serif;
-
-    font-size:18px;
-
-    font-weight:500;
-
-    color:#302725;
-}
-
-
-#songsPage .song a{
-
-    color:var(--ds-pink);
-
-    font-size:12px;
-
-    font-weight:500;
-
-    text-decoration:none;
-}
-
-
-#songsPage .song a:hover{
-
-    text-decoration:underline;
-}
-
-
-/* =========================================================
-   MOVIES
-========================================================= */
-
-#moviesPage{
-
-    text-align:center;
-}
-
-
-#moviesPage .movie{
-
-    display:inline-flex;
-
-    width:calc(33.333% - 16px);
-
-    min-height:95px;
-
-    margin:7px;
-
-    padding:20px;
-
-    align-items:center;
-
-    justify-content:center;
-
-    vertical-align:top;
-
-    border:1px solid var(--ds-border);
-
-    border-radius:16px;
-
-    background:rgba(255,255,255,.28);
-
-    box-shadow:none;
-
-    transition:.2s ease;
-}
-
-
-#moviesPage .movie:hover{
-
-    transform:translateY(-2px);
-
-    background:#FFFCFA;
-
-    border-color:#DCCAC3;
-
-    box-shadow:none;
-}
-
-
-#moviesPage .movie h3{
-
-    margin:0;
-
-    font-family:'Playfair Display',serif;
-
-    font-size:16px;
-
-    font-weight:500;
-
-    line-height:1.45;
-
-    color:#3B302C;
-}
-
-
-/* =========================================================
-   MOOD CHECK
-========================================================= */
-
-#moodPage .moodIntro{
-
-    margin:-12px 0 28px;
-
-    color:var(--ds-muted);
-
-    font-size:13px;
-
-    text-align:center;
-}
-
-
-#moodPage .moodGrid{
-
-    width:100%;
-
-    max-width:760px;
-
-    margin:0 auto;
-
-    display:grid;
-
-    grid-template-columns:repeat(2,1fr);
-
-    gap:12px;
-}
-
-
-#moodPage .moodCard{
-
-    min-height:105px;
-
-    padding:18px;
-
-    border:1px solid var(--ds-border);
-
-    border-radius:16px;
-
-    background:rgba(255,255,255,.28);
-
-    box-shadow:none;
-
-    font-size:28px;
-
-    transition:.2s ease;
-}
-
-
-#moodPage .moodCard span{
-
-    color:#554A46;
-
-    font-size:13px;
-
-    font-weight:400;
-}
-
-
-#moodPage .moodCard:hover{
-
-    transform:translateY(-2px);
-
-    border-color:#DCCAC3;
-
-    background:#FFFCFA;
-
-    box-shadow:none;
-}
-
-
-#moodPage #moodMessage{
-
-    max-width:760px;
-
-    padding:26px;
-
-    border:1px solid var(--ds-border);
-
-    border-radius:16px;
-
-    background:#FFFCFA;
-
-    box-shadow:none;
-}
-
-
-#moodPage #moodMessage h3{
-
-    font-family:'Playfair Display',serif;
-
-    font-size:22px;
-
-    font-weight:500;
-
-    color:#302725;
-}
-
-
-/* =========================================================
-   GAME PAGE
-========================================================= */
-
-#gamePage{
-
-    text-align:center;
-}
-
-
-#gamePage .gameIntro{
-
-    max-width:500px;
-
-    margin:-10px auto 22px;
-
-    color:var(--ds-muted);
-
-    font-size:13px;
-
-    line-height:1.8;
-}
-
-
-#startGame,
-#playAgain,
-#continueGame{
-
-    border:1px solid var(--ds-pink);
-
-    border-radius:8px;
-
-    background:transparent;
-
-    box-shadow:none;
-
-    color:var(--ds-pink);
-
-    font-family:'Poppins',sans-serif;
-
-    font-size:13px;
-
-    font-weight:400;
-}
-
-
-#startGame:hover,
-#playAgain:hover,
-#continueGame:hover{
-
-    transform:translateY(-2px);
-
-    background:var(--ds-pink);
-
-    color:white;
-
-    box-shadow:none;
-}
-
-
-#gameContainer{
-
-    border:1px solid var(--ds-border);
-
-    border-radius:18px;
-
-    background:#FFFCFA;
-
-    box-shadow:none;
-}
-
-
-#popupMessage,
-#gameComplete{
-
-    border:1px solid var(--ds-border);
-
-    border-radius:16px;
-
-    background:#FFFCFA;
-
-    box-shadow:0 8px 30px rgba(76,64,60,.08);
-}
-
-
-/* =========================================================
-   PROPOSAL / WEDDING
-========================================================= */
-
-#proposalPage{
-
-    text-align:center;
-}
-
-
-#proposalPage .proposalBox,
-#proposalLetter,
-#weddingInvite,
-#vowsSection,
-#ceremonySection,
-#certificateSection,
-#specialDelivery{
-
-    border:1px solid var(--ds-border);
-
-    border-radius:18px;
-
-    background:#FFFCFA;
-
-    box-shadow:none;
-}
-
-
-#proposalPage h2{
-
-    font-family:'Playfair Display',serif;
-
-    font-weight:500;
-
-    color:#2E2522;
-}
-
-
-#proposalPage .deliverySmallText{
-
-    color:var(--ds-pink);
-
-    font-size:11px;
-
-    font-weight:500;
-
-    letter-spacing:2px;
-
-    text-transform:uppercase;
-}
-
-
-#proposalPage .deliveryLabel{
-
-    border:1px solid var(--ds-border);
-
-    border-radius:12px;
-
-    background:#FFF9F6;
-}
-
-
-#proposalPage .deliveryLabel strong{
-
-    color:var(--ds-pink);
-}
-
-
-#openLetterBtn,
-#proposalYesBtn,
-#inviteToVowsBtn,
-#vowsToCeremonyBtn,
-#iDoBtn,
-#weddingHomeBtn{
-
-    border-radius:8px;
-
-    box-shadow:none;
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media(max-width:700px){
-
-    #lettersPage,
-    #reasonsPage,
-    #songsPage,
-    #moviesPage,
-    #moodPage,
-    #gamePage,
-    #proposalPage{
-
-        padding:25px 16px 55px;
-    }
-
-
-    #lettersPage > h2,
-    #reasonsPage > h2,
-    #songsPage > h2,
-    #moviesPage > h2,
-    #moodPage > h2,
-    #gamePage > h2{
-
-        font-size:32px;
-    }
-
-
-    #reasonsPage .reason{
-
-        width:100%;
-
-        margin:6px 0;
-    }
-
-
-    #moviesPage .movie{
-
-        width:calc(50% - 12px);
-
-        margin:5px;
-    }
-
-
-    #moodPage .moodGrid{
-
-        grid-template-columns:repeat(2,1fr);
-    }
-
-}
-
-
-@media(max-width:430px){
-
-    #moviesPage .movie{
-
-        width:100%;
-
-        margin:5px 0;
-    }
-
-
-    #moodPage .moodGrid{
-
-        grid-template-columns:1fr;
-    }
-
-}
-
-/* Letter section labels */
-
-#lettersPage .letterCategory{
-    margin:34px 8px 14px;
-
-    color:#D9828F;
-
-    font-family:'Poppins',sans-serif;
-
-    font-size:10px;
-    font-weight:500;
-
-    letter-spacing:3.5px;
-}
-
-#lettersPage .letterCategory:first-of-type{
-    margin-top:8px;
-}
-
-#lettersPage .specialLettersLabel{
-    margin-top:38px;
-}
-
-#lettersPage .letterBtn::before{
-    content:"♡";
-
-    position:absolute;
-
-    left:18px;
-    top:50%;
-
-    transform:translateY(-50%);
-
-    color:#D9828F;
-
-    font-family:'Poppins',sans-serif;
-    font-size:17px;
-    font-weight:300;
-}
-
-#lettersPage .letterBtn{
-    padding-left:48px;
-}
-
-/* =========================================
-   MINIMAL MOOD CHECK
-========================================= */
-
-#moodPage{
-    max-width:850px;
-    margin:0 auto;
-}
-
-
-/* intro */
-
-#moodPage .moodIntro{
-    margin:-10px 0 4px;
-
-    color:#655954;
-
-    font-family:'Poppins',sans-serif;
-
-    font-size:13px;
-
-    text-align:center;
-}
-
-
-#moodLittleNote,
-.moodLittleNote{
-    margin-bottom:30px;
-
-    color:#D9828F;
-
-    font-family:'Caveat',cursive;
-
-    font-size:18px;
-
-    text-align:center;
-}
-
-
-/* mood grid */
-
-#moodPage .moodGrid{
-    width:100%;
-    max-width:760px;
-
-    margin:0 auto;
-
-    display:grid;
-
-    grid-template-columns:repeat(2,1fr);
-
-    gap:12px;
-}
-
-
-/* cards */
-
-#moodPage .moodCard{
-    min-height:88px;
-
-    padding:18px 22px;
-
-    display:grid;
-
-    grid-template-columns:45px 1fr;
-
-    align-items:center;
-
-    gap:14px;
-
-    border:1px solid #E8DCD5;
-
-    border-radius:15px;
-
-    background:rgba(255,255,255,.20);
-
-    box-shadow:none;
-
-    color:#302725;
-
-    font-family:'Poppins',sans-serif;
-
-    text-align:left;
-
-    cursor:pointer;
-
-    transition:.2s ease;
-}
-
-
-#moodPage .moodCard:hover{
-    transform:translateY(-2px);
-
-    border-color:#DCC8C0;
-
-    background:#FFFCFA;
-
-    box-shadow:none;
-}
-
-
-/* pink symbol */
-
-#moodPage .moodSymbol{
-    width:38px;
-    height:38px;
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
-    border:1px solid #E7B5BC;
-
-    border-radius:50%;
-
-    color:#D9828F;
-
-    font-family:'Poppins',sans-serif;
-
-    font-size:21px;
-    font-weight:300;
-}
-
-
-/* mood name */
-
-#moodPage .moodName{
-    color:#302725;
-
-    font-family:'Playfair Display',serif;
-
-    font-size:18px;
-    font-weight:500;
-}
-
-
-/* selected message */
-
-#moodPage #moodMessage{
-    max-width:760px;
-
-    margin:22px auto 0;
-
-    padding:30px;
-
-    border:1px solid #E8DCD5;
-
-    border-radius:16px;
-
-    background:#FFFCFA;
-
-    box-shadow:none;
-
-    color:#665A55;
-
-    font-size:13px;
-
-    line-height:1.9;
-}
-
-
-#moodPage #moodMessage h3{
-    margin-bottom:15px;
-
-    color:#302725;
-
-    font-family:'Playfair Display',serif;
-
-    font-size:23px;
-    font-weight:500;
-
-    text-align:center;
-}
-
-
-/* feel better button */
-
-#moodPage .feelBetterBtn,
-#moodPage .backToMoodsBtn{
-    display:block;
-
-    margin:24px auto 0;
-
-    padding:11px 22px;
-
-    border:1px solid #D9828F;
-
-    border-radius:8px;
-
-    background:transparent;
-
-    box-shadow:none;
-
-    color:#D9828F;
-
-    font-family:'Poppins',sans-serif;
-
-    font-size:12px;
-
-    cursor:pointer;
-
-    transition:.2s ease;
-}
-
-
-#moodPage .feelBetterBtn:hover,
-#moodPage .backToMoodsBtn:hover{
-    transform:translateY(-2px);
-
-    background:#D9828F;
-
-    color:white;
-
-    box-shadow:none;
-}
-
-
-/* ending hearts */
-
-#moodPage .floatingHearts{
-    color:#D9828F;
-    font-size:19px;
-}
-
-
-/* mobile */
-
-@media(max-width:600px){
-
-    #moodPage .moodGrid{
-        grid-template-columns:1fr;
-    }
-
-    #moodPage .moodCard{
-        min-height:75px;
-    }
-
-}
-
-/* =========================================
-   FIX MOOD CARD PLACEMENT
-========================================= */
-
-#moodPage{
-    width:100%;
-    max-width:950px;
-    margin:0 auto;
-
-    display:none;
-}
-
-
-#moodPage .moodGrid{
-    width:100%;
-    max-width:700px;
-
-    margin:0 auto;
-
-    display:grid;
-
-    grid-template-columns:repeat(2, minmax(0, 1fr));
-
-    gap:14px;
-}
-
-
-#moodPage .moodCard{
-    width:100%;
-    min-width:0;
-
-    min-height:90px;
-
-    padding:18px 22px;
-}
-
-
-/* keep everything centred nicely */
-
-#moodPage .moodIntro,
-#moodPage .moodLittleNote{
-    width:100%;
-    text-align:center;
-}
-
-
-/* tablet / smaller screens */
-
-@media(max-width:750px){
-
-    #moodPage{
-        padding-left:24px;
-        padding-right:24px;
-    }
-
-    #moodPage .moodGrid{
-        max-width:620px;
-    }
-
-}
-
-
-/* phone */
-
-@media(max-width:500px){
-
-    #moodPage .moodGrid{
-        grid-template-columns:1fr;
-    }
-
-}
-
-#moodPage .moodName{
-    white-space:nowrap;
-}
-
-/* =========================================
-   FORCE MOOD CHECK TO CENTRE
-========================================= */
-
-#main,
-main{
-    width:100%;
-}
-
-#moodPage{
-    width:100% !important;
-    max-width:none !important;
-
-    margin:0 !important;
-
-    padding-left:30px !important;
-    padding-right:30px !important;
-
-    box-sizing:border-box;
-}
-
-
-/* centre the title area */
-
-#moodPage > h2,
-#moodPage .moodIntro,
-#moodPage .moodLittleNote{
-    width:100%;
-    text-align:center;
-}
-
-
-/* FORCE GRID WIDTH */
-
-#moodPage .moodGrid{
-    width:min(700px, calc(100vw - 60px)) !important;
-    max-width:700px !important;
-
-    margin:30px auto 0 !important;
-
-    display:grid !important;
-
-    grid-template-columns:
-        repeat(2, minmax(0, 1fr)) !important;
-
-    gap:14px !important;
-}
-
-
-/* cards fill their column */
-
-#moodPage .moodCard{
-    width:100% !important;
-    min-width:0 !important;
-
-    box-sizing:border-box;
-}
-
-
-/* keep names on one line */
-
-#moodPage .moodName{
-    white-space:nowrap;
-}
-
-
-/* phones */
-
-@media(max-width:500px){
-
-    #moodPage .moodGrid{
-        width:100% !important;
-
-        grid-template-columns:1fr !important;
-    }
-
-}
-
-width:min(700px, calc(100vw - 60px)) !important;
-margin:30px auto 0 !important;
-
-/* =========================================
-   MINIMAL OUR SONGS PAGE
-========================================= */
-
-#songsPage{
-    max-width:850px;
-    margin:0 auto;
-}
-
-
-/* little handwritten subtitle */
-
-#songsPage .songsIntro{
-    margin:-18px 0 32px;
-
-    color:#D9828F;
-
-    font-family:'Caveat',cursive;
-
-    font-size:19px;
-
-    text-align:center;
-}
-
-
-/* song rows */
-
-#songsPage .song{
-    position:relative;
-
-    min-height:82px;
-
-    margin-bottom:11px;
-
-    padding:18px 95px 18px 62px;
-
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-
-    border:1px solid #E8DCD5;
-
-    border-radius:15px;
-
-    background:rgba(255,255,255,.20);
-
-    box-shadow:none;
-
-    transition:.2s ease;
-}
-
-
-#songsPage .song:hover{
-    transform:translateY(-2px);
-
-    border-color:#DCC8C0;
-
-    background:#FFFCFA;
-
-    box-shadow:none;
-}
-
-
-/* minimalist music note */
-
-#songsPage .song::before{
-    content:"♪";
-
-    position:absolute;
-
-    left:22px;
-    top:50%;
-
-    transform:translateY(-50%);
-
-    color:#D9828F;
-
-    font-family:'Playfair Display',serif;
-
-    font-size:27px;
-    font-weight:400;
-}
-
-
-/* song title */
-
-#songsPage .song h3{
-    margin:0;
-
-    color:#302725;
-
-    font-family:'Playfair Display',serif;
-
-    font-size:17px;
-    font-weight:500;
-
-    line-height:1.4;
-}
-
-
-/* listen link */
-
-#songsPage .song a{
-    position:absolute;
-
-    right:22px;
-    top:50%;
-
-    transform:translateY(-50%);
-
-    color:#D9828F;
-
-    font-family:'Poppins',sans-serif;
-
-    font-size:11px;
-    font-weight:500;
-
-    text-decoration:none;
-
-    white-space:nowrap;
-
-    transition:.2s ease;
-}
-
-
-#songsPage .song a:hover{
-    transform:translate(3px,-50%);
-
-    text-decoration:none;
-}
-
-
-/* mobile */
-
-@media(max-width:600px){
-
-    #songsPage .song{
-        padding:
-            17px
-            72px
-            17px
-            50px;
-
-        min-height:78px;
-    }
-
-    #songsPage .song::before{
-        left:18px;
-        font-size:24px;
-    }
-
-    #songsPage .song h3{
-        font-size:15px;
-    }
-
-    #songsPage .song a{
-        right:17px;
-        font-size:10px;
-    }
-
-}
-
-/* Final Songs heading spacing */
-
-#songsPage > h2{
-    display:block !important;
-
-    margin:4px 0 8px !important;
-
-    text-align:center;
-
-    color:#211917;
-
-    font-family:'Playfair Display',serif;
-
-    font-size:38px;
-
-    font-weight:500;
-}
-
-#songsPage > h2::after{
-    content:"♡";
-
-    display:block;
-
-    margin-top:5px;
-
-    color:#D9828F;
-
-    font-family:'Poppins',sans-serif;
-
-    font-size:17px;
-    font-weight:300;
-}
-
-#songsPage .songsIntro{
-    margin:8px 0 32px !important;
-
-    text-align:center;
-
-    color:#D9828F;
-
-    font-family:'Caveat',cursive;
-
-    font-size:19px;
-}
-
-/* =========================================
-   MINIMAL MOVIE NIGHTS
-========================================= */
-
-#moviesPage{
-    max-width:850px;
-    margin:0 auto;
-}
-
-
-/* subtitle */
-
-#moviesPage .moviesIntro{
-    margin:-18px 0 32px;
-
-    text-align:center;
-
-    color:#D9828F;
-
-    font-family:'Caveat',cursive;
-
-    font-size:19px;
-}
-
-
-/* movie layout */
-
-#moviesPage .movieGrid{
-    width:100%;
-    max-width:760px;
-
-    margin:0 auto;
-
-    display:grid;
-
-    grid-template-columns:repeat(2, minmax(0,1fr));
-
-    gap:12px;
-}
-
-
-/* movie cards */
-
-#moviesPage .movie{
-    position:relative;
-
-    width:100%;
-    min-height:88px;
-
-    margin:0;
-
-    padding:20px 20px 20px 58px;
-
-    display:flex;
-
-    align-items:center;
-    justify-content:flex-start;
-
-    border:1px solid #E8DCD5;
-
-    border-radius:15px;
-
-    background:rgba(255,255,255,.20);
-
-    box-shadow:none;
-
-    text-align:left;
-
-    transition:.2s ease;
-}
-
-
-#moviesPage .movie:hover{
-    transform:translateY(-2px);
-
-    border-color:#DCC8C0;
-
-    background:#FFFCFA;
-
-    box-shadow:none;
-}
-
-
-/* little pink film icon */
-
-#moviesPage .movie::before{
-    content:"▱";
-
-    position:absolute;
-
-    left:21px;
-    top:50%;
-
-    transform:translateY(-50%) rotate(-8deg);
-
-    color:#D9828F;
-
-    font-size:25px;
-
-    font-weight:300;
-}
-
-
-/* movie title */
-
-#moviesPage .movie h3{
-    margin:0;
-
-    color:#302725;
-
-    font-family:'Playfair Display',serif;
-
-    font-size:16px;
-    font-weight:500;
-
-    line-height:1.4;
-}
-
-
-/* mobile */
-
-@media(max-width:600px){
-
-    #moviesPage .movieGrid{
-        grid-template-columns:1fr;
-    }
-
-    #moviesPage .movie{
-        min-height:75px;
-    }
-
-}
-
-/* =========================================
-   MINIMAL REASONS I LOVE YOU
-========================================= */
-
-#reasonsPage{
-    max-width:900px;
-    margin:0 auto;
-}
-
-
-/* handwritten subtitle */
-
-#reasonsPage .reasonsIntro{
-    margin:-18px 0 34px;
-
-    text-align:center;
-
-    color:#D9828F;
-
-    font-family:'Caveat',cursive;
-
-    font-size:19px;
-}
-
-
-/* grid */
-
-#reasonsPage .reasonsGrid{
-    width:100%;
-    max-width:800px;
-
-    margin:0 auto;
-
-    display:grid;
-
-    grid-template-columns:repeat(2, minmax(0,1fr));
-
-    gap:12px;
-
-    counter-reset:reasonNumber;
-}
-
-
-/* cards */
-
-#reasonsPage .reason{
-    counter-increment:reasonNumber;
-
-    position:relative;
-
-    width:100%;
-    min-height:105px;
-
-    margin:0;
-
-    padding:38px 45px 20px 22px;
-
-    display:block;
-
-    border:1px solid #E8DCD5;
-
-    border-radius:15px;
-
-    background:rgba(255,255,255,.20);
-
-    box-shadow:none;
-
-    color:#514641;
-
-    font-family:'Poppins',sans-serif;
-
-    font-size:13px;
-
-    line-height:1.7;
-
-    text-align:left;
-
-    transition:.2s ease;
-}
-
-
-#reasonsPage .reason:hover{
-    transform:translateY(-2px);
-
-    border-color:#DCC8C0;
-
-    background:#FFFCFA;
-
-    box-shadow:none;
-}
-
-
-/* tiny number */
-
-#reasonsPage .reason::before{
-    content:
-        counter(reasonNumber, decimal-leading-zero);
-
-    position:absolute;
-
-    top:14px;
-    left:22px;
-
-    color:#D9828F;
-
-    font-family:'Poppins',sans-serif;
-
-    font-size:9px;
-    font-weight:500;
-
-    letter-spacing:2px;
-}
-
-
-/* heart in corner */
-
-#reasonsPage .reason::after{
-    content:"♡";
-
-    position:absolute;
-
-    top:12px;
-    right:18px;
-
-    color:#D9828F;
-
-    font-family:'Poppins',sans-serif;
-
-    font-size:17px;
-    font-weight:300;
-}
-
-
-/* mobile */
-
-@media(max-width:650px){
-
-    #reasonsPage .reasonsGrid{
-        grid-template-columns:1fr;
-    }
-
-    #reasonsPage .reason{
-        min-height:90px;
-    }
-
-}
-
-/* =========================================
-   MINIMAL CATCH MY LOVE GAME
-========================================= */
-
-#gamePage{
-    width:100%;
-    max-width:900px;
-
-    margin:0 auto;
-
-    padding:30px;
-
-    text-align:center;
-}
-
-
-/* little handwritten line */
-
-#gamePage .gameLittleNote{
-    margin:-18px 0 8px;
-
-    color:#D9828F;
-
-    font-family:'Caveat',cursive;
-
-    font-size:19px;
-}
-
-
-/* intro */
-
-#gamePage .gameIntro{
-    max-width:500px;
-
-    margin:18px auto 22px;
-
-    color:#6C625E;
-
-    font-family:'Poppins',sans-serif;
-
-    font-size:12px;
-
-    line-height:1.8;
-}
-
-
-/* START + PLAY AGAIN */
-
-#gamePage #startGame,
-#gamePage #playAgain,
-#gamePage #continueGame{
-
-    margin:15px auto 28px;
-
-    padding:11px 24px;
-
-    border:1px solid #D9828F;
-
-    border-radius:8px;
-
-    background:transparent;
-
-    box-shadow:none;
-
-    color:#D9828F;
-
-    font-family:'Poppins',sans-serif;
-
-    font-size:12px;
-    font-weight:500;
-
-    cursor:pointer;
-
-    transition:.2s ease;
-}
-
-
-#gamePage #startGame:hover,
-#gamePage #playAgain:hover,
-#gamePage #continueGame:hover{
-
-    transform:translateY(-2px);
-
-    background:#D9828F;
-
-    color:white;
-
-    box-shadow:none;
-}
-
-
-/* GAME AREA */
-
-#gamePage #gameContainer{
-
-    position:relative;
-
-    width:700px;
-    max-width:100%;
-
-    height:470px;
-
-    margin:5px auto 0;
-
-    overflow:hidden;
-
-    border:1px solid #E8DCD5;
-
-    border-radius:18px;
-
-    background:#FFFCFA;
-
-    box-shadow:none;
-}
-
-
-/* score */
-
-#gamePage #score{
-
-    position:absolute;
-
-    top:18px;
-    left:20px;
-
-    color:#D9828F;
-
-    font-family:'Poppins',sans-serif;
-
-    font-size:12px;
-    font-weight:500;
-
-    letter-spacing:1px;
-
-    z-index:5;
-}
-
-
-/* envelope basket */
-
-#gamePage #basket{
-
-    position:absolute;
-
-    bottom:18px;
-
-    width:52px;
-    height:42px;
-
-    transform:translateX(-50%);
-
-    font-size:0;
-
-    user-select:none;
-}
-
-
-#gamePage #basket svg{
-
-    width:100%;
-    height:100%;
-
-    fill:none;
-
-    stroke:#D9828F;
-
-    stroke-width:1.4;
-
-    stroke-linecap:round;
-
-    stroke-linejoin:round;
-}
-
-
-/* falling hearts */
-
-#gamePage .heart{
-
-    position:absolute;
-
-    color:#D9828F;
-
-    font-family:'Poppins',sans-serif;
-
-    font-size:32px;
-
-    font-weight:300;
-
-    line-height:1;
-
-    pointer-events:none;
-
-    text-shadow:none;
-}
-
-
-/* milestone messages */
-
-#gamePage #popupMessage{
-
-    position:absolute;
-
-    top:50%;
-    left:50%;
-
-    transform:translate(-50%,-50%);
-
-    width:min(330px,85%);
-
-    padding:26px;
-
-    border:1px solid #E8DCD5;
-
-    border-radius:15px;
-
-    background:#FFFCFA;
-
-    box-shadow:none;
-
-    color:#625651;
-
-    font-family:'Poppins',sans-serif;
-
-    font-size:12px;
-
-    line-height:1.8;
-
-    z-index:999;
-}
-
-
-#gamePage #popupMessage p{
-    margin:0 0 18px;
-}
-
-
-/* finished letter */
-
-#gamePage #gameComplete{
-
-    background:#FFFCFA;
-
-    border:1px solid #E8DCD5;
-
-    border-radius:17px;
-
-    box-shadow:none;
-
-    color:#625651;
-
-    font-family:'Poppins',sans-serif;
-}
-
-
-#gamePage .gameCompleteHeart{
-
-    margin:0 0 12px;
-
-    color:#D9828F;
-
-    font-family:'Poppins',sans-serif;
-
-    font-size:35px;
-
-    font-weight:300;
-}
-
-
-#gamePage #finalLetter{
-
-    color:#625651;
-
-    font-family:'Poppins',sans-serif;
-
-    font-size:12px;
-
-    line-height:1.9;
-
-    text-align:left;
-}
-
-
-/* mobile */
-
-@media(max-width:600px){
-
-    #gamePage{
-        padding:22px 18px;
-    }
-
-    #gamePage #gameContainer{
-        height:430px;
-        border-radius:15px;
-    }
-
-    #gamePage .heart{
-        font-size:28px;
-    }
-
-}
-
-/* =========================================
-   MINIMAL YOU'VE GOT A LETTER
-========================================= */
-
-#proposalPage{
-    width:100%;
-    max-width:850px;
-
-    margin:0 auto;
-
-    padding:30px;
-
-    color:#514641;
-}
-
-
-/* every stage */
-
-#proposalPage .proposalBox{
-
-    width:100%;
-    max-width:690px;
-
-    margin:25px auto;
-
-    padding:42px 45px;
-
-    border:1px solid #E8DCD5;
-
-    border-radius:18px;
-
-    background:#FFFCFA;
-
-    box-shadow:none;
-
-    text-align:center;
-}
-
-
-/* headings */
-
-#proposalPage .proposalBox h2{
-
-    margin:8px 0 20px;
-
-    color:#2B2320;
-
-    font-family:'Playfair Display',serif;
-
-    font-size:34px;
-    font-weight:500;
-}
-
-
-/* small heart icon */
-
-#proposalPage .proposalIcon{
-
-    margin:0 auto 12px;
-
-    color:#D9828F;
-
-    font-family:'Poppins',sans-serif;
-
-    font-size:30px;
-    font-weight:300;
-}
-
-
-/* DELIVERY PAGE */
-
-#proposalPage .deliverySmallText{
-
-    margin-bottom:22px;
-
-    color:#D9828F;
-
-    font-family:'Poppins',sans-serif;
-
-    font-size:9px;
-    font-weight:500;
-
-    letter-spacing:3px;
-
-    text-transform:uppercase;
-}
-
-
-/* envelope */
-
-#proposalPage .deliveryEnvelope{
-
-    width:75px;
-    height:58px;
-
-    margin:10px auto 20px;
-
-    color:#D9828F;
-}
-
-
-#proposalPage .deliveryEnvelope svg{
-
-    width:100%;
-    height:100%;
-
-    fill:none;
-
-    stroke:currentColor;
-
-    stroke-width:1.25;
-
-    stroke-linecap:round;
-
-    stroke-linejoin:round;
-}
-
-
-/* SUGAR heading */
-
-#proposalPage .deliveryBox > h2{
-
-    margin-bottom:25px;
-
-    font-size:38px;
-}
-
-
-/* address label */
-
-#proposalPage .deliveryLabel{
-
-    max-width:430px;
-
-    margin:0 auto 22px;
-
-    padding:20px 22px;
-
-    border-top:1px solid #E8DCD5;
-    border-bottom:1px solid #E8DCD5;
-
-    background:transparent;
-
-    text-align:left;
-
-    color:#655954;
-
-    font-family:'Poppins',sans-serif;
-
-    font-size:12px;
-
-    line-height:1.9;
-}
-
-
-#proposalPage .deliveryLabel strong{
-    color:#302725;
-    font-weight:500;
-}
-
-
-/* funny warning */
-
-#proposalPage .deliveryWarning{
-
-    max-width:430px;
-
-    margin:20px auto;
-
-    color:#D9828F;
-
-    font-family:'Caveat',cursive;
-
-    font-size:18px;
-
-    line-height:1.5;
-}
-
-
-/* proposal body text */
-
-#proposalPage .proposalText,
-#proposalPage .ceremonyText,
-#proposalPage .certificateEnding,
-#proposalPage .certificateIntro{
-
-    color:#665A55;
-
-    font-family:'Poppins',sans-serif;
-
-    font-size:12px;
-
-    line-height:1.9;
-}
-
-
-/* BIG QUESTION */
-
-#proposalPage .proposalQuestion{
-
-    margin:34px 0 25px;
-
-    color:#2B2320;
-
-    font-family:'Playfair Display',serif;
-
-    font-size:28px;
-    font-weight:500;
-}
-
-
-/* all proposal buttons */
-
-#proposalPage button:not(.backBtn){
-
-    margin-top:20px;
-
-    padding:11px 23px;
-
-    border:1px solid #D9828F;
-
-    border-radius:8px;
-
-    background:transparent;
-
-    box-shadow:none;
-
-    color:#D9828F;
-
-    font-family:'Poppins',sans-serif;
-
-    font-size:11px;
-    font-weight:500;
-
-    cursor:pointer;
-
-    transition:.2s ease;
-}
-
-
-#proposalPage button:not(.backBtn):hover{
-
-    transform:translateY(-2px);
-
-    background:#D9828F;
-
-    color:white;
-
-    box-shadow:none;
-}
-
-
-/* INVITATION */
-
-#proposalPage .inviteNames{
-
-    margin:15px 0 8px;
-
-    color:#2B2320;
-
-    font-family:'Playfair Display',serif;
-
-    font-size:28px;
-}
-
-
-#proposalPage .inviteDetails{
-
-    margin:25px auto;
-
-    color:#655954;
-
-    font-family:'Poppins',sans-serif;
-
-    font-size:12px;
-
-    line-height:2;
-}
-
-
-#proposalPage .inviteNote{
-
-    color:#D9828F;
-
-    font-family:'Caveat',cursive;
-
-    font-size:18px;
-}
-
-
-/* VOWS */
-
-#proposalPage .vowCard{
-
-    margin:18px 0;
-
-    padding:28px;
-
-    border:1px solid #E8DCD5;
-
-    border-radius:14px;
-
-    background:rgba(255,255,255,.25);
-
-    box-shadow:none;
-
-    text-align:left;
-}
-
-
-#proposalPage .vowCard h3{
-
-    margin:0 0 18px;
-
-    color:#2B2320;
-
-    font-family:'Playfair Display',serif;
-
-    font-size:21px;
-    font-weight:500;
-
-    text-align:center;
-}
-
-
-#proposalPage .vowCard p{
-
-    color:#665A55;
-
-    font-family:'Poppins',sans-serif;
-
-    font-size:12px;
-
-    line-height:1.9;
-}
-
-
-/* CERTIFICATE */
-
-#proposalPage .certificateImage{
-
-    width:100%;
-    max-width:560px;
-
-    margin:25px auto;
-
-    display:block;
-
-    border:1px solid #E8DCD5;
-
-    border-radius:10px;
-
-    box-shadow:none;
-}
-
-
-/* mobile */
-
-@media(max-width:600px){
-
-    #proposalPage{
-        padding:22px 18px;
-    }
-
-    #proposalPage .proposalBox{
-        padding:32px 22px;
-    }
-
-    #proposalPage .proposalBox h2{
-        font-size:29px;
-    }
-
-    #proposalPage .proposalQuestion{
-        font-size:24px;
-    }
-
-}
-
-/* Keep proposal stages hidden until they are reached */
-
-#proposalLetter,
-#weddingInvite,
-#vowsSection,
-#ceremonySection,
-#certificateSection{
-    display:none;
-}
-
-#specialDelivery{
-    display:block;
-}
-
-/* =========================================
-   WEDDING FLOW - INITIAL STATE
-========================================= */
-
-#proposalPage #proposalLetter,
-#proposalPage #weddingInvite,
-#proposalPage #vowsSection,
-#proposalPage #ceremonySection,
-#proposalPage #certificateSection{
-    display:none !important;
-}
-
-#proposalPage #specialDelivery{
-    display:block !important;
-}
-
-/* =========================================
-   NEW MINIMAL LANDING PAGE
-========================================= */
-
-#landing{
-    width:100%;
-    min-height:100vh;
-
-    padding:40px 24px;
-
-    display:flex;
-    flex-direction:column;
-
-    justify-content:center;
-    align-items:center;
-
-    text-align:center;
-
-    background:#FFFBF8;
-
-    color:#2B2320;
-}
-
-
-/* tiny label above title */
-
-#landing::before{
-    content:"A LITTLE PLACE MADE FOR US";
-
-    margin-bottom:22px;
-
-    color:#D9828F;
-
-    font-family:'Poppins',sans-serif;
-
-    font-size:9px;
-    font-weight:500;
-
-    letter-spacing:4px;
-}
-
-
-/* title */
-
-#landing h1{
-    position:relative;
-
-    margin:0;
-
-    color:#211917;
-
-    font-family:'Playfair Display',serif;
-
-    font-size:58px;
-    font-weight:500;
-
-    letter-spacing:-1.5px;
-    line-height:1.1;
-}
-
-
-/* little pink heart */
-
-#landing h1::after{
-    content:"♡";
-
-    display:inline-block;
-
-    margin-left:9px;
-
-    color:#D9828F;
-
-    font-family:'Poppins',sans-serif;
-
-    font-size:27px;
-    font-weight:300;
-
-    transform:translateY(-5px);
-}
-
-
-/* subtitle */
-
-#landing p{
-    margin:20px 0 34px;
-
-    color:#6C625E;
-
-    font-family:'Poppins',sans-serif;
-
-    font-size:13px;
-    font-weight:400;
-
-    line-height:1.7;
-}
-
-
-/* little handwritten note */
-
-#landing p::after{
-    content:"made with all my love ♡";
-
-    display:block;
-
-    margin-top:11px;
-
-    color:#D9828F;
-
-    font-family:'Caveat',cursive;
-
-    font-size:18px;
-}
-
-
-/* begin button */
-
-#landing button{
-    width:auto;
-    min-width:185px;
-    height:auto;
-
-    padding:12px 25px;
-
-    border:1px solid #D9828F;
-
-    border-radius:8px;
-
-    background:transparent;
-
-    color:#D9828F;
-
-    font-family:'Poppins',sans-serif;
-
-    font-size:12px;
-    font-weight:500;
-
-    cursor:pointer;
-
-    box-shadow:none;
-
-    transition:.2s ease;
-}
-
-
-#landing button::after{
-    content:" →";
-
-    margin-left:8px;
-}
-
-
-#landing button:hover{
-    transform:translateY(-2px);
-
-    background:#D9828F;
-
-    color:white;
-
-    box-shadow:none;
-}
-
-
-/* tiny decorative line */
-
-#landing::after{
-    content:"";
-
-    width:80px;
-    height:1px;
-
-    margin-top:38px;
-
-    background:#E8DCD5;
-}
-
-
-/* mobile */
-
-@media(max-width:600px){
-
-    #landing h1{
-        font-size:46px;
-    }
-
-    #landing h1::after{
-        font-size:23px;
-    }
-
-    #landing::before{
-        font-size:8px;
-        letter-spacing:3px;
-    }
-
-}
-
-/* Centre landing content vertically */
-
-#landing{
-    justify-content:center !important;
-    padding-top:20px !important;
-    padding-bottom:20px !important;
-}
-
-#landing > *,
-#landing::before,
-#landing::after{
-    position:relative;
-    top:55px;
-}
-
-/* keep the heart's own positioning */
-#landing h1::after{
-    transform:translateY(-5px);
-}
-
-#landing button:hover{
-    transform:none !important;
-}
-
-#landing button:active{
-    transform:none !important;
-}
-
-/* =========================================
-   MONTHLY BOUQUET PAGE
-========================================= */
-
-#bouquetPage{
-    --bouquet-cream:#FFFBF8;
-    --bouquet-paper:#FFFDFC;
-    --bouquet-pink:#D9828F;
-    --bouquet-soft:#F7DEDE;
-    --bouquet-border:#E8DCD5;
-    --bouquet-brown:#2B2320;
-    --bouquet-muted:#70635E;
-    --bouquet-sage:#85865C;
-
-    display:none;
-
-    min-height:100vh;
-    padding:32px 28px 70px;
-
-    background:#FFFBF8;
-
-    color:var(--bouquet-brown);
-
-    font-family:'Poppins',sans-serif;
-}
-
-
-/* BACK BUTTON */
-
-#bouquetPage .bouquetBackBtn{
-    display:block;
-
-    width:auto;
-    height:auto;
-
-    margin:0 0 15px;
-
-    padding:9px 18px;
-
-    border:1px solid var(--bouquet-pink);
-    border-radius:8px;
-
-    background:transparent;
-
-    color:var(--bouquet-pink);
-
-    font-family:'Poppins',sans-serif;
-    font-size:12px;
-    font-weight:500;
-
-    box-shadow:none;
-}
-
-#bouquetPage .bouquetBackBtn:hover{
-    transform:none;
-
-    background:var(--bouquet-pink);
-    color:white;
-
-    box-shadow:none;
-}
-
-
-/* =========================================
-   HEADER
-========================================= */
-
-.bouquetPageHeader{
-    max-width:900px;
-
-    margin:0 auto;
-
-    text-align:center;
-}
-
-.bouquetEyebrow{
-    margin:5px 0 12px;
-
-    color:var(--bouquet-pink);
-
-    font-size:9px;
-    font-weight:500;
-
-    letter-spacing:5px;
-}
-
-#bouquetPage .bouquetPageHeader h2{
-    margin:0;
-
-    color:#211917;
-
-    font-family:'Playfair Display',serif;
-
-    font-size:49px;
-    font-weight:500;
-
-    letter-spacing:-1px;
-}
-
-#bouquetPage .bouquetPageHeader h2 span{
-    color:var(--bouquet-pink);
-
-    font-family:'Poppins',sans-serif;
-
-    font-size:28px;
-    font-weight:300;
-}
-
-.bouquetHandwriting{
-    margin:8px 0 0;
-
-    color:var(--bouquet-pink);
-
-    font-family:'Caveat',cursive;
-
-    font-size:22px;
-
-    transform:rotate(-2deg);
-}
-
-
-/* =========================================
-   LARGE BOUQUET
-========================================= */
-
-.bigBouquet{
-    position:relative;
-
-    width:100%;
-    max-width:530px;
-
-    margin:18px auto 0;
-}
-
-.bigBouquet svg{
-    display:block;
-
-    width:100%;
-    height:auto;
-
-    overflow:visible;
-}
-
-
-/* stems + leaves */
-
-.bouquetStems{
-    fill:none;
-
-    stroke:var(--bouquet-sage);
-    stroke-width:2;
-
-    stroke-linecap:round;
-    stroke-linejoin:round;
-}
-
-
-/* roses */
-
-.roseFlower{
-    fill:#FFF7F4;
-
-    stroke:#D79C93;
-    stroke-width:1.8;
-
-    stroke-linecap:round;
-    stroke-linejoin:round;
-}
-
-
-/* daisy */
-
-.daisyFlower{
-    fill:#FFFDFC;
-
-    stroke:#77765D;
-    stroke-width:1.6;
-}
-
-.daisyFlower circle{
-    fill:#F1D9A3;
-}
-
-
-/* lavender */
-
-.lavenderFlower{
-    fill:#F5E9F0;
-
-    stroke:#967D91;
-    stroke-width:1.6;
-
-    stroke-linecap:round;
-}
-
-
-/* baby's breath */
-
-.babyBreath{
-    fill:#FFFDFC;
-
-    stroke:#B68E7C;
-    stroke-width:1.5;
-
-    stroke-linecap:round;
-}
-
-
-/* wrapping */
-
-.bouquetWrapping{
-    fill:rgba(249,231,222,.32);
-
-    stroke:#D5B6A7;
-    stroke-width:1.5;
-
-    stroke-linejoin:round;
-}
-
-
-/* ribbon */
-
-.bouquetRibbonPage{
-    fill:#F7DEDE;
-
-    stroke:#D89DA4;
-    stroke-width:1.6;
-
-    stroke-linecap:round;
-    stroke-linejoin:round;
-}
-
-
-/* tag */
-
-.bigBouquetTag{
-    position:absolute;
-
-    right:11%;
-    bottom:7%;
-
-    min-width:78px;
-
-    padding:8px 12px;
-
-    border:1px solid #D0B5A8;
-    border-radius:3px;
-
-    background:#FFF9F4;
-
-    color:#574942;
-
-    font-family:'Caveat',cursive;
-
-    font-size:17px;
-    line-height:1.05;
-
-    text-align:center;
-
-    transform:rotate(7deg);
-}
-
-.bigBouquetTag span{
-    display:block;
-
-    margin-top:3px;
-
-    color:var(--bouquet-pink);
-
-    font-family:'Poppins',sans-serif;
-    font-size:14px;
-}
-
-
-/* =========================================
-   MESSAGE UNDER BOUQUET
-========================================= */
-
-.bouquetMainNote{
-    max-width:620px;
-
-    margin:10px auto 32px;
-
-    color:#413632;
-
-    font-family:'Playfair Display',serif;
-
-    font-size:16px;
-    line-height:1.7;
-
-    text-align:center;
-}
-
-.bouquetMainNote span{
-    display:block;
-
-    margin-top:5px;
-
-    color:var(--bouquet-pink);
-
-    font-family:'Poppins',sans-serif;
-}
-
-
-/* =========================================
-   FLOWER MEANINGS
-========================================= */
-
-.flowerMeaningGrid{
-    width:100%;
-    max-width:950px;
-
-    margin:0 auto;
-
-    display:grid;
-
-    grid-template-columns:repeat(6,1fr);
-
-    gap:16px;
-}
-
-.flowerMeaningCard{
-    grid-column:span 2;
-
-    min-height:165px;
-
-    padding:23px;
-
-    display:grid;
-
-    grid-template-columns:42px 1fr;
-
-    gap:15px;
-
-    align-items:start;
-
-    border:1px solid var(--bouquet-border);
-    border-radius:15px;
-
-    background:rgba(255,255,255,.36);
-
-    box-shadow:0 5px 18px rgba(90,67,60,.035);
-
-    text-align:left;
-
-    transition:.25s ease;
-}
-
-.flowerMeaningCard:nth-child(4){
-    grid-column:2 / span 2;
-}
-
-.flowerMeaningCard:nth-child(5){
-    grid-column:4 / span 2;
-}
-
-.flowerMeaningCard:hover{
-    transform:translateY(-2px);
-
-    border-color:#DCC5BC;
-
-    background:#FFFDFC;
-}
-
-.flowerTinyIcon{
-    display:flex;
-
-    width:38px;
-    height:38px;
-
-    align-items:center;
-    justify-content:center;
-
-    color:var(--bouquet-pink);
-
-    font-family:'Playfair Display',serif;
-
-    font-size:27px;
-    font-weight:400;
-}
-
-.flowerMeaningCard h3{
-    margin:0 0 4px;
-
-    color:var(--bouquet-pink);
-
-    font-family:'Playfair Display',serif;
-
-    font-size:22px;
-    font-weight:500;
-}
-
-.flowerMeaningLabel{
-    display:block;
-
-    margin-bottom:12px;
-
-    color:#A48380;
-
-    font-size:8px;
-    font-weight:500;
-
-    letter-spacing:2px;
-}
-
-.flowerMeaningCard p{
-    margin:0;
-
-    color:#554A46;
-
-    font-size:12px;
-    line-height:1.7;
-}
-
-
-/* =========================================
-   PREVIOUS BOUQUETS
-========================================= */
-
-.previousBouquets{
-    width:100%;
-    max-width:900px;
-
-    margin:48px auto 0;
-
-    text-align:center;
-}
-
-.bouquetDivider{
-    width:100%;
-
-    margin-bottom:20px;
-
-    display:grid;
-
-    grid-template-columns:1fr auto 1fr;
-
-    gap:13px;
-
-    align-items:center;
-}
-
-.bouquetDivider > span{
-    height:1px;
-
-    background:#E5D5CF;
-}
-
-.bouquetDivider b{
-    color:var(--bouquet-pink);
-
-    font-size:15px;
-    font-weight:300;
-}
-
-#bouquetPage .previousBouquets h2{
-    margin:0 0 20px;
-
-    color:var(--bouquet-pink);
-
-    font-family:'Playfair Display',serif;
-
-    font-size:31px;
-    font-weight:500;
-}
-
-.firstBouquetMemory{
-    position:relative;
-
-    width:100%;
-    max-width:420px;
-
-    margin:0 auto;
-
-    padding:25px 30px;
-
-    border:1px dashed #E5BFC2;
-    border-radius:12px;
-
-    background:#FFF9F7;
-}
-
-.firstBouquetMemory::before{
-    content:"";
-
-    position:absolute;
-
-    top:-7px;
-    left:50%;
-
-    width:58px;
-    height:13px;
-
-    transform:translateX(-50%);
-
-    background:rgba(247,222,222,.75);
-}
-
-.firstBouquetMemory p{
-    margin:0 0 12px;
-
-    color:var(--bouquet-pink);
-
-    font-family:'Playfair Display',serif;
-
-    font-size:16px;
-}
-
-.firstBouquetMemory span{
-    display:block;
-
-    padding-top:12px;
-
-    border-top:1px solid #ECD7D1;
-
-    color:#BA7E85;
-
-    font-size:11px;
-}
-
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media(max-width:700px){
-
-    #bouquetPage{
-        padding:24px 16px 50px;
-    }
-
-    #bouquetPage .bouquetPageHeader h2{
-        font-size:37px;
-    }
-
-    .bouquetEyebrow{
-        letter-spacing:3px;
-    }
-
-    .bigBouquet{
-        max-width:430px;
-    }
-
-    .bigBouquetTag{
-        right:7%;
-
-        font-size:15px;
-    }
-
-    .bouquetMainNote{
-        font-size:14px;
-    }
-
-    .flowerMeaningGrid{
-        grid-template-columns:1fr;
-    }
-
-    .flowerMeaningCard,
-    .flowerMeaningCard:nth-child(4),
-    .flowerMeaningCard:nth-child(5){
-        grid-column:auto;
-    }
-
-    .flowerMeaningCard{
-        min-height:auto;
-    }
-
-    #bouquetPage .previousBouquets h2{
-        font-size:27px;
-    }
-}
-
-.bigBouquetTag{
-    right:4% !important;
-    bottom:1% !important;
-
-    transform:rotate(5deg) !important;
-}
-
-/* MATCH FLOWER CARDS TO BOUQUET */
-
-.flowerCardDrawing{
-    width:48px;
-    height:65px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
-
-.flowerCardDrawing svg{
-    width:100%;
-    height:100%;
-
-    fill:none;
-
-    stroke-linecap:round;
-    stroke-linejoin:round;
-}
-
-
-/* rose */
-
-.roseMini svg{
-    stroke:#D79C93;
-    stroke-width:1.4;
-}
-
-
-/* lavender */
-
-.lavenderMini svg{
-    stroke:#967D91;
-    stroke-width:1.4;
-}
-
-.lavenderMini ellipse{
-    fill:#F5E9F0;
-}
-
-
-/* daisy */
-
-.daisyMini svg{
-    stroke:#77765D;
-    stroke-width:1.3;
-}
-
-.daisyMini circle{
-    fill:#F1D9A3;
-}
-
-
-/* forget-me-not */
-
-.forgetMini svg{
-    stroke:#A3A58A;
-    stroke-width:1.3;
-}
-
-.forgetMini .tinyForgetFlower circle{
-    fill:#FFFDFC;
-}
-
-
-/* baby's breath */
-
-.babyMini svg{
-    stroke:#B68E7C;
-    stroke-width:1.3;
-}
-
-.babyMini circle{
-    fill:#FFFDFC;
-}
-
-
-/* slightly more space for the drawings */
-
-.flowerMeaningCard{
-    grid-template-columns:55px 1fr !important;
-    gap:18px !important;
-}
-
-/* EXACT BOUQUET FLOWERS IN MEANING CARDS */
-
-.flowerCardDrawing{
-    width:58px;
-    height:72px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
-
-.flowerCardDrawing svg{
-    width:100%;
-    height:100%;
-
-    fill:none;
-
-    stroke-linecap:round;
-    stroke-linejoin:round;
-}
-
-/* rose */
-.roseMini svg{
-    fill:#FFF7F4;
-    stroke:#D79C93;
-    stroke-width:2;
-}
-
-/* lavender */
-.lavenderMini svg{
-    stroke:#967D91;
-    stroke-width:2;
-}
-
-.lavenderMini ellipse{
-    fill:#F5E9F0;
-}
-
-/* daisy */
-.daisyMini svg{
-    fill:#FFFDFC;
-    stroke:#77765D;
-    stroke-width:2;
-}
-
-.daisyMini circle{
-    fill:#F1D9A3;
-}
-
-/* baby's breath */
-.babyMini svg{
-    fill:#FFFDFC;
-    stroke:#B68E7C;
-    stroke-width:2;
-}
-
-/* forget-me-not — bouquet + card */
-.forgetBouquet,
-.forgetMini svg{
-    fill:#FFFDFC;
-    stroke:#A3A58A;
-    stroke-width:1.7;
-    stroke-linecap:round;
-    stroke-linejoin:round;
-}
-
-.forgetBouquet g circle:first-child,
-.forgetMini g circle:first-child{
-    fill:#F1D9A3;
-}
-
-/* =========================================
-   BOUQUET CARD POSITIONING
-========================================= */
-
-@media(max-width:700px){
-
-    .flowerMeaningGrid{
-        width:100%;
-        max-width:620px;
-
-        grid-template-columns:repeat(2, 1fr) !important;
-
-        gap:14px;
-    }
-
-    .flowerMeaningCard,
-    .flowerMeaningCard:nth-child(4),
-    .flowerMeaningCard:nth-child(5){
-        grid-column:auto !important;
-    }
-
-    .flowerMeaningCard{
-        min-height:170px;
-
-        padding:20px 18px;
-
-        grid-template-columns:48px 1fr !important;
-
-        gap:12px !important;
-    }
-
-    /* centre Baby's Breath */
-    .flowerMeaningCard:nth-child(5){
-        grid-column:1 / 3 !important;
-
-        width:calc(50% - 7px);
-
-        justify-self:center;
-    }
-
-}
-
-/* =========================================
-   BOUQUET ARCHIVE
-========================================= */
-
-.previousBouquets{
-    margin-top:55px;
-}
-
-.previousBouquets::after{
-    content:"our little flower archive ♡";
-
-    display:block;
-
-    margin:-13px 0 22px;
-
-    color:#D9828F;
-
-    font-family:'Caveat',cursive;
-    font-size:18px;
-}
-
-
-/* archive card */
-
-.bouquetArchiveCard{
-    width:100%;
-    max-width:560px;
-
-    margin:0 auto;
-
-    padding:20px 24px;
-
-    display:grid;
-
-    grid-template-columns:75px 1fr 25px;
-
-    gap:20px;
-
-    align-items:center;
-
-    border:1px solid #E8DCD5;
-    border-radius:17px;
-
-    background:#FFFDFC;
-
-    text-align:left;
-
-    transition:.25s ease;
-}
-
-.bouquetArchiveCard:hover{
-    transform:translateY(-2px);
-
-    border-color:#DCC3BB;
-}
-
-
-/* little bouquet */
-
-.archiveFlower{
-    width:65px;
-    height:72px;
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-}
-
-.archiveFlower svg{
-    width:100%;
-    height:100%;
-
-    fill:none;
-
-    stroke:#A39176;
-    stroke-width:1.3;
-
-    stroke-linecap:round;
-    stroke-linejoin:round;
-}
-
-.archiveFlower circle{
-    fill:#FFF8F5;
-
-    stroke:#D79C93;
-}
-
-
-/* text */
-
-.archiveDate{
-    display:block;
-
-    margin-bottom:6px;
-
-    color:#D9828F;
-
-    font-size:8px;
-    font-weight:500;
-
-    letter-spacing:2px;
-}
-
-.bouquetArchiveCard h3{
-    margin:0 0 5px;
-
-    color:#302622;
-
-    font-family:'Playfair Display',serif;
-
-    font-size:21px;
-    font-weight:500;
-}
-
-.bouquetArchiveCard p{
-    margin:0;
-
-    color:#716560;
-
-    font-size:11px;
-    line-height:1.6;
-}
-
-
-/* arrow */
-
-.archiveArrow{
-    color:#D9828F;
-
-    font-size:22px;
-    font-weight:300;
-}
-
-
-/* get rid of old dashed-card styling */
-
-.firstBouquetMemory{
-    display:none;
-}
-
-
-@media(max-width:600px){
-
-    .bouquetArchiveCard{
-        grid-template-columns:60px 1fr 20px;
-
-        padding:18px;
-
-        gap:14px;
-    }
-
-    .archiveFlower{
-        width:55px;
-        height:65px;
-    }
-
-    .bouquetArchiveCard h3{
-        font-size:19px;
     }
-
-}
-
-/* COMING SOON CARDS */
-
-.comingSoonTag{
-    margin-top:auto;
-
-    padding:4px 9px;
-
-    border:1px solid #D9828F;
-    border-radius:3px;
-
-    color:#D9828F;
-
-    font-family:'Poppins',sans-serif;
-    font-size:8px;
-    font-weight:500;
-
-    letter-spacing:1.5px;
-}
-
-#scrapbookBtn,
-#remindersBtn{
-    cursor:default;
-}
-
-/* =========================================
-   OUR SCRAPBOOK - FLIP BOOK
-========================================= */
-
-#scrapbookPage{
-    display:none;
-
-    min-height:100vh;
-
-    padding:30px 24px 70px;
-
-    background:#FFFBF8;
-
-    color:#2B2320;
-
-    font-family:'Poppins',sans-serif;
-}
-
-
-/* HEADER */
-
-.scrapbookHeader{
-    max-width:900px;
-
-    margin:0 auto 30px;
-
-    text-align:center;
-}
-
-.scrapbookEyebrow{
-    margin:5px 0 12px;
-
-    color:#D9828F;
-
-    font-size:9px;
-    font-weight:500;
-
-    letter-spacing:4px;
-}
-
-.scrapbookHeader h2{
-    margin:0;
-
-    color:#211917;
-
-    font-family:'Playfair Display',serif;
-
-    font-size:46px;
-    font-weight:500;
-}
-
-.scrapbookHeader h2 span{
-    color:#D9828F;
-}
-
-.scrapbookHandwriting{
-    margin-top:8px;
-
-    color:#D9828F;
-
-    font-family:'Caveat',cursive;
-
-    font-size:20px;
-}
-
-
-/* =========================================
-   BOOK
-========================================= */
-
-.scrapbookBook{
-    width:100%;
-    max-width:900px;
-
-    margin:0 auto;
-
-    position:relative;
-}
-
-
-/* hide pages until active */
-
-.scrapbookSpread{
-    display:none;
-
-    width:100%;
-
-    min-height:540px;
-
-    align-items:stretch;
-    justify-content:center;
-}
-
-.scrapbookSpread.active{
-    display:flex;
-
-    animation:scrapbookTurn .35s ease;
-}
-
-
-/* actual pages */
-
-.scrapbookSheet{
-    position:relative;
-
-    width:50%;
-
-    min-height:540px;
-
-    padding:32px;
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
-    background:#FFFDFC;
-
-    border:1px solid #E8DCD5;
-
-    overflow:hidden;
-}
-
-
-/* left page */
-
-.leftSheet{
-    border-radius:18px 0 0 18px;
-
-    border-right:none;
-}
-
-
-/* right page */
-
-.rightSheet{
-    border-radius:0 18px 18px 0;
-
-    border-left:1px solid #EFE4DE;
-}
-
-
-/* centre crease */
-
-.scrapbookSpread:not(:first-child)::after{
-    content:"";
-
-    position:absolute;
-
-    left:50%;
-    top:3%;
-
-    width:1px;
-    height:94%;
-
-    background:#E2D3CD;
-
-    box-shadow:
-        -4px 0 10px rgba(80,55,45,.04),
-        4px 0 10px rgba(80,55,45,.04);
-
-    transform:translateX(-50%);
-}
-
-
-/* scrapbook images */
-
-.scrapbookSheet img{
-    display:block;
-
-    width:100%;
-    height:auto;
-
-    max-height:455px;
-
-    object-fit:contain;
-
-    border-radius:4px;
-
-    background:white;
-}
-
-
-/* little tape */
-
-.scrapbookTape{
-    position:absolute;
-
-    top:17px;
-    left:50%;
-
-    width:65px;
-    height:17px;
-
-    transform:translateX(-50%) rotate(-2deg);
-
-    background:rgba(247,222,222,.75);
-
-    z-index:2;
-}
-
-.rightSheet .scrapbookTape{
-    transform:translateX(-50%) rotate(2deg);
-}
-
-
-/* page numbers */
-
-.pageNumber{
-    position:absolute;
-
-    bottom:13px;
-
-    color:#C5969B;
-
-    font-family:'Caveat',cursive;
-
-    font-size:15px;
-}
-
-.leftSheet .pageNumber{
-    left:18px;
-}
-
-.rightSheet .pageNumber{
-    right:18px;
-}
-
-
-/* =========================================
-   COVER
-========================================= */
-
-.scrapbookSpread:first-child{
-    align-items:center;
-}
-
-.scrapbookCover{
-    position:relative;
-
-    width:430px;
-    min-height:530px;
-
-    padding:55px 45px;
-
-    display:flex;
-    flex-direction:column;
-
-    align-items:center;
-    justify-content:center;
-
-    border:1px solid #D9B8B6;
-
-    border-radius:18px;
-
-    background:#F7DEDE;
-
-    text-align:center;
-
-    box-shadow:
-        8px 10px 0 #F3ECE8;
-}
-
-.coverTinyHeart{
-    margin-bottom:18px;
-
-    color:#D9828F;
-
-    font-size:24px;
-}
-
-.coverSmall{
-    margin-bottom:20px;
-
-    color:#9C6F75;
-
-    font-size:9px;
-
-    letter-spacing:4px;
-}
-
-.scrapbookCover h3{
-    margin:0 0 22px;
-
-    color:#332724;
-
-    font-family:'Playfair Display',serif;
-
-    font-size:52px;
-    font-weight:500;
-
-    line-height:1.05;
-}
-
-.coverNote{
-    color:#6F615C;
-
-    font-family:'Caveat',cursive;
-
-    font-size:21px;
-    line-height:1.5;
-}
-
-.coverFrom{
-    position:absolute;
-
-    bottom:30px;
-
-    color:#B4767E;
-
-    font-family:'Caveat',cursive;
-
-    font-size:18px;
-}
-
-
-/* =========================================
-   END PAGE
-========================================= */
-
-.scrapbookEndPage{
-    flex-direction:column;
-
-    border-radius:0 18px 18px 0;
-
-    text-align:center;
-}
-
-.endHeart{
-    margin-bottom:14px;
-
-    color:#D9828F;
-
-    font-size:28px;
-}
-
-.scrapbookEndPage h3{
-    margin:0 0 15px;
-
-    color:#D9828F;
-
-    font-family:'Playfair Display',serif;
-
-    font-size:28px;
-    font-weight:500;
-}
-
-.scrapbookEndPage p{
-    color:#6E625D;
-
-    font-family:'Caveat',cursive;
-
-    font-size:19px;
-    line-height:1.5;
-}
-
-
-/* =========================================
-   CONTROLS
-========================================= */
-
-.scrapbookControls{
-    max-width:900px;
-
-    margin:24px auto 0;
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
-    gap:25px;
-}
-
-.scrapbookControls button{
-    width:44px;
-    height:44px;
-
-    border:1px solid #D9828F;
-    border-radius:50%;
-
-    background:transparent;
-
-    color:#D9828F;
-
-    font-size:19px;
-
-    cursor:pointer;
-
-    transition:.2s;
-}
-
-.scrapbookControls button:hover{
-    background:#D9828F;
-
-    color:white;
-
-    transform:none;
-}
-
-#scrapbookCounter{
-    min-width:95px;
-
-    color:#8C7770;
-
-    font-size:11px;
-
-    text-align:center;
-
-    letter-spacing:1px;
-}
-
-.scrapbookBottomNote{
-    margin-top:20px;
-
-    color:#D9828F;
-
-    font-family:'Caveat',cursive;
-
-    font-size:17px;
-
-    text-align:center;
-}
-
-
-
-
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media(max-width:700px){
-
-    #scrapbookPage{
-        padding:24px 14px 50px;
-    }
-
-    .scrapbookHeader h2{
-        font-size:37px;
-    }
-
-    .scrapbookSpread{
-        min-height:auto;
-    }
-
-    .scrapbookSpread.active{
-        display:block;
-    }
-
-    .scrapbookSpread:not(:first-child)::after{
-        display:none;
-    }
-
-    .scrapbookSheet{
-        width:100%;
-
-        min-height:460px;
-
-        margin-bottom:18px;
-
-        border:1px solid #E8DCD5;
-
-        border-radius:16px;
-    }
-
-    .scrapbookSheet img{
-        max-height:390px;
-    }
-
-    .scrapbookCover{
-        width:100%;
-
-        min-height:470px;
-    }
-
-    .scrapbookCover h3{
-        font-size:45px;
-    }
-
-}
-
-/* =========================================
-   REAL SCRAPBOOK PAGE FLIP
-========================================= */
-
-.scrapbookBook{
-    position:relative;
-    perspective:1800px;
-    transform-style:preserve-3d;
-}
-
-
-/* don't slide/fade the spreads anymore */
-
-.scrapbookSpread.active{
-    animation:none;
-    position:relative;
-    z-index:2;
-}
-
-
-/* spread underneath while a page is turning */
-
-.scrapbookSpread.underSpread{
-    display:flex;
-
-    position:absolute;
-
-    top:0;
-    left:0;
-
-    width:100%;
-    height:100%;
-
-    z-index:1;
-}
-
-
-/* hide the page underneath the page we're physically turning */
-
-.scrapbookSpread.turnBaseForward .rightSheet{
-    visibility:hidden;
-}
-
-.scrapbookSpread.turnBaseBack .leftSheet{
-    visibility:hidden;
-}
-
-
-/* =========================================
-   THE ACTUAL MOVING PAGE
-========================================= */
-
-.scrapbookFlipLeaf{
-    position:absolute;
-
-    top:0;
-
-    width:50%;
-    height:540px;
-
-    z-index:20;
-
-    transform-style:preserve-3d;
-
-    pointer-events:none;
-}
-
-
-/* RIGHT PAGE TURNS TO THE LEFT */
-
-.scrapbookFlipLeaf.flipForward{
-    left:50%;
-
-    transform-origin:left center;
-
-    animation:realPageForward 1.4s
-        cubic-bezier(.55,.05,.25,1)
-        forwards;
-}
-
-
-/* LEFT PAGE TURNS BACK TO THE RIGHT */
-
-.scrapbookFlipLeaf.flipBack{
-    left:0;
-
-    transform-origin:right center;
-
-    animation:realPageBack 1.4s
-        cubic-bezier(.55,.05,.25,1)
-        forwards;
-}
-
-
-/* both sides of the turning piece of paper */
-
-.scrapbookFlipFace{
-    position:absolute;
-
-    inset:0;
-
-    width:100%;
-    height:100%;
-
-    background:#FFFDFC;
-
-    backface-visibility:hidden;
-    -webkit-backface-visibility:hidden;
-
-    overflow:hidden;
-}
-
-
-/* front of page */
-
-.scrapbookFlipFront{
-    transform:rotateY(0deg);
-}
-
-
-/* back of page */
-
-.scrapbookFlipBack{
-    transform:rotateY(180deg);
-}
-
-
-/* make copied scrapbook sheets fit inside the flipping leaf */
-
-.scrapbookFlipFace.scrapbookSheet{
-    width:100%;
-    height:100%;
 
-    min-height:0;
 
-    margin:0;
 
-    border:1px solid #E8DCD5;
-}
+    /* create the physical sheet */
 
+    const leaf = document.createElement("div");
 
-/* tiny shadow while the paper moves */
+    leaf.className =
+        direction === "forward"
+            ? "scrapbookFlipLeaf flipForward"
+            : "scrapbookFlipLeaf flipBack";
 
-.scrapbookFlipLeaf::after{
-    content:"";
 
-    position:absolute;
 
-    inset:0;
+    /* front side */
 
-    pointer-events:none;
+    const front =
+        frontPage.cloneNode(true);
 
-    background:linear-gradient(
-        90deg,
-        rgba(70,45,35,.12),
-        transparent 22%,
-        transparent 78%,
-        rgba(70,45,35,.08)
+    front.classList.add(
+        "scrapbookFlipFace",
+        "scrapbookFlipFront"
     );
 
-    opacity:0;
-
-    animation:pageShadow 1.4s ease;
-}
 
 
-/* =========================================
-   PAGE TURN ANIMATIONS
-========================================= */
+    /* back side */
 
-@keyframes realPageForward{
+    const back =
+        backPage.cloneNode(true);
 
-    0%{
-        transform:rotateY(0deg);
-    }
-
-    45%{
-        transform:rotateY(-82deg);
-    }
-
-    55%{
-        transform:rotateY(-98deg);
-    }
-
-    100%{
-        transform:rotateY(-180deg);
-    }
-
-}
-
-
-@keyframes realPageBack{
-
-    0%{
-        transform:rotateY(0deg);
-    }
-
-    45%{
-        transform:rotateY(82deg);
-    }
-
-    55%{
-        transform:rotateY(98deg);
-    }
-
-    100%{
-        transform:rotateY(180deg);
-    }
-
-}
-
-
-@keyframes pageShadow{
-
-    0%{
-        opacity:0;
-    }
-
-    45%{
-        opacity:.8;
-    }
-
-    60%{
-        opacity:.6;
-    }
-
-    100%{
-        opacity:0;
-    }
-
-}
-
-
-/* make the centre of the book feel deeper */
-
-.scrapbookSpread:not(:first-child)::after{
-    z-index:10;
-
-    background:linear-gradient(
-        to right,
-        rgba(90,60,50,.07),
-        #E2D3CD,
-        rgba(90,60,50,.07)
+    back.classList.add(
+        "scrapbookFlipFace",
+        "scrapbookFlipBack"
     );
 
-    width:5px;
 
-    border-radius:50%;
+
+    leaf.appendChild(front);
+    leaf.appendChild(back);
+
+    scrapbookBook.appendChild(leaf);
+
+
+
+    leaf.addEventListener(
+        "animationend",
+        () => {
+
+            leaf.remove();
+
+            currentScrapbookSpread =
+                targetIndex;
+
+            scrapbookIsFlipping = false;
+
+            showScrapbookSpread();
+
+        },
+
+        {
+            once:true
+        }
+    );
+
 }
 
-
-/* smoother images while page is moving */
-
-.scrapbookFlipLeaf img{
-    transform:translateZ(1px);
-}
-
-
-/* don't allow arrow double-clicks during animation */
-
-.scrapbookControls button:disabled{
-    cursor:default;
-}
-
-/* =========================================
-   SCRAPBOOK IMAGE PLACEMENT
-========================================= */
-
-.scrapbookSheet img{
-    width:112%;
-    max-width:none;
-    max-height:500px;
-
-    object-fit:contain;
-
-    transition:transform .3s ease;
-}
-
-
-/* give every picture a slightly handmade position */
-
-.scrapbookSpread:nth-child(2) .leftSheet img{
-    transform:rotate(-1.5deg) scale(1.04);
-}
-
-.scrapbookSpread:nth-child(2) .rightSheet img{
-    transform:rotate(1.2deg) scale(1.04);
-}
-
-.scrapbookSpread:nth-child(3) .leftSheet img{
-    transform:rotate(1deg) scale(1.08);
-}
-
-.scrapbookSpread:nth-child(3) .rightSheet img{
-    transform:rotate(-1.2deg) scale(1.08);
-}
-
-.scrapbookSpread:nth-child(4) .leftSheet img{
-    transform:rotate(-1deg) scale(1.06);
-}
-
-
-/* make the tape look more like real translucent tape */
-
-.scrapbookTape{
-    width:72px;
-    height:20px;
-
-    background:rgba(235,184,190,.38);
-
-    border-left:1px solid rgba(255,255,255,.5);
-    border-right:1px solid rgba(255,255,255,.5);
-
-    backdrop-filter:blur(1px);
-}
-
-/* =========================================
-   THINGS THAT REMIND ME OF YOU
-========================================= */
-
-#remindersPage{
-    display:none;
-
-    min-height:100vh;
-
-    padding:30px 24px 80px;
-
-    background:#FFFBF8;
-
-    color:#2B2320;
-
-    font-family:'Poppins',sans-serif;
-}
 
 
 /* =========================================
-   HEADER
+   ARROWS
 ========================================= */
 
-.remindersHeader{
-    width:100%;
-    max-width:950px;
+scrapbookNext.addEventListener("click", () => {
 
-    margin:0 auto 65px;
+    if(scrapbookIsFlipping) return;
 
-    text-align:center;
-}
 
-.remindersEyebrow{
-    margin:5px 0 13px;
+    /* front cover */
 
-    color:#D9828F;
+    if(currentScrapbookSpread === 0){
 
-    font-size:9px;
-    font-weight:500;
+        openScrapbookCover();
 
-    letter-spacing:4px;
-}
-
-.remindersHeader h2{
-    margin:0;
-
-    color:#211917;
-
-    font-family:'Playfair Display',serif;
-
-    font-size:45px;
-    font-weight:500;
-
-    line-height:1.2;
-}
-
-.remindersHeader h2 span{
-    color:#D9828F;
-}
-
-.remindersHandwriting{
-    margin-top:11px;
-
-    color:#D9828F;
-
-    font-family:'Caveat',cursive;
-
-    font-size:21px;
-}
-
-
-/* =========================================
-   MEMORY BOARD
-========================================= */
-
-.remindersBoard{
-    width:100%;
-    max-width:1050px;
-
-    margin:0 auto;
-
-    display:grid;
-
-    grid-template-columns:repeat(12,1fr);
-
-    grid-auto-flow:dense;
-
-    gap:34px 22px;
-
-    align-items:start;
-
-    position:relative;
-}
-
-
-/* =========================================
-   NORMAL CARD
-========================================= */
-
-.reminderCard{
-    position:relative;
-
-    grid-column:span 3;
-
-    padding:11px 11px 15px;
-
-    background:#FFFDFC;
-
-    border:1px solid #E8DCD5;
-
-    border-radius:3px;
-
-    text-align:center;
-
-    transition:
-        transform .25s ease,
-        border-color .25s ease;
-
-    cursor:pointer;
-}
-
-.reminderCard:hover{
-    border-color:#D9B2B7;
-}
-
-
-/* =========================================
-   PHOTO PLACEHOLDERS
-========================================= */
-
-.reminderPhoto{
-    width:100%;
-
-    min-height:175px;
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
-    background:#FFF8F5;
-
-    border:1px solid #EFE2DC;
-
-    overflow:hidden;
-}
-
-.reminderPhoto span{
-    color:#D8BFC0;
-
-    font-family:'Caveat',cursive;
-
-    font-size:17px;
-}
-
-
-/* later your real photos will use this */
-
-.reminderPhoto img{
-    width:100%;
-    height:100%;
-
-    display:block;
-
-    object-fit:cover;
-}
-
-
-/* captions */
-
-.reminderCard > p:not(.noteWord){
-    margin:12px 3px 0;
-
-    color:#6D5D58;
-
-    font-family:'Caveat',cursive;
-
-    font-size:18px;
-
-    line-height:1.1;
-}
-
-
-/* =========================================
-   DIFFERENT CARD SHAPES
-========================================= */
-
-
-/* classic polaroid */
-
-.reminderPolaroid{
-    padding:10px 10px 22px;
-
-    grid-column:span 3;
-}
-
-.reminderPolaroid .reminderPhoto{
-    min-height:190px;
-}
-
-
-/* taller */
-
-.reminderTall{
-    grid-column:span 3;
-
-    padding:11px 11px 17px;
-}
-
-.reminderTall .reminderPhoto{
-    min-height:245px;
-}
-
-
-/* wide landscape */
-
-.reminderWide{
-    grid-column:span 4;
-}
-
-.reminderWide .reminderPhoto{
-    min-height:165px;
-}
-
-
-/* =========================================
-   SLIGHT UNEVENNESS
-========================================= */
-
-.reminderTiltLeft{
-    transform:rotate(-1.3deg);
-}
-
-.reminderTiltRight{
-    transform:rotate(1.2deg);
-}
-
-.reminderTiltLeft:hover{
-    transform:rotate(-1.3deg) translateY(-3px);
-}
-
-.reminderTiltRight:hover{
-    transform:rotate(1.2deg) translateY(-3px);
-}
-
-
-/* =========================================
-   TAPE
-========================================= */
-
-.reminderTape{
-    position:absolute;
-
-    top:-10px;
-    left:50%;
-
-    width:65px;
-    height:18px;
-
-    transform:translateX(-50%) rotate(-2deg);
-
-    background:rgba(232,184,190,.42);
-
-    border-left:1px solid rgba(255,255,255,.6);
-    border-right:1px solid rgba(255,255,255,.6);
-
-    z-index:3;
-}
-
-.reminderTiltRight .reminderTape{
-    transform:translateX(-50%) rotate(3deg);
-}
-
-
-/* =========================================
-   PAPERCLIP DETAIL
-========================================= */
-
-.reminderPaperclip{
-    position:absolute;
-
-    top:-16px;
-    right:18px;
-
-    color:#C59FA4;
-
-    font-size:32px;
-
-    font-family:'Caveat',cursive;
-
-    transform:rotate(35deg);
-
-    z-index:4;
-}
-
-
-/* =========================================
-   PIN
-========================================= */
-
-.reminderPin{
-    position:absolute;
-
-    top:-5px;
-    left:50%;
-
-    width:8px;
-    height:8px;
-
-    transform:translateX(-50%);
-
-    border-radius:50%;
-
-    background:#D9828F;
-
-    z-index:4;
-}
-
-
-/* =========================================
-   COLOUR CARDS
-========================================= */
-
-.reminderColourCard{
-    grid-column:span 2;
-
-    min-height:180px;
-
-    padding:28px 16px 18px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-    justify-content:center;
-
-    background:#FFFDFC;
-}
-
-.colourCircle{
-    display:block;
-
-    width:82px;
-    height:82px;
-
-    margin-bottom:13px;
-
-    border-radius:50%;
-}
-
-
-/* orange */
-
-.orangeMemory .colourCircle{
-    background:#D78551;
-}
-
-
-/* yellow */
-
-.yellowMemory .colourCircle{
-    background:#E9D27C;
-}
-
-
-/* =========================================
-   HOME NOTE CARD
-========================================= */
-
-.reminderNoteCard{
-    grid-column:span 3;
-
-    min-height:200px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-    justify-content:center;
-
-    padding:28px 22px;
-
-    background:#FFF7F3;
-}
-
-.reminderNoteCard .noteWord{
-    margin:0 0 9px;
-
-    color:#D9828F;
-
-    font-family:'Caveat',cursive;
-
-    font-size:37px;
-}
-
-.reminderNoteCard small{
-    color:#8B7770;
-
-    font-family:'Caveat',cursive;
-
-    font-size:16px;
-
-    line-height:1.45;
-}
-
-
-/* =========================================
-   LITTLE DOODLES
-========================================= */
-
-.reminderDoodle{
-    grid-column:span 1;
-
-    align-self:center;
-    justify-self:center;
-
-    color:#D9828F;
-
-    font-family:'Caveat',cursive;
-
-    font-size:28px;
-
-    opacity:.75;
-
-    pointer-events:none;
-}
-
-.doodleHeartOne{
-    transform:rotate(-13deg);
-}
-
-.doodleHeartTwo{
-    transform:rotate(9deg);
-}
-
-.doodleHeartThree{
-    transform:rotate(-8deg);
-}
-
-.doodleArrowOne,
-.doodleArrowTwo{
-    font-size:26px;
-}
-
-.doodleStarOne,
-.doodleStarTwo{
-    font-size:25px;
-}
-
-
-/* =========================================
-   MAKE THE COLLAGE FEEL LESS PERFECT
-========================================= */
-
-.remindersBoard .reminderCard:nth-of-type(2){
-    margin-top:35px;
-}
-
-.remindersBoard .reminderCard:nth-of-type(4){
-    margin-top:20px;
-}
-
-.remindersBoard .reminderCard:nth-of-type(7){
-    margin-top:38px;
-}
-
-.remindersBoard .reminderCard:nth-of-type(9){
-    margin-top:15px;
-}
-
-.remindersBoard .reminderCard:nth-of-type(12){
-    margin-top:30px;
-}
-
-.remindersBoard .reminderCard:nth-of-type(15){
-    margin-top:20px;
-}
-
-.remindersBoard .reminderCard:nth-of-type(18){
-    margin-top:35px;
-}
-
-
-/* =========================================
-   ENDING
-========================================= */
-
-.remindersEnding{
-    width:100%;
-    max-width:500px;
-
-    margin:85px auto 10px;
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
-    gap:18px;
-
-    text-align:center;
-}
-
-.remindersEnding > span{
-    color:#D9828F;
-
-    font-size:16px;
-}
-
-.remindersEnding p{
-    margin:0;
-
-    color:#D9828F;
-
-    font-family:'Caveat',cursive;
-
-    font-size:22px;
-
-    line-height:1.35;
-}
-
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media(max-width:700px){
-
-    #remindersPage{
-        padding:24px 16px 60px;
-    }
-
-    .remindersHeader{
-        margin-bottom:45px;
-    }
-
-    .remindersHeader h2{
-        font-size:36px;
-    }
-
-    .remindersEyebrow{
-        letter-spacing:3px;
-    }
-
-    .remindersBoard{
-        grid-template-columns:repeat(6,1fr);
-
-        gap:29px 14px;
+        return;
     }
 
 
-    .reminderCard,
-    .reminderPolaroid,
-    .reminderTall{
-        grid-column:span 3;
+    if(
+        currentScrapbookSpread <
+        scrapbookSpreads.length - 1
+    ){
+
+        turnScrapbookPage("forward");
+
     }
 
-    .reminderWide{
-        grid-column:span 4;
+});
+
+scrapbookPrev.addEventListener("click", () => {
+
+    if(scrapbookIsFlipping) return;
+
+    /* close book */
+
+    if(currentScrapbookSpread === 1){
+
+        closeScrapbookCover();
+
+        return;
     }
 
-    .reminderColourCard{
-        grid-column:span 2;
+    if(currentScrapbookSpread > 1){
+
+        turnScrapbookPage("back");
+
     }
 
-    .reminderNoteCard{
-        grid-column:span 3;
-    }
-
-    .reminderDoodle{
-        grid-column:span 1;
-
-        font-size:22px;
-    }
+});
 
 
-    .reminderPhoto{
-        min-height:145px;
-    }
+showScrapbookSpread();
 
-    .reminderPolaroid .reminderPhoto{
-        min-height:165px;
-    }
-
-    .reminderTall .reminderPhoto{
-        min-height:205px;
-    }
-
-    .reminderWide .reminderPhoto{
-        min-height:145px;
-    }
-
-
-    .reminderCard > p:not(.noteWord){
-        font-size:16px;
-    }
-
-    .remindersEnding{
-        margin-top:60px;
-    }
-
-}
-
-
-/* VERY SMALL PHONES */
-
-@media(max-width:430px){
-
-    .remindersBoard{
-        grid-template-columns:repeat(2,1fr);
-
-        gap:27px 13px;
-    }
-
-    .reminderCard,
-    .reminderPolaroid,
-    .reminderTall,
-    .reminderWide,
-    .reminderNoteCard{
-        grid-column:span 1;
-    }
-
-    .reminderColourCard{
-        grid-column:span 1;
-    }
-
-    .reminderDoodle{
-        display:none;
-    }
-
-    .reminderPhoto{
-        min-height:135px;
-    }
-
-    .reminderTall .reminderPhoto{
-        min-height:185px;
-    }
-
-    .reminderWide .reminderPhoto{
-        min-height:135px;
-    }
-
-    .reminderNoteCard{
-        min-height:175px;
-    }
-
-    .colourCircle{
-        width:68px;
-        height:68px;
-    }
-
-}
-
-/* keep New York + Golden Brown beside each other */
-
-@media(max-width:700px){
-
-    .remindersBoard .reminderCard:nth-of-type(18),
-    .remindersBoard .reminderCard:nth-of-type(20){
-        grid-column:span 3;
-    }
-
-}
-
-/* =========================================
-   REMINDER PHOTOS
-========================================= */
-
-.reminderPhoto{
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
-}
-
-.reminderPhoto > span{
-    display:none;
-}
-
-/* 2 Rapunzel */
-.remindersBoard .reminderCard:nth-of-type(2) .reminderPhoto{
-    background-image:url("rapunzel.png");
-}
-
-/* 3 Tides of the Moon */
-.remindersBoard .reminderCard:nth-of-type(3) .reminderPhoto{
-    background-image:url("tides.png");
-}
-
-/* 4 California Dreamin' */
-.remindersBoard .reminderCard:nth-of-type(4) .reminderPhoto{
-    background-image:url("california.png");
-}
-
-/* 5 O Children */
-.remindersBoard .reminderCard:nth-of-type(5) .reminderPhoto{
-    background-image:url("o-children.png");
-}
-
-/* 7 Billie Eilish */
-.remindersBoard .reminderCard:nth-of-type(7) .reminderPhoto{
-    background-image:url("billie.png");
-}
-
-/* 8 Autumn */
-.remindersBoard .reminderCard:nth-of-type(8) .reminderPhoto{
-    background-image:url("autumn.png");
-}
-
-/* 9 Gilmore Girls */
-.remindersBoard .reminderCard:nth-of-type(9) .reminderPhoto{
-    background-image:url("gilmore-girls.png");
-}
-
-/* 10 Home */
-.remindersBoard .reminderCard:nth-of-type(10) .reminderPhoto{
-    background-image:url("home.png");
-}
-
-/* 12 Harry Potter */
-.remindersBoard .reminderCard:nth-of-type(12) .reminderPhoto{
-    background-image:url("harry-potter.png");
-}
-
-/* 13 Oregon */
-.remindersBoard .reminderCard:nth-of-type(13) .reminderPhoto{
-    background-image:url("oregon.png");
-}
-
-/* 14 Rain */
-.remindersBoard .reminderCard:nth-of-type(14) .reminderPhoto{
-    background-image:url("rain.png");
-}
-
-/* 15 Girl on the Moon */
-.remindersBoard .reminderCard:nth-of-type(15) .reminderPhoto{
-    background-image:url("girl-on-the-moon.png");
-}
-
-/* 16 Lana Del Rey */
-.remindersBoard .reminderCard:nth-of-type(16) .reminderPhoto{
-    background-image:url("lana.png");
-}
-
-/* 17 Roses */
-.remindersBoard .reminderCard:nth-of-type(17) .reminderPhoto{
-    background-image:url("roses.png");
-}
-
-/* 18 New York */
-.remindersBoard .reminderCard:nth-of-type(18) .reminderPhoto{
-    background-image:url("new-york.png");
-}
-
-/* 19 She's Unreal */
-.remindersBoard .reminderCard:nth-of-type(19) .reminderPhoto{
-    background-image:url("shes-unreal.png");
-}
-
-/* 20 Golden Brown */
-.remindersBoard .reminderCard:nth-of-type(20) .reminderPhoto{
-    background-image:url("golden-brown.png");
-}
-
-/* 6 Orange */
-.remindersBoard .reminderCard:nth-of-type(6) .reminderPhoto{
-    background-image:url("orange.png");
-}
-
-/* 11 Yellow */
-.remindersBoard .reminderCard:nth-of-type(11) .reminderPhoto{
-    background-image:url("yellow.png");
-}
-    
