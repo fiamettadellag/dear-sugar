@@ -9415,3 +9415,10 @@ margin:30px auto 0 !important;
     margin-left: auto;
     margin-right: auto;
 }
+
+/* MAKE THIS OR THAT CARD MATCH CATCH MY LOVE */
+
+#thisOrThatBtn.funGameCard{
+    background:rgba(255,255,255,.28);
+    border:1px solid var(--border);
+}
