@@ -9441,3 +9441,23 @@ margin:30px auto 0 !important;
     stroke:currentColor;
     stroke-width:1.15;
 }
+
+/* THIS OR THAT HEART */
+
+.funGameCard .gameIcon{
+    width:42px;
+    height:42px;
+    display:block;
+    flex-shrink:0;
+    color:#D9828F;
+}
+
+.funGameCard .gameIcon svg{
+    width:100%;
+    height:100%;
+    display:block;
+
+    fill:none;
+    stroke:currentColor;
+    stroke-width:1.15;
+}
