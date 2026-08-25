@@ -24,6 +24,23 @@ body{
 
 }
 
+/* MAKE THIS OR THAT CARD MATCH THE OTHER CARDS */
+
+a[href="this-or-that.html"] {
+    background: #FFFDFC !important;
+}
+
+/* MAKE THE THIS OR THAT HEART MATCH SPECIAL DELIVERY */
+
+a[href="this-or-that.html"] .card-icon,
+a[href="this-or-that.html"] .icon,
+a[href="this-or-that.html"] .fun-icon {
+    color: #D9828F !important;
+    font-family: Arial, sans-serif !important;
+    font-size: 32px !important;
+    font-weight: 300 !important;
+    line-height: 1 !important;
+}
 /* ---------- LANDING PAGE ---------- */
 
 #landing{
