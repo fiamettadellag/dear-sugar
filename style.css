@@ -9461,3 +9461,16 @@ margin:30px auto 0 !important;
     stroke:currentColor;
     stroke-width:1.15;
 }
+
+/* SAME HEART AS THIS OR THAT + SPECIAL DELIVERY */
+
+.sameHeart{
+    width:42px;
+    height:42px;
+    display:block;
+    flex-shrink:0;
+
+    fill:none;
+    stroke:#D9828F;
+    stroke-width:1.15;
+}
