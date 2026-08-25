@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>This or That ♡</title>
+
+    <link rel="stylesheet" href="style.css?v=5">
+</head>
+
+<body>
+
+    <main class="thisOrThatPage">
+
+        <button class="backButton" onclick="goHome()">
+            ← Back
+        </button>
+
+        <div class="thisOrThatGame">
+
+            <span class="littleHeart">♡</span>
+
+            <p class="gameEyebrow">JUST FOR FUN</p>
+
+            <h1>This or That</h1>
+
+            <p class="gameIntro">
+                Let's see how well we match.
+            </p>
+
+            <div class="progressText">
+                Question <span id="questionNumber">1</span>
+                of <span id="totalQuestions">10</span>
+            </div>
+
+            <div class="progressBar">
+                <div class="progressFill" id="progressFill"></div>
+            </div>
+
+            <div class="questionBox">
+
+                <h2 id="question">
+                    Beach or Mountains?
+                </h2>
+
+                <div class="choices">
+
+                    <button class="choiceButton" id="choiceOne">
+                        Beach
+                    </button>
+
+                    <div class="orText">or</div>
+
+                    <button class="choiceButton" id="choiceTwo">
+                        Mountains
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <script src="this-or-that.js"></script>
+
+</body>
+</html>
