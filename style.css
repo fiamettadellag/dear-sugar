@@ -9474,3 +9474,57 @@ margin:30px auto 0 !important;
     stroke:#D9828F;
     stroke-width:1.15;
 }
+
+/* BEGINNING PAGE – MOBILE FIX */
+
+@media screen and (max-width: 700px) {
+
+    /* Centre the entire opening content vertically */
+    #introPage,
+    .introPage,
+    .landingPage {
+        min-height: 100svh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Make sure all intro text is centred on the same axis */
+    #introPage *,
+    .introPage *,
+    .landingPage * {
+        text-align: center;
+    }
+
+    /* Remove any horizontal offset from the small headings */
+    .eyebrow,
+    .subtitle,
+    .tagline {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        width: 100%;
+        text-align: center !important;
+    }
+}
+
+/* MAKE FLOWER MEANING CARDS MORE SQUARE ON PHONE */
+
+@media screen and (max-width: 700px) {
+
+    .flowerMeaningCard{
+        aspect-ratio: 1 / 1 !important;
+        min-height: 0 !important;
+        height: auto !important;
+        box-sizing: border-box !important;
+    }
+
+}
+
+/* Move "our little flower archive" further down */
+
+.bouquetArchive,
+.flowerArchive,
+.archiveText {
+    margin-top: 25px !important;
+}
