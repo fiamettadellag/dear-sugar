@@ -9,32 +9,55 @@ const gamePage = document.getElementById("gamePage");
 const moodPage = document.getElementById("moodPage");
 const proposalPage = document.getElementById("proposalPage");
 const bouquetPage = document.getElementById("bouquetPage");
+const augustBouquetPage = document.getElementById("augustBouquetPage");
 const scrapbookPage = document.getElementById("scrapbookPage");
 const remindersPage = document.getElementById("remindersPage");
-
+let birthdayGreetingShown = false;
 // Hide every page except the one we want
 function showPage(page){
 
-    landing.style.display = "none";
-    home.style.display = "none";
-    lettersPage.style.display = "none";
-    reasonsPage.style.display = "none";
-    songsPage.style.display = "none";
-    moviesPage.style.display = "none";
-    gamePage.style.display = "none";
-    moodPage.style.display = "none";
-    proposalPage.style.display = "none";
-    bouquetPage.style.display = "none";
-    scrapbookPage.style.display = "none";
-    remindersPage.style.display = "none";
+    const pages = [
+        landing,
+        home,
+        lettersPage,
+        reasonsPage,
+        songsPage,
+        moviesPage,
+        gamePage,
+        moodPage,
+        proposalPage,
+        bouquetPage,
+        augustBouquetPage,
+        scrapbookPage,
+        remindersPage
+    ];
 
-    page.style.display = "block";
+    pages.forEach(section => {
+        if(section){
+            section.style.display = "none";
+        }
+    });
+
+    if(page){
+        page.style.display = "block";
+    }
 }
 
 // Landing button
-document.getElementById("beginButton").addEventListener("click", () => {
-    showPage(home);
-});
+const beginButton = document.getElementById("beginButton");
+
+if(beginButton){
+    beginButton.addEventListener("click", () => {
+
+        showPage(home);
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    });
+}
 
 // Home buttons
 document.getElementById("scrapbookBtn").addEventListener("click", () => {
@@ -76,6 +99,21 @@ document.getElementById("bouquetBtn").addEventListener("click", () => {
     });
 
 });
+
+const augustBouquetBtn = document.getElementById("augustBouquetBtn");
+
+if (augustBouquetBtn) {
+    augustBouquetBtn.addEventListener("click", () => {
+
+        showPage(augustBouquetPage);
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    });
+}
 
 document.getElementById("reasonsBtn").addEventListener("click", () => {
     showPage(reasonsPage);
@@ -132,11 +170,31 @@ document.getElementById("proposalBtn").addEventListener("click", () => {
 
 });
 
-// Every back button returns home
+// Back buttons
 document.querySelectorAll(".backBtn").forEach(button => {
 
     button.addEventListener("click", () => {
-        showPage(home);
+
+        if (button.closest("#augustBouquetPage")) {
+
+            showPage(bouquetPage);
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        } else {
+    showPage(home);
+
+    const birthdayGreeting =
+        document.getElementById("birthdayGreeting");
+
+    if (birthdayGreeting) {
+        birthdayGreeting.style.display = "none";
+    }
+}
+
     });
 
 });
@@ -1134,3 +1192,318 @@ scrapbookPrev.addEventListener("click", () => {
 
 showScrapbookSpread();
 
+/* =========================================
+   JESS'S BIRTHDAY MODE
+========================================= */
+
+const today = new Date();
+
+const isJessBirthday =
+    today.getMonth() === 8 &&
+    today.getDate() === 13;
+
+
+if (isJessBirthday) {
+    document.body.classList.add("jessBirthday");
+}
+
+
+const birthdayGreeting =
+    document.getElementById("birthdayGreeting");
+
+const birthdayWishes =
+    document.querySelector(".birthdayWishes");
+
+const birthdaySurpriseSection =
+    document.querySelector(".birthdaySurpriseSection");
+
+const birthdayCakeSection =
+    document.querySelector(".birthdayCakeSection");
+
+
+/* Hide birthday content until Let's Begin */
+
+if (isJessBirthday) {
+
+    if (birthdayWishes) {
+        birthdayWishes.style.display = "none";
+    }
+
+    if (birthdaySurpriseSection) {
+        birthdaySurpriseSection.style.display = "none";
+    }
+
+    if (birthdayCakeSection) {
+        birthdayCakeSection.style.display = "none";
+    }
+
+
+} else {
+
+    if (birthdayWishes) {
+        birthdayWishes.style.display = "none";
+    }
+
+    if (birthdaySurpriseSection) {
+        birthdaySurpriseSection.style.display = "none";
+    }
+
+    if (birthdayCakeSection) {
+        birthdayCakeSection.style.display = "none";
+    }
+
+    if (birthdayGreeting) {
+        birthdayGreeting.style.display = "none";
+    }
+
+}
+
+
+/* Birthday entrance */
+
+if (isJessBirthday) {
+
+    document
+        .getElementById("beginButton")
+        .addEventListener("click", () => {
+
+            if (birthdayGreetingShown) return;
+
+            birthdayGreetingShown = true;
+
+
+            if (birthdayCakeSection) {
+                birthdayCakeSection.style.display = "block";
+            }
+
+            if (birthdayWishes) {
+                birthdayWishes.style.display = "block";
+            }
+
+            if (birthdaySurpriseSection) {
+                birthdaySurpriseSection.style.display = "block";
+            }
+
+
+            if (birthdayGreeting) {
+
+                birthdayGreeting.style.display = "flex";
+
+                birthdayGreeting.style.animation = "none";
+
+                void birthdayGreeting.offsetWidth;
+
+                birthdayGreeting.style.animation = "";
+
+            }
+
+
+            setTimeout(() => {
+
+                const heartShades = [
+                    "#C94F6D",
+                    "#D45A78",
+                    "#C63F63",
+                    "#B83F5A",
+                    "#E06A87",
+                    "#D9828F",
+                    "#B94E6B",
+                    "#A93655",
+                    "#E7839A",
+                    "#CC5C78"
+                ];
+
+
+                for (let i = 0; i < 60; i++) {
+
+                    const heart =
+                        document.createElement("div");
+
+                    heart.className =
+                        "birthdayHeart";
+
+                    heart.innerHTML = "♡";
+
+                    heart.style.left =
+                        Math.random() * 100 + "vw";
+
+                    heart.style.color =
+                        heartShades[
+                            Math.floor(
+                                Math.random() *
+                                heartShades.length
+                            )
+                        ];
+
+                    heart.style.animationDelay =
+                        Math.random() * 5 + "s";
+
+                    heart.style.animationDuration =
+                        (5 + Math.random() * 5) + "s";
+
+                    heart.style.fontSize =
+                        (13 + Math.random() * 16) + "px";
+
+                    heart.style.opacity =
+                        (0.7 + Math.random() * 0.3)
+                            .toFixed(2);
+
+                    document.body.appendChild(heart);
+
+                }
+
+
+                if (birthdayGreeting) {
+                    birthdayGreeting.classList.add(
+                        "birthdayGreetingPop"
+                    );
+                }
+
+            }, 400);
+
+        });
+
+}
+
+
+/* =========================================
+   BIRTHDAY GIFT OPENING
+========================================= */
+
+/* =========================================
+   BIRTHDAY GIFT OPENING
+========================================= */
+
+function openBirthdayGift(){
+
+    const giftBox =
+        document.querySelector(".birthdayGiftBox");
+
+    if(giftBox){
+        giftBox.classList.add("giftOpening");
+
+        setTimeout(() => {
+            giftBox.classList.remove("giftOpening");
+        }, 900);
+    }
+
+}
+
+/* =========================
+   BIRTHDAY CAKE
+   ========================= */
+
+const birthdayCake = document.getElementById("birthdayCake");
+const birthdayCakeButton = document.getElementById("birthdayCakeButton");
+const birthdayCakeWish = document.getElementById("birthdayCakeWish");
+const birthdayCakeImage = document.getElementById("birthdayCakeImage");
+const cakeSmoke = document.getElementById("cakeSmoke");
+
+let cakeStarted = false;
+let cakeBlown = false;
+
+if (
+    birthdayCake &&
+    birthdayCakeButton &&
+    birthdayCakeWish &&
+    birthdayCakeImage
+) {
+
+    birthdayCakeButton.addEventListener("click", function () {
+
+        /* FIRST CLICK — MAKE A WISH */
+
+        if (!cakeStarted) {
+
+            cakeStarted = true;
+
+            birthdayCakeWish.textContent = "Make a wish ♡";
+            birthdayCakeWish.classList.add("showWish");
+
+            birthdayCakeButton.textContent = "♡ DONE";
+
+            birthdayCakeButton.classList.add("cakeReady");
+
+            return;
+        }
+
+
+        /* SECOND CLICK — BLOW OUT CANDLES */
+
+        if (!cakeBlown) {
+
+            cakeBlown = true;
+
+            birthdayCake.classList.add("cakeBlown");
+
+
+            /* Smoke */
+
+            if (cakeSmoke) {
+                cakeSmoke.classList.add("smoking");
+            }
+
+
+            /* Change cake */
+
+            setTimeout(function () {
+
+                birthdayCakeImage.src = "cake-blown.png";
+
+            }, 250);
+
+
+           /* Change message immediately */
+
+birthdayCakeWish.textContent =
+    "I hope your wish comes true. ♡";
+
+
+            /* Show WISH MADE */
+
+            birthdayCakeButton.textContent = "♡ WISH MADE";
+
+
+            /* Reset after 2 seconds */
+
+            setTimeout(function () {
+
+                birthdayCakeButton.textContent =
+                    "♡ CLICK THE CAKE";
+
+                birthdayCakeButton.disabled = false;
+
+                cakeStarted = false;
+                cakeBlown = false;
+
+
+                birthdayCakeWish.classList.remove(
+                    "showWish"
+                );
+
+                birthdayCakeWish.textContent =
+                    "I hope your wish comes true. ♡";
+
+
+                birthdayCake.classList.remove(
+                    "cakeBlown"
+                );
+
+
+                if (cakeSmoke) {
+                    cakeSmoke.classList.remove(
+                        "smoking"
+                    );
+                }
+
+
+                birthdayCakeImage.src =
+                    "cake-transparent.png";
+
+            }, 2000);
+
+        }
+
+    });
+
+}  
