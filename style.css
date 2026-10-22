@@ -6460,7 +6460,7 @@ margin:30px auto 0 !important;
    MONTHLY BOUQUET PAGE
 ========================================= */
 
-#bouquetPage{
+#septemberBouquetPage{
     --bouquet-cream:#FFFBF8;
     --bouquet-paper:#FFFDFC;
     --bouquet-pink:#D9828F;
@@ -6485,7 +6485,7 @@ margin:30px auto 0 !important;
 
 /* BACK BUTTON */
 
-#bouquetPage .bouquetBackBtn{
+#septemberBouquetPage .bouquetBackBtn
     display:block;
 
     width:auto;
@@ -6509,7 +6509,7 @@ margin:30px auto 0 !important;
     box-shadow:none;
 }
 
-#bouquetPage .bouquetBackBtn:hover{
+#septemberBouquetPage .bouquetBackBtn:hover{
     transform:none;
 
     background:var(--bouquet-pink);
@@ -6542,7 +6542,7 @@ margin:30px auto 0 !important;
     letter-spacing:5px;
 }
 
-#bouquetPage .bouquetPageHeader h2{
+#septemberBouquetPage .bouquetPageHeader h2{
     margin:0;
 
     color:#211917;
@@ -6555,7 +6555,7 @@ margin:30px auto 0 !important;
     letter-spacing:-1px;
 }
 
-#bouquetPage .bouquetPageHeader h2 span{
+#septemberBouquetPage .bouquetPageHeader h2 span{
     color:var(--bouquet-pink);
 
     font-family:'Poppins',sans-serif;
@@ -7062,11 +7062,11 @@ margin:30px auto 0 !important;
 
 @media(max-width:700px){
 
-    #bouquetPage{
+    #septemberBouquetPage{
         padding:24px 16px 50px;
     }
 
-    #bouquetPage .bouquetPageHeader h2{
+    #septemberBouquetPage .bouquetPageHeader h2{
         font-size:37px;
     }
 
@@ -12142,18 +12142,656 @@ margin:30px auto 0 !important;
 
 }
 
-@media (max-width: 600px){
 
-    .previousBouquets{
-        width:100% !important;
-        max-width:100% !important;
-        margin:45px auto 0 !important;
-        padding:0 !important;
-        left:0 !important;
-        right:0 !important;
-        transform:none !important;
-        position:relative !important;
-        box-sizing:border-box !important;
+/* ===============================
+   DEAR, SUGAR — OCTOBER BOUQUET
+================================ */
+
+.bouquetHero {
+    background: linear-gradient(
+        135deg,
+        #FFF8F0,
+        #FBE8E3,
+        #F8EEE2
+    );
+    border-color: #E4C9BC;
+}
+
+.bouquetHero:hover {
+    border-color: #C88F7D;
+}
+
+.flowerLines {
+    stroke: #85815C;
+}
+
+.flowerLines circle {
+    fill: #FFF8F0;
+    stroke: #C98F83;
+}
+
+.bouquetPaper {
+    fill: rgba(222, 164, 143, 0.2);
+    stroke: #C69B87;
+}
+
+.bouquetRibbon {
+    stroke: #B77D70;
+}
+
+.bouquetTag {
+    background: #FFF4E8;
+    border-color: #D9B9A6;
+    color: #655047;
+}
+
+#home .bouquetHero h2 {
+    color: #513D36;
+}
+
+.bouquetHeroText p {
+    color: #70584D;
+}
+
+.heroFakeButton {
+    background: #C9827D;
+}
+
+
+/* ==========================================
+   DEAR, SUGAR — OCTOBER HOMEPAGE DECORATIONS
+========================================== */
+
+#home.homeRedesign {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse at 50% 40%,
+            #FFE9DF 0%,
+            transparent 72%),
+        #FFF8F3;
+}
+
+/* Keep the real website content above the background */
+#home.homeRedesign > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Full-page floating Halloween decorations */
+#home.homeRedesign .october-decorations {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+/* Each decoration can be positioned independently */
+#home.homeRedesign .october-decor {
+    position: absolute;
+    display: block;
+    line-height: 1;
+    user-select: none;
+}
+
+/* Soft outlined hearts */
+#home.homeRedesign .october-heart {
+    color: #F08091;
+    font-family: Georgia, serif;
+    font-size: 25px;
+    font-weight: 300;
+}
+
+/* Tiny twinkling stars */
+#home.homeRedesign .october-star {
+    color: #F49A65;
+    font-size: 25px;
+    font-weight: 300;
+}
+
+/* Gentle handwritten-style accents */
+#home.homeRedesign .october-ghost {
+    font-size: 34px;
+    filter: sepia(0.15);
+}
+
+#home.homeRedesign .october-bat {
+    font-size: 27px;
+    filter: sepia(0.25);
+}
+
+#home.homeRedesign .october-pumpkin {
+    font-size: 29px;
+}
+
+/* Keep the central bouquet card readable */
+#home.homeRedesign .bouquetHero {
+    background: linear-gradient(
+        135deg,
+        rgba(255, 232, 220, 0.97),
+        rgba(255, 244, 236, 0.97)
+    );
+    border-color: #F0B6A4;
+    box-shadow: 0 10px 35px rgba(172, 111, 86, 0.06);
+}
+
+/* Match the reference's soft pink button */
+#home.homeRedesign .heroFakeButton {
+    background: #DE9293;
+    border-radius: 10px;
+}
+
+#home.homeRedesign .heroFakeButton:hover {
+    background: #D47F87;
+}
+
+/* Small screens */
+@media (max-width: 700px) {
+    #home.homeRedesign .october-ghost {
+        font-size: 25px;
     }
 
+    #home.homeRedesign .october-bat {
+        font-size: 20px;
+    }
+
+    #home.homeRedesign .october-pumpkin {
+        font-size: 22px;
+    }
+
+    #home.homeRedesign .october-heart,
+    #home.homeRedesign .october-star {
+        font-size: 19px;
+    }
+}
+
+
+/* Tiny ghost beside the Dear, Sugar title */
+#home.homeRedesign .october-title-ghost {
+    display: inline-block;
+    margin-left: 8px;
+    font-family: sans-serif;
+    font-size: 0.48em;
+    vertical-align: 0.2em;
+    transform: rotate(8deg);
+}
+
+
+/* Final homepage decoration positioning */
+#home.homeRedesign .october-decorations {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+#home.homeRedesign .october-decor {
+    opacity: 0.82;
+}
+
+#home.homeRedesign > *:not(.october-decorations) {
+    position: relative;
+    z-index: 1;
+}
+
+/* Keep the title readable and prevent the ghost from overlapping it */
+#home.homeRedesign .october-title-ghost {
+    margin-left: 10px;
+    font-size: 0.38em;
+    vertical-align: 0.25em;
+}
+
+@media (max-width: 700px) {
+    #home.homeRedesign .october-decor {
+        opacity: 0.68;
+    }
+
+    #home.homeRedesign .october-ghost {
+        font-size: 23px;
+    }
+
+    #home.homeRedesign .october-pumpkin,
+    #home.homeRedesign .october-bat {
+        font-size: 19px;
+    }
+}
+
+
+/* Refine the October decorations */
+#home.homeRedesign .october-ghost {
+    font-size: 25px;
+    opacity: 0.72;
+}
+
+#home.homeRedesign .october-bat,
+#home.homeRedesign .october-pumpkin {
+    font-size: 21px;
+    opacity: 0.78;
+}
+
+#home.homeRedesign .october-heart,
+#home.homeRedesign .october-star {
+    font-size: 19px;
+    opacity: 0.75;
+}
+
+/* Keep the title ghost small and close to the heart */
+#home.homeRedesign .october-title-ghost {
+    font-size: 0.32em;
+    margin-left: 5px;
+    vertical-align: 0.15em;
+}
+
+
+/* Phone-friendly October homepage */
+@media (max-width: 600px) {
+    #home.homeRedesign .october-ghost {
+        font-size: 20px;
+    }
+
+    #home.homeRedesign .october-bat,
+    #home.homeRedesign .october-pumpkin {
+        font-size: 17px;
+    }
+
+    #home.homeRedesign .october-heart,
+    #home.homeRedesign .october-star {
+        font-size: 16px;
+    }
+
+    /* Keep decorations subtle on small screens */
+    #home.homeRedesign .october-decor {
+        opacity: 0.6;
+    }
+
+    /* Prevent the main heading from becoming too wide */
+    #home.homeRedesign h1 {
+        max-width: 100%;
+        overflow-wrap: break-word;
+    }
+
+    /* Keep the main card within the screen */
+    #home.homeRedesign .bouquetHero {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+
+/* Previous Bouquets — two cards side by side */
+.previousBouquets {
+    text-align: center;
+}
+
+.previousBouquets .bouquetArchiveCard {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 490px;
+    margin: 12px;
+    vertical-align: top;
+}
+
+/* Desktop: August and September in one row */
+@media (min-width: 760px) {
+    .previousBouquets .bouquetArchiveCard {
+        display: inline-flex;
+        width: calc(50% - 30px);
+        max-width: 490px;
+        min-height: 145px;
+        align-items: center;
+        text-align: left;
+    }
+}
+
+/* Phone: stack cards so they're easy to read */
+@media (max-width: 759px) {
+    .previousBouquets .bouquetArchiveCard {
+        display: flex;
+        width: 100%;
+        max-width: 490px;
+        margin: 12px auto;
+        align-items: center;
+        text-align: left;
+    }
+}
+
+
+/* =========================================
+   OCTOBER — PREVIOUS BOUQUETS ALIGNMENT
+========================================= */
+
+#bouquetPage .previousBouquets {
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+
+    width: 100% !important;
+    max-width: 900px !important;
+    margin: 55px auto 0 !important;
+    padding: 0 20px !important;
+    box-sizing: border-box !important;
+
+    text-align: center !important;
+}
+
+#bouquetPage .previousBouquets .bouquetArchiveCard {
+    display: flex;
+    width: 100% !important;
+    max-width: 490px !important;
+    margin: 0 auto 22px !important;
+    box-sizing: border-box !important;
+}
+
+#bouquetPage .previousBouquets .bouquetDivider {
+    width: 100% !important;
+    max-width: 420px !important;
+    margin: 0 auto 20px !important;
+}
+
+#bouquetPage .previousBouquets h2 {
+    text-align: center !important;
+}
+
+
+/* Hide Previous Bouquets on September's page */
+#septemberBouquetPage .previousBouquets {
+    display: none !important;
+}
+
+
+/* =========================================
+   OCTOBER BOUQUET — SOFT AUTUMN STYLING
+========================================= */
+
+#bouquetPage {
+    background: #fff7f5;
+    padding: 45px 24px 80px;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+/* October heading */
+
+#bouquetPage .octoberBouquetHeader {
+    max-width: 900px;
+    margin: 20px auto 45px;
+    text-align: center;
+}
+
+#bouquetPage .bouquetEyebrow {
+    color: #cb8d83;
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 5px;
+    margin-bottom: 14px;
+}
+
+#bouquetPage .octoberBouquetHeader h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 5vw, 49px);
+    font-weight: 500;
+    color: #302522;
+    letter-spacing: -1px;
+    margin: 0 0 15px;
+}
+
+#bouquetPage .octoberBouquetHeader h2 span {
+    color: #db9ca8;
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+}
+
+#bouquetPage .bouquetHandwriting {
+    font-family: 'Caveat', cursive;
+    font-size: 25px;
+    color: #c58c88;
+    margin: 0 0 24px;
+}
+
+#bouquetPage .octoberBouquetMessage {
+    max-width: 520px;
+    margin: 0 auto;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    line-height: 1.9;
+    color: #9a7976;
+}
+
+/* October flower illustration */
+
+#bouquetPage > svg {
+    display: block;
+    width: 100%;
+    max-width: 520px;
+    height: auto;
+    margin: 0 auto 65px;
+}
+
+/* Mobile styling */
+
+@media (max-width: 600px) {
+    #bouquetPage {
+        padding: 28px 16px 60px;
+    }
+
+    #bouquetPage .octoberBouquetHeader {
+        margin-bottom: 30px;
+    }
+
+    #bouquetPage .bouquetHandwriting {
+        font-size: 22px;
+    }
+}
+
+
+/* =========================================
+   OCTOBER — FLOWER MEANING CARDS
+========================================= */
+
+#bouquetPage .octoberFlowerMeanings {
+    max-width: 900px;
+    margin: 30px auto 90px;
+    padding: 0 20px;
+    text-align: center;
+}
+
+#bouquetPage .octoberMeaningsEyebrow {
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: #c88f87;
+    margin-bottom: 15px;
+}
+
+#bouquetPage .octoberFlowerMeanings h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 500;
+    color: #332724;
+    margin-bottom: 15px;
+}
+
+#bouquetPage .octoberMeaningsIntro {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    line-height: 1.9;
+    color: #a08480;
+    max-width: 480px;
+    margin: 0 auto 45px;
+}
+
+#bouquetPage .octoberMeaningGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+#bouquetPage .octoberMeaningCard {
+    background: #fffaf9;
+    border: 1px solid #efd8d4;
+    border-radius: 18px;
+    padding: 35px 25px;
+    box-shadow: 0 5px 20px rgba(190, 140, 135, 0.05);
+}
+
+#bouquetPage .octoberFlowerSymbol {
+    display: block;
+    color: #dca6a4;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+#bouquetPage .octoberMeaningCard h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 23px;
+    font-weight: 500;
+    color: #42302c;
+    margin: 0 0 12px;
+}
+
+#bouquetPage .octoberMeaningLabel {
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: #cc9388;
+    margin-bottom: 17px;
+}
+
+#bouquetPage .octoberMeaningCard p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    line-height: 1.9;
+    color: #947b76;
+    margin: 0;
+}
+
+#bouquetPage .octoberMeaningsEnding {
+    font-family: 'Caveat', cursive;
+    font-size: 24px;
+    color: #d19b9c;
+    margin-top: 40px;
+}
+
+/* Mobile layout */
+
+@media (max-width: 600px) {
+    #bouquetPage .octoberFlowerMeanings {
+        padding: 0 5px;
+        margin-bottom: 65px;
+    }
+
+    #bouquetPage .octoberFlowerMeanings h2 {
+        font-size: 30px;
+    }
+
+    #bouquetPage .octoberMeaningGrid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    #bouquetPage .octoberMeaningCard {
+        padding: 28px 20px;
+    }
+}
+
+
+/* OCTOBER FLOWER MEANINGS — AUGUST-STYLE CARDS */
+
+.octoberMeaningGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.octoberMeaningCard {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 24px;
+    text-align: left;
+    background: #fffafa;
+    border: 1px solid #efd8d3;
+    border-radius: 19px;
+    min-width: 0;
+}
+
+.octoberMeaningCard .octoberFlowerSymbol {
+    display: block;
+    flex: 0 0 48px;
+    width: 48px;
+    height: 64px;
+    font-size: 0;
+}
+
+.octoberFlowerSymbol svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.octoberMeaningCard > div:last-child {
+    flex: 1;
+    min-width: 0;
+}
+
+.octoberMeaningCard h3 {
+    margin: 0 0 5px;
+    color: #e58496;
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.octoberMeaningCard .octoberMeaningLabel {
+    display: block;
+    color: #d99592;
+    font-family: 'Poppins', sans-serif;
+    font-size: 9px;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.octoberMeaningCard p {
+    margin: 0;
+    color: #ac7772;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+@media (max-width: 600px) {
+    .octoberMeaningGrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .octoberMeaningCard {
+        padding: 16px 12px;
+        gap: 8px;
+    }
+
+    .octoberMeaningCard .octoberFlowerSymbol {
+        flex-basis: 32px;
+        width: 32px;
+        height: 48px;
+    }
+
+    .octoberMeaningCard h3 {
+        font-size: 16px;
+    }
+
+    .octoberMeaningCard .octoberMeaningLabel {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    .octoberMeaningCard p {
+        font-size: 11px;
+    }
 }
