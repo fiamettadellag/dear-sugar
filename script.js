@@ -9,28 +9,35 @@ const gamePage = document.getElementById("gamePage");
 const moodPage = document.getElementById("moodPage");
 const proposalPage = document.getElementById("proposalPage");
 const bouquetPage = document.getElementById("bouquetPage");
-const augustBouquetPage = document.getElementById("augustBouquetPage");
+const augustBouquetPage = 
+document.getElementById("augustBouquetPage");
+const septemberBouquetPage = document.getElementById("septemberBouquetPage");
+const octoberBouquetPage = document.getElementById("octoberBouquetPage");
 const scrapbookPage = document.getElementById("scrapbookPage");
 const remindersPage = document.getElementById("remindersPage");
 let birthdayGreetingShown = false;
 // Hide every page except the one we want
 function showPage(page){
 
-    const pages = [
-        landing,
-        home,
-        lettersPage,
-        reasonsPage,
-        songsPage,
-        moviesPage,
-        gamePage,
-        moodPage,
-        proposalPage,
-        bouquetPage,
-        augustBouquetPage,
-        scrapbookPage,
-        remindersPage
-    ];
+   
+const pages = [
+    landing,
+    home,
+    lettersPage,
+    reasonsPage,
+    songsPage,
+    moviesPage,
+    gamePage,
+    moodPage,
+    proposalPage,
+    bouquetPage,
+    augustBouquetPage,
+    septemberBouquetPage,
+    octoberBouquetPage,
+    scrapbookPage,
+    remindersPage
+];
+
 
     pages.forEach(section => {
         if(section){
@@ -89,6 +96,7 @@ document.getElementById("lettersBtn").addEventListener("click", () => {
     showPage(lettersPage);
 });
 
+
 document.getElementById("bouquetBtn").addEventListener("click", () => {
 
     showPage(bouquetPage);
@@ -100,20 +108,34 @@ document.getElementById("bouquetBtn").addEventListener("click", () => {
 
 });
 
-const augustBouquetBtn = document.getElementById("augustBouquetBtn");
 
-if (augustBouquetBtn) {
-    augustBouquetBtn.addEventListener("click", () => {
 
+document.querySelectorAll("#augustBouquetBtn").forEach(button => {
+    button.addEventListener("click", () => {
         showPage(augustBouquetPage);
 
         window.scrollTo({
             top: 0,
             behavior: "smooth"
         });
-
     });
-}
+});
+ 
+
+
+document.querySelectorAll("#septemberBouquetBtn").forEach(button => {
+    button.addEventListener("click", () => {
+        showPage(septemberBouquetPage);
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+});
+
+
+
 
 document.getElementById("reasonsBtn").addEventListener("click", () => {
     showPage(reasonsPage);
@@ -170,13 +192,12 @@ document.getElementById("proposalBtn").addEventListener("click", () => {
 
 });
 
-// Back buttons
-document.querySelectorAll(".backBtn").forEach(button => {
 
+ // Back buttons
+document.querySelectorAll(".backBtn").forEach(button => {
     button.addEventListener("click", () => {
 
-        if (button.closest("#augustBouquetPage")) {
-
+       if (button.closest("#augustBouquetPage, #septemberBouquetPage")) {
             showPage(bouquetPage);
 
             window.scrollTo({
@@ -185,19 +206,35 @@ document.querySelectorAll(".backBtn").forEach(button => {
             });
 
         } else {
-    showPage(home);
+            showPage(home);
 
-    const birthdayGreeting =
-        document.getElementById("birthdayGreeting");
+            const birthdayGreeting =
+                document.getElementById("birthdayGreeting");
 
-    if (birthdayGreeting) {
-        birthdayGreeting.style.display = "none";
-    }
+            if (!isJessBirthday && birthdayGreeting) {
+    birthdayGreeting.style.setProperty("display", "none", "important");
 }
 
-    });
+            if (birthdayGreeting) {
+                birthdayGreeting.style.display = "none";
+            }
+        }
 
+    });
 });
+
+
+/* September bouquet back button */
+const septemberBackButton =
+    document.querySelector("#septemberBouquetPage .backBtn");
+
+if (septemberBackButton) {
+    septemberBackButton.addEventListener("click", () => {
+        showPage(bouquetPage);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+}
+
 
 // Start on landing page
 showPage(landing);
@@ -1507,3 +1544,4 @@ birthdayCakeWish.textContent =
     });
 
 }  
+
